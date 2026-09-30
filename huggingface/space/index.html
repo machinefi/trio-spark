@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Trio-Spark v1.0 is a Situated World Model for fast judgment over the next move.">
+  <title>Trio-Spark v1.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <nav><span class="brand">MACHINEFI / TRIO</span><a href="https://github.com/machinefi/trio-spark">GitHub ↗</a></nav>
+    <section class="hero">
+      <p class="eyebrow">SITUATED WORLD MODEL · V1.0</p>
+      <h1>Fast judgment for<br>the next move.</h1>
+      <p class="lede">Give Trio-Spark the state of an environment and 2–8 possible moves. One pass returns the best next move and a probability for every choice.</p>
+      <div class="actions">
+        <a class="primary" href="https://platform.machinefi.com/spark">Try 100 decisions free</a>
+        <a class="secondary" href="https://platform.machinefi.com/spark/docs">Read the API docs</a>
+      </div>
+    </section>
+    <section class="flow" aria-label="Architecture">
+      <span>environment signals</span><b>→</b><span>structured state</span><b>→</b><span class="spark">TRIO-SPARK</span><b>→</b><span>next move</span>
+    </section>
+    <section class="grid">
+      <article><span class="number">25</span><h2>Drone decisions</h2><p>75.7 m flown through an obstacle course with zero collisions.</p></article>
+      <article><span class="number">3</span><h2>Browser decisions</h2><p>Requested item selected and the task closed autonomously.</p></article>
+      <article><span class="number">13</span><h2>Robot decisions</h2><p>Physical manipulation completed with zero forbidden contacts.</p></article>
+    </section>
+    <section class="code-section">
+      <div><p class="eyebrow">ONE REQUEST. ONE DECISION.</p><h2>Your environment defines what Spark can do.</h2><p>Use structured signals from software, simulations, sensors, or robots. Your application keeps control of legal actions and execution.</p></div>
+      <pre><code>curl https://platform.machinefi.com/api/spark/v1/decisions \
+  -H "Authorization: Bearer $TRIO_SPARK_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "task": "Keep the machine safe.",
+    "state": {"temperature_c": 84},
+    "choices": [
+      {"id": "slow", "description": "Reduce speed"},
+      {"id": "stop", "description": "Stop now"}
+    ]
+  }'</code></pre>
+    </section>
+    <footer><span>Situated World Models. Built to move.</span><a href="https://machinefi.com">machinefi.com ↗</a></footer>
+  </main>
+</body>
+</html>
