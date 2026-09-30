@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://platform.machinefi.com/spark"><strong>Try Trio-Spark</strong></a>
   ·
-  <a href="https://platform.machinefi.com/spark/docs">API Docs</a>
+  <a href="docs/api.md">API Docs</a>
   ·
   <a href="https://platform.machinefi.com/spark/billing">Pricing</a>
   ·
@@ -52,7 +52,7 @@ Spark repeatedly chose the next manipulation skill from fresh MuJoCo state: appr
 
 ## Build with Trio-Spark
 
-Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark/keys), then follow the [API documentation](https://platform.machinefi.com/spark/docs).
+Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark/keys), then follow the [public API reference](docs/api.md).
 
 ```bash
 export TRIO_SPARK_API_KEY=tf_...
@@ -75,7 +75,7 @@ print(result["probabilities"])
 PY
 ```
 
-The dependency-free Python client lives at [`clients/python/trio_spark.py`](clients/python/trio_spark.py). Product behavior, limits, pricing, account management, and the current API contract live on the [Trio-Spark website](https://platform.machinefi.com/spark).
+The dependency-free Python client lives at [`clients/python/trio_spark.py`](clients/python/trio_spark.py). The request/response schema, limits, errors, and pricing are documented in the [public API reference](docs/api.md). Account management and live usage remain in the [Trio-Spark console](https://platform.machinefi.com/spark).
 
 ## How Spark fits into an agent
 
