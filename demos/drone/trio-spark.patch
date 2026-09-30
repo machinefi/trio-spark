@@ -1,0 +1,254 @@
+diff --git a/hud.py b/hud.py
+index f136a98..deeb163 100644
+--- a/hud.py
++++ b/hud.py
+@@ -1,4 +1,5 @@
+-"""Telemetry overlay: makes the Jev layer visible in the video."""
++"""Telemetry overlay: makes the Trio-Spark layer visible in the video."""
++import os
+ import numpy as np
+ from PIL import Image, ImageDraw, ImageFont
+ 
+@@ -7,13 +8,19 @@ PANEL   = (17, 21, 26)
+ LINE    = (38, 45, 54)
+ TEXT    = (222, 230, 238)
+ DIM     = (118, 132, 146)
+-ACCENT  = (255, 159, 28)      # Jev
++ACCENT  = (200, 76, 54)       # MachineFi copper
+ CYAN    = (46, 196, 241)      # perception
+ GREEN   = (64, 214, 141)
+ RED     = (240, 78, 72)
+ 
+-MONO = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+-BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"
++MONO = next((p for p in (
++    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
++    "/System/Library/Fonts/SFNSMono.ttf",
++) if os.path.exists(p)), None)
++BOLD = next((p for p in (
++    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf",
++    "/System/Library/Fonts/SFNSMono.ttf",
++) if os.path.exists(p)), MONO)
+ _F = {}
+ 
+ 
+@@ -72,13 +79,13 @@ class Hud:
+         dr.rectangle([px, 0, self.W, self.H], fill=PANEL)
+         dr.line([px, 0, px, self.H], fill=LINE, width=1)
+         x0, w = px + 22, self.W_PANEL - 44
+-        fresh = judg.get("age_s", 9) < 0.45 and judg["source"] == "jev"
++        fresh = judg.get("age_s", 9) < 1.5 and judg["source"] == "spark"
+ 
+         # ---- header ------------------------------------------------------
+         y = 26
+-        dr.text((x0, y), "JEV", font=font(30, True), fill=ACCENT)
+-        dr.text((x0 + 62, y + 10), "SYSTEM ONE", font=font(13, True), fill=TEXT)
+-        dr.text((x0 + 62, y + 27), tel["model"], font=font(11), fill=DIM)
++        dr.text((x0, y), "TRIO-SPARK", font=font(27, True), fill=ACCENT)
++        dr.text((x0, y + 34), "SITUATED DECISION MODEL", font=font(11, True), fill=TEXT)
++        dr.text((x0 + 202, y + 34), "v1.0", font=font(11), fill=DIM)
+         dot = ACCENT if fresh else (70, 55, 30)
+         dr.ellipse([self.W - 40, y + 12, self.W - 28, y + 24], fill=dot)
+         y += 62
+@@ -132,7 +139,7 @@ class Hud:
+         # ---- the judgment -------------------------------------------------
+         y += 16
+         dr.text((x0, y), "TACTICAL JUDGMENT", font=font(11, True), fill=ACCENT)
+-        if judg["source"] != "jev":
++        if judg["source"] != "spark":
+             dr.text((x0 + w - 62, y), "FALLBACK", font=font(11, True), fill=DIM)
+         y += 22
+         if "steer" in judg:                       # graded-score navigator
+@@ -161,7 +168,7 @@ class Hud:
+             p = probs.get(k, 0.0)
+             self.smooth[k] = 0.65 * self.smooth.get(k, 0.0) + 0.35 * p   # ease the bars
+             p = self.smooth[k]
+-            chosen = k == judg["maneuver"] and judg["source"] == "jev"
++            chosen = k == judg["maneuver"] and judg["source"] == "spark"
+             col = ACCENT if chosen else (58, 70, 82)
+             dr.text((x0, y), k.replace("_", " ").ljust(11), font=font(12, True if chosen else False),
+                     fill=TEXT if chosen else DIM)
+@@ -186,7 +193,7 @@ class Hud:
+         for i, s in enumerate([
+             f"calls {tel['calls']:<4} reused {tel['skipped']}",
+             f"latency {tel['lat']}  tokens {tel['tokens']}",
+-            f"control 500Hz   jev {tel['hz']:.0f}Hz",
++            f"control 500Hz   Spark {tel['hz']:.1f}Hz",
+         ]):
+             dr.text((x0, fy + i * 16), s, font=font(11), fill=DIM)
+ 
+@@ -202,7 +209,7 @@ class Hud:
+                     fill=RED if (k == "CONTACTS" and tel["hits"]) else TEXT)
+             cx += 150
+         dr.text((self.vw - 330, self.vh - 36), tel["mode"], font=font(14, True),
+-                fill=ACCENT if tel["mode"].startswith("JEV") else DIM)
++                fill=ACCENT if tel["mode"].startswith("TRIO") else DIM)
+         if tel.get("climbing"):
+             dr.text((self.vw - 330, self.vh - 52), "CLIMBING OVER BARRIER", font=font(11, True), fill=GREEN)
+         return np.asarray(img.convert("RGB"))
+diff --git a/requirements.txt b/requirements.txt
+index 43cbfd7..2f63165 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,6 +1,5 @@
+-mujoco>=3.13
++mujoco>=3.3
+ numpy>=1.26
+-typesafe-sdk>=0.7
+ pillow>=10.0
+ imageio>=2.34
+ imageio-ffmpeg>=0.4
+diff --git a/run.py b/run.py
+index 315234a..c5c2c53 100644
+--- a/run.py
++++ b/run.py
+@@ -160,7 +160,7 @@ class Guidance:
+ 
+         # --- Jev's tactical commitment (advisory) --------------------------------
+         acted = False
+-        if (use_jev and judg["source"] == "jev" and judg["age_s"] < THRESH["stale_after_s"]
++        if (use_jev and judg["source"] == "spark" and judg["age_s"] < THRESH["stale_after_s"]
+                 and (decision_needed(scene) or self.climb_hold)):
+             self.commit_left = max(0, self.commit_left - 1)
+             if self.commit_left == 0 or judg["risk"] >= THRESH["override_risk"]:
+@@ -347,7 +347,7 @@ def episode(seed=0, seconds=35.0, use_jev=True, video=None, hz=None, budget=None
+             depth = np.clip(eye.depth.render(), 0, 25.0)
+             tel = {"t": t, "standoff": standoffs[-1], "speed": float(np.linalg.norm(d.qvel[:3])),
+                    "hits": hits, "model": tac.model if tac else "disabled",
+-                   "mode": "JEV ENGAGED" if use_jev else "ABLATION: NO JEV",
++                   "mode": "TRIO-SPARK v1.0" if use_jev else "ABLATION: NO MODEL",
+                    "calls": tac.calls if tac else 0, "skipped": tac.skipped if tac else 0,
+                    "tokens": tac.tokens if tac else 0, "hz": (1.0 / tac.min_dt) if tac else 0,
+                    "lat": f"{np.median(tac.latency):.2f}s" if (tac and tac.latency) else "--",
+diff --git a/tactics.py b/tactics.py
+index 08eaf1d..bb2eecc 100644
+--- a/tactics.py
++++ b/tactics.py
+@@ -8,10 +8,10 @@ Runs off the control loop in a worker thread. The flight code never blocks on it
+ and never *needs* it -- it reads whatever judgment is currently cached, and the
+ reflex layer in run.py owns safety regardless of what comes back.
+ """
+-import os, threading, queue, time
+-from typesafe_sdk import TypeSafeClient, Choice, Noul, Score
++import json, os, threading, queue, time, urllib.error, urllib.request, uuid
+ 
+-MODEL = "jev-latest"
++MODEL = "trio-spark-preview"
++API_URL = "https://platform.machinefi.com/api/spark/v1/decisions"
+ 
+ # --- how the flight code reacts to a judgment -------------------------------
+ THRESHOLDS = {
+@@ -64,28 +64,11 @@ MANEUVERS = {
+         "stale. Stop chasing it and sweep to find the target again."),
+ }
+ 
+-QUESTIONS = {
+-    "maneuver": Choice(
+-        instructions={
+-            "role": "You are the tactical decision layer of an autonomous quadrotor.",
+-            "mission": MISSION,
+-            "ask": "Which single maneuver should the drone commit to right now?",
+-        },
+-        criteria=MANEUVERS,
+-    ),
+-    "risk": Score(
+-        instructions="How dangerous is the drone's immediate situation?",
+-        criteria=["clear and open", "tight but manageable", "about to hit something"],
+-    ),
+-    "target_truly_lost": Noul(
+-        instructions=(
+-            "Has the drone genuinely lost the rover? Judge from unseen_for_s: a fraction "
+-            "of a second behind a pillar is a normal occlusion, several seconds of nothing "
+-            "in an open scene means the chase line is stale."),
+-        criteria={"true": "Give up the remembered bearing and sweep to search.",
+-                  "false": "Keep flying the last known bearing; it should reappear."},
+-    ),
+-}
++TASK = (
++    "You are the fast tactical judgment layer of an autonomous quadrotor. "
++    "Follow the rover, keep it in view, and avoid collisions. Choose the single "
++    "best maneuver to commit to now from the allowed actions."
++)
+ 
+ 
+ def decision_needed(scene):
+@@ -111,10 +94,11 @@ class Tactician:
+     scene has actually changed enough to be worth a call."""
+ 
+     def __init__(self, hz=THRESHOLDS["call_hz"], budget=THRESHOLDS["call_budget"], model=MODEL):
+-        key = os.environ.get("TYPESAFE_API_KEY") or os.environ.get("JEV_API_KEY")
++        key = os.environ.get("TRIO_SPARK_API_KEY")
+         if not key:
+-            raise RuntimeError("set TYPESAFE_API_KEY (see .env.example)")
+-        self.client = TypeSafeClient(api_key=key)
++            raise RuntimeError("set TRIO_SPARK_API_KEY")
++        self.key = key
++        self.url = os.environ.get("TRIO_SPARK_API_URL", API_URL)
+         self.min_dt = 1.0 / hz
+         self.budget = budget
+         self.model = model
+@@ -183,17 +167,44 @@ class Tactician:
+             t0 = time.time()
+             self.attempts += 1  # counts against the budget whether or not the call succeeds
+             try:
+-                r = self.client.system_one(state=build_state(scene), model=self.model, questions=QUESTIONS)
+-                a = r.answers
++                payload = json.dumps({
++                    "model": self.model,
++                    "task": TASK,
++                    "state": build_state(scene),
++                    "choices": [
++                        {"id": key, "description": description}
++                        for key, description in MANEUVERS.items()
++                    ],
++                }).encode()
++                request = urllib.request.Request(
++                    self.url,
++                    data=payload,
++                    headers={
++                        "Authorization": f"Bearer {self.key}",
++                        "Content-Type": "application/json",
++                        "Idempotency-Key": f"drone-{uuid.uuid4()}",
++                        "User-Agent": "trio-spark-drone-demo/1.0",
++                    },
++                    method="POST",
++                )
++                with urllib.request.urlopen(request, timeout=10) as response:
++                    r = json.load(response)
++                probs = {item["choice_id"]: item["probability"] for item in r["probabilities"]}
++                unseen = float(scene["target"].get("unseen_for_s") or 0.0)
++                nearest = float(scene.get("nearest_obstacle_m", 25.0))
++                # Safety telemetry remains deterministic and independent of the model.
++                risk = max(0.0, min(2.0, 2.0 - nearest / 2.5))
+                 judgment = {
+-                    "maneuver": a["maneuver"].choice,
+-                    "confidence": round(a["maneuver"].confidence, 3),
+-                    "probabilities": {k: round(v, 3) for k, v in a["maneuver"].probabilities.items()},
+-                    "risk": round(a["risk"].score, 2),
+-                    "target_truly_lost": round(a["target_truly_lost"].noul, 3),
+-                    "source": "jev",
++                    "maneuver": r["choice_id"],
++                    "confidence": round(r["confidence"], 3),
++                    "probabilities": {k: round(v, 3) for k, v in probs.items()},
++                    "risk": round(risk, 2),
++                    "target_truly_lost": round(max(0.0, min(1.0, (unseen - 0.5) / 3.0)), 3),
++                    "source": "spark",
++                    "request_id": r["request_id"],
++                    "latency_ms": r["latency_ms"],
+                 }
+-                self.tokens += r.usage.input_tokens + r.usage.output_tokens
++                self.tokens += int(r["usage"]["billed_input_tokens"])
+                 self.calls += 1
+                 self.latency.append(time.time() - t0)
+                 with self._lock:
+@@ -211,10 +222,6 @@ class Tactician:
+     def close(self):
+         self._stop.set()
+         self._thread.join(timeout=1.0)
+-        try:
+-            self.client.close()
+-        except Exception:
+-            pass
+ 
+     def stats(self):
+         lat = sorted(self.latency)

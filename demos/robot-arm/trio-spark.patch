@@ -1,0 +1,85 @@
+diff --git a/src/embodied_jev/policies.py b/src/embodied_jev/policies.py
+index ce8cb73..f3435e0 100644
+--- a/src/embodied_jev/policies.py
++++ b/src/embodied_jev/policies.py
+@@ -7,6 +7,7 @@ import math
+ import os
+ import time
+ import threading
++import uuid
+ from functools import lru_cache
+ 
+ import httpx
+@@ -146,6 +147,33 @@ class DecisionPolicy:
+         self.tokens += counts[0]
+         self.output_tokens += counts[1]
+ 
++    def _spark_choice(self, state, spec):
++        options = spec["criteria"]
++        if not 2 <= len(options) <= 8:
++            raise ValueError("Spark requires 2..8 offered actions")
++        payload = {
++            "model": "trio-spark-preview",
++            "task": spec["instructions"] if isinstance(spec["instructions"], str) else json.dumps(spec["instructions"]),
++            "state": state,
++            "choices": [{"id": key, "description": str(value)} for key, value in options.items()],
++        }
++        response = self._post(
++            self.connection["url"], json=payload,
++            headers={"Authorization": f"Bearer {self.connection['key']}",
++                     "Idempotency-Key": str(uuid.uuid4()), "User-Agent": "Trio-Spark-Examples/1.0"},
++            timeout=25, follow_redirects=False)
++        response.raise_for_status()
++        body = response.json()
++        answer = {
++            "choice": body["choice_id"],
++            "probabilities": {row["choice_id"]: row["probability"] for row in body["probabilities"]},
++            "confidence": body.get("confidence"),
++        }
++        usage = body.get("usage") or {}
++        self.tokens += int(usage.get("billed_input_tokens", 0))
++        self.model = "Trio-Spark v1.0"
++        return answer
++
+     def choose(self, observation, question, options, baseline_choice, history):
+         start = time.perf_counter()
+         self.last_input = None
+@@ -281,6 +309,8 @@ class DecisionPolicy:
+             return self._claude_choice(state, spec, start)
+         if self.provider == "minicpm":
+             answer = self._local_inference(state, spec)
++        elif "/api/spark/v1/decisions" in self.connection.get("url", ""):
++            answer = self._spark_choice(state, spec)
+         else:
+             url, key, model = (self.connection[k] for k in ("url", "key", "model"))
+             headers = {"Authorization": f"Bearer {key}"} if key else {}
+@@ -350,6 +380,29 @@ class DecisionPolicy:
+                 self.last_input = {**model_input, "channel_inputs": inputs}
+             return result
+         self.calls += 1
++        if self.provider == "local" and "/api/spark/v1/decisions" in self.connection.get("url", ""):
++            result, inputs = {}, {}
++            try:
++                for name, spec in questions.items():
++                    if continue_run is not None and not continue_run():
++                        return None
++                    channel_start = time.perf_counter()
++                    answer = self._spark_choice(state, spec)
++                    choice, probabilities = validate_answer(answer, spec["criteria"])
++                    latency = (time.perf_counter() - channel_start) * 1000
++                    result[name] = {"choice": choice, "probabilities": probabilities,
++                                    "selected_probability": probabilities[choice],
++                                    "provider_confidence": answer.get("confidence"),
++                                    "provider": self.provider, "model": self.model,
++                                    "model_call": True, "latency_ms": latency, "shared_request": False}
++                    inputs[name] = {"state": state, "decision": spec}
++                self.calls += len(questions) - 1
++                self.last_input = {**model_input, "channel_inputs": inputs}
++                self.latencies.append((time.perf_counter() - started) * 1000)
++                return result
++            except Exception:
++                self.latencies.append((time.perf_counter() - started) * 1000)
++                raise
+         try:
+             url, key, model = (self.connection[k] for k in ("url", "key", "model"))
+             headers = {"Authorization": f"Bearer {key}"} if key else {}

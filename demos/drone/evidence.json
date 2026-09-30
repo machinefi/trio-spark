@@ -1,0 +1,13 @@
+{
+  "demo": "autonomous-drone",
+  "production_api": true,
+  "duration_seconds": 65.0,
+  "successful_calls": 25,
+  "api_errors": 0,
+  "median_wall_latency_ms": 933,
+  "p90_wall_latency_ms": 1049,
+  "distance_flown_m": 75.7,
+  "max_x_m": 77.2,
+  "crossed_barrier": true,
+  "collisions": 0
+}

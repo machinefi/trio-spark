@@ -1,0 +1,11 @@
+{
+  "demo": "robot-arm-transfer",
+  "production_api": true,
+  "wall_seconds": 13.68,
+  "successful_calls": 13,
+  "api_errors": 0,
+  "executed_skills": 8,
+  "max_lift_m": 0.19699,
+  "forbidden_contact_steps": 0,
+  "physical_success": true
+}

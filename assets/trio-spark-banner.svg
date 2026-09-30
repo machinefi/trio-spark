@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">Trio-Spark</title>
+  <desc id="desc">Fast judgment for the next move</desc>
+  <rect width="1280" height="360" fill="#f2eee7"/>
+  <path d="M0 0h1280v18H0z" fill="#171b1b"/>
+  <path d="M0 342h1280v18H0z" fill="#c9533f"/>
+  <g transform="translate(70 69)">
+    <text x="0" y="51" fill="#171b1b" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="-2">TRIO–SPARK</text>
+    <text x="2" y="95" fill="#c9533f" font-family="Menlo, Consolas, monospace" font-size="17" font-weight="700" letter-spacing="2.2">SITUATED WORLD MODEL</text>
+    <text x="2" y="159" fill="#171b1b" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Fast judgment for the next move.</text>
+    <text x="2" y="200" fill="#63706d" font-family="Arial, Helvetica, sans-serif" font-size="20">One state. Two to eight moves. One pass.</text>
+  </g>
+  <g transform="translate(790 84)" font-family="Menlo, Consolas, monospace">
+    <rect x="0" y="56" width="118" height="82" rx="10" fill="#fffaf2" stroke="#d7cec2" stroke-width="2"/>
+    <rect x="184" y="56" width="118" height="82" rx="10" fill="#fffaf2" stroke="#c9533f" stroke-width="3"/>
+    <rect x="368" y="56" width="118" height="82" rx="10" fill="#fffaf2" stroke="#d7cec2" stroke-width="2"/>
+    <text x="59" y="91" fill="#63706d" font-size="13" text-anchor="middle">SIGNALS</text>
+    <text x="59" y="115" fill="#171b1b" font-size="16" font-weight="700" text-anchor="middle">STATE</text>
+    <text x="243" y="91" fill="#c9533f" font-size="13" text-anchor="middle">TRIO–SPARK</text>
+    <text x="243" y="115" fill="#171b1b" font-size="16" font-weight="700" text-anchor="middle">JUDGMENT</text>
+    <text x="427" y="91" fill="#63706d" font-size="13" text-anchor="middle">EXECUTOR</text>
+    <text x="427" y="115" fill="#171b1b" font-size="16" font-weight="700" text-anchor="middle">ACTION</text>
+    <path d="M124 97h51m-12-10 12 10-12 10M308 97h51m-12-10 12 10-12 10" fill="none" stroke="#c9533f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="243" y="178" fill="#63706d" font-size="14" text-anchor="middle">FULL DISTRIBUTION · ZERO OUTPUT TOKENS</text>
+  </g>
+</svg>

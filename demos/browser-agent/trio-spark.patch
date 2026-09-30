@@ -1,0 +1,126 @@
+diff --git a/jev_ultrafast/model.py b/jev_ultrafast/model.py
+index d311747..ccc4ece 100644
+--- a/jev_ultrafast/model.py
++++ b/jev_ultrafast/model.py
+@@ -3,7 +3,9 @@
+ import json
+ import math
+ import os
++import re
+ import time
++import uuid
+ 
+ import httpx
+ 
+@@ -104,44 +106,87 @@ def choose(state, goal, history):
+             },
+             "instructions": {"goal": goal, "operation": operation, "rules": [NEXT_ACTION, TARGET]},
+         }
++    # Spark's API accepts one bounded choice head. Rank the currently visible
++    # actions deterministically, then let the model make the actual decision.
++    words = set(re.findall(r"[a-z0-9]+", goal.lower()))
++    candidates = []
++    for operation, group in targets.items():
++        for index, action in group.items():
++            searchable = " ".join(str(action.get(k, "")) for k in ("label", "role", "value", "current_value")).lower()
++            overlap = len(words & set(re.findall(r"[a-z0-9]+", searchable)))
++            candidates.append((overlap, operation, index, action))
++    candidates.sort(key=lambda item: (-item[0], int(item[2].split(":")[0])))
++    offered = candidates[:5]
++    choices = []
++    mapping = {}
++    for _score, operation, index, action in offered:
++        choice_id = action["id"]
++        mapping[choice_id] = (operation, index, action)
++        choices.append({
++            "id": choice_id,
++            "description": f"{operation} [{index}] {action['label']}"
++        })
++    for control in ("WAIT", "DONE", "BLOCKED"):
++        if len(choices) >= 8:
++            break
++        description = controls.get(control, {}).get("label") or {
++            "WAIT": "Wait for the current page to change or finish loading.",
++            "DONE": "Every requirement is visibly satisfied.",
++            "BLOCKED": "No supported visible action can progress the task.",
++        }[control]
++        choices.append({"id": control, "description": description})
+     body = {
+-        "model": os.environ.get("TYPESAFE_MODEL", "jev-latest"),
++        "model": "trio-spark-preview",
++        "task": "Choose the single best next browser action for the user's goal. Act only on visible evidence. Choose DONE only when the goal is visibly satisfied.",
+         "state": {
+-            "page": {k: state[k] for k in ("url", "title", "text")},
+-            "elements": elements,
++            "goal": goal,
++            "page": {"url": state["url"], "title": state["title"], "text": state["text"][:1600]},
++            "offered_visible_actions": choices,
+             "recent_actions": [
+                 {k: h.get(k) for k in ("action", "kind", "text", "page_changed")} for h in history[-10:]
+             ],
+         },
+-        "questions": questions,
++        "choices": choices,
+     }
+     started = time.perf_counter()
+-    result = post_json("https://api.typesafe.ai/v1/systemone", os.environ["TYPESAFE_API_KEY"], body)
+-    operation_answer = validate_choice(result["answers"].get("operation", {}), operations)
+-    operation = operation_answer["choice"]
+-    target = None
+-    target_answer = None
+-    probabilities = {}
+-    if operation in targets:
+-        # Unused target heads cannot cause an action. Validate the head selected by the operation.
+-        target_answer = validate_choice(result["answers"].get(operation.lower() + "_target", {}), targets[operation])
+-        target = target_answer["choice"]
+-        choice = targets[operation][target]["id"]
+-        probabilities = {a["id"]: target_answer["probabilities"][index] for index, a in targets[operation].items()}
++    key = os.environ["TRIO_SPARK_API_KEY"]
++    for attempt in range(3):
++        response = CLIENT.post(
++            "https://platform.machinefi.com/api/spark/v1/decisions",
++            json=body,
++            headers={"Authorization": f"Bearer {key}", "Idempotency-Key": str(uuid.uuid4()),
++                     "User-Agent": "Trio-Spark-Examples/1.0"},
++        )
++        if response.status_code in {429, 503} and attempt < 2:
++            time.sleep(1.2 * (attempt + 1))
++            continue
++        if response.is_error:
++            raise RuntimeError(f"Spark returned HTTP {response.status_code}: {response.text[:160]}; no action executed.")
++        break
++    result = response.json()
++    ids = {item["id"] for item in choices}
++    answer = validate_choice({
++        "choice": result["choice_id"],
++        "confidence": result["confidence"],
++        "probabilities": {item["choice_id"]: item["probability"] for item in result["probabilities"]},
++    }, ids)
++    choice = answer["choice"]
++    if choice in mapping:
++        operation, target, _action = mapping[choice]
+     else:
+-        choice = controls[operation]["id"] if operation in controls else operation
+-        probabilities[choice] = operation_answer["probabilities"][operation]
++        operation, target = choice, None
++    probabilities = {item["id"]: answer["probabilities"][item["id"]] for item in choices}
+     return {
+         "choice": choice,
+         "operation": operation,
+         "target": target,
+-        "confidence": operation_answer["confidence"],
++        "confidence": answer["confidence"],
+         "probabilities": probabilities,
+-        "operation_probabilities": operation_answer["probabilities"],
+-        "target_probabilities": target_answer["probabilities"] if target_answer else {},
+-        "target_confidence": target_answer["confidence"] if target_answer else None,
+-        "raw_answers": result["answers"],
+-        "model": result["model"],
++        "operation_probabilities": probabilities,
++        "target_probabilities": probabilities,
++        "target_confidence": answer["confidence"],
++        "raw_answers": result,
++        "model": result.get("model", "Trio-Spark v1.0"),
+         "usage": result.get("usage", {}),
+         "latency_ms": round((time.perf_counter() - started) * 1000),
+         "request": body,

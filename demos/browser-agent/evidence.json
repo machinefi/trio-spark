@@ -1,0 +1,10 @@
+{
+  "demo": "browser-agent",
+  "production_api": true,
+  "duration_ms": 4002,
+  "successful_calls": 3,
+  "api_errors": 0,
+  "actions": ["Travel", "It's Only the Himalayas", "DONE"],
+  "final_url": "https://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html",
+  "completed": true
+}
