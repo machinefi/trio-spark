@@ -9,4 +9,4 @@ The demos adapt these MIT-licensed projects. Their names and trademarks remain t
 | Robot arm | [FBddcz/embodied-jev](https://github.com/FBddcz/embodied-jev) | `f08de2e4e20d6cd69fea9c57ac1062c3ef510f1e` |
 | 2048 recorded run | [ARCJ137442/jev-2048](https://github.com/ARCJ137442/jev-2048) | See `demos/2048/ATTRIBUTION.md` |
 
-Apply the patch in each demo directory to a checkout at the listed revision. Follow the upstream repository's license and setup instructions.
+For the runnable integrations, apply the patch in the demo directory to a checkout at the listed revision. The recorded 2048 run retains its upstream license and attribution in `demos/2048/`. Follow each upstream repository's license and setup instructions.
