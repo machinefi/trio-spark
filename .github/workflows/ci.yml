@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile Python sources
+        run: python -m compileall -q clients scripts tests
+      - name: Run client tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify demo evidence and assets
+        run: python scripts/verify_repository.py
+      - name: Scan tracked files for common secret formats
+        run: |
+          if git grep -nE '(sk_(live|test)_[A-Za-z0-9]{16,}|tf_[A-Za-z0-9]{20,}|gh[pousr]_[A-Za-z0-9]{20,}|Bearer[[:space:]]+[A-Za-z0-9._-]{24,})' -- . ':!*.md'; then
+            echo "Potential credential found in a tracked file" >&2
+            exit 1
+          fi

@@ -1,0 +1,9 @@
+{
+  "demo": "gui-agent-safety",
+  "production_api": true,
+  "duration_seconds": 24,
+  "successful_calls": 3,
+  "api_errors": 0,
+  "model_latency_ms": {"min": 198.52, "median": 202.62, "max": 242.93},
+  "outcome": "invoice review reached a bounded human handoff"
+}

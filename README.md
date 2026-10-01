@@ -50,6 +50,19 @@ Spark repeatedly chose the next manipulation skill from fresh MuJoCo state: appr
 
 [Run this demo](demos/robot-arm/) · [Measured evidence](demos/robot-arm/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.0-Robot-Arm.mp4)
 
+### More recorded production runs
+
+These compact runs show the same decision API in games, operations, and a GUI
+safety workflow:
+
+- [Falling Blocks](demos/falling-blocks/) — 16 decisions, 7 lines cleared
+- [2048](demos/2048/) — 26 decisions, 19 scoring turns
+- [Restaurant Rush](demos/restaurant-rush/) — 6 changing operating situations
+- [GUI Agent Safety](demos/gui-safety/) — policy gate plus bounded human handoff
+
+Each directory includes a sanitized decision record and measured evidence. The
+videos replay captured production responses with presentation timing.
+
 ## Build with Trio-Spark
 
 Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark/keys), then follow the [public API reference](docs/api.md).
@@ -68,6 +81,7 @@ result = decide(
         "slow": "Reduce speed and keep observing",
         "stop": "Stop the machine now",
     },
+    session_id="machine-line:shift-42",
 )
 
 print(result["choice_id"])
@@ -76,6 +90,9 @@ PY
 ```
 
 The dependency-free Python client lives at [`clients/python/trio_spark.py`](clients/python/trio_spark.py). The request/response schema, limits, errors, and pricing are documented in the [public API reference](docs/api.md). Account management and live usage remain in the [Trio-Spark console](https://platform.machinefi.com/spark).
+
+The product and release name is **Trio-Spark v1.0**. The current API model
+identifier remains `trio-spark-preview` for compatibility.
 
 ## How Spark fits into an agent
 
