@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+JEVALS_MANIFEST_SHA256 = "bb3c39515cdefb8be7b3294b423d3e36066748b55b59c9778041e66cea5d893c"
 
 
 def verify_evidence() -> None:
@@ -68,8 +69,28 @@ def verify_local_markdown_links() -> None:
                 )
 
 
+def verify_evaluation_manifest() -> None:
+    path = ROOT / "evals" / "manifests" / "jevals-0.1.0-pubmedqa.json"
+    actual = hashlib.sha256(path.read_bytes()).hexdigest()
+    if actual != JEVALS_MANIFEST_SHA256:
+        raise RuntimeError("Jevals manifest checksum does not match the attributed revision")
+
+
+def verify_retired_console_routes() -> None:
+    retired = ("platform.machinefi.com/spark/keys", "platform.machinefi.com/spark/billing")
+    for markdown in sorted(ROOT.rglob("*.md")):
+        content = markdown.read_text()
+        for route in retired:
+            if route in content:
+                raise RuntimeError(
+                    f"{markdown.relative_to(ROOT)} links to retired console route {route}"
+                )
+
+
 if __name__ == "__main__":
     verify_evidence()
     verify_assets()
     verify_local_markdown_links()
+    verify_evaluation_manifest()
+    verify_retired_console_routes()
     print("public repository evidence and asset checks passed")

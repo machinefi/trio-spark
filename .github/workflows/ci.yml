@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Compile Python sources
-        run: python -m compileall -q clients scripts tests
+        run: python -m compileall -q clients demos evals scripts tests
       - name: Run client tests
         run: python -m unittest discover -s tests -v
       - name: Verify demo evidence and assets

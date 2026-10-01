@@ -32,7 +32,7 @@ remain stable. Rotate it for a new run. The header is optional and does not
 change response or billing semantics; it lets the service reuse eligible prefix
 work for lower latency after the first request.
 
-Create or revoke keys in the [API Keys console](https://platform.machinefi.com/spark/keys).
+Create or revoke keys in the [Trio-Spark console](https://platform.machinefi.com/spark#api-keys).
 Keep keys in a server-side secret store and never ship them in browser code.
 
 `Idempotency-Key` may contain letters, digits, `.`, `_`, `:`, and `-`. Repeating

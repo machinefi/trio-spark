@@ -35,7 +35,7 @@ Spark handles the bounded judgment step. Your application supplies the state, le
 
 ## API
 
-Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark/keys).
+Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark#api-keys).
 
 ```bash
 curl https://platform.machinefi.com/api/spark/v1/decisions \
