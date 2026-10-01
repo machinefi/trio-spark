@@ -1,0 +1,9 @@
+{
+  "demo": "restaurant-rush",
+  "production_api": true,
+  "duration_seconds": 25,
+  "successful_calls": 6,
+  "api_errors": 0,
+  "model_latency_ms": {"min": 175.16, "median": 178.205, "max": 258.14},
+  "outcome": "six changing service situations handled"
+}

@@ -1,0 +1,12 @@
+{
+  "demo": "falling-blocks",
+  "production_api": true,
+  "duration_seconds": 30.0,
+  "successful_calls": 16,
+  "api_errors": 0,
+  "lines_cleared": 7,
+  "score": 764,
+  "selected_seed": 61,
+  "model_latency_ms": {"min": 401.84, "median": 421.125, "max": 429.53},
+  "outcome": "completed recorded run"
+}

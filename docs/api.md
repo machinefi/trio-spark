@@ -21,6 +21,17 @@ Content-Type: application/json
 Idempotency-Key: 8-to-128-safe-ASCII-characters
 ```
 
+Continuous agent loops may also send:
+
+```http
+X-Spark-Session-Id: agent-loop:run_42
+```
+
+Reuse one 1–128 character safe ASCII value only while the task and policy prefix
+remain stable. Rotate it for a new run. The header is optional and does not
+change response or billing semantics; it lets the service reuse eligible prefix
+work for lower latency after the first request.
+
 Create or revoke keys in the [API Keys console](https://platform.machinefi.com/spark/keys).
 Keep keys in a server-side secret store and never ship them in browser code.
 
@@ -120,8 +131,8 @@ Some errors also include `request_id` or `new_request_required`.
 | 401 | `unauthenticated` | Missing, revoked, or invalid API key |
 | 402 | `insufficient_balance` | Add credit before retrying |
 | 409 | `idempotency_conflict`, `in_progress`, `result_expired` | Follow the message and idempotency guidance |
-| 413 | `too_large` | HTTP request body exceeds the limit |
-| 429 | `rate_limited` | Retry after the `Retry-After` interval |
+| 413 | `too_large`, `too_many_tokens` | HTTP body or tokenized model input exceeds its limit |
+| 429 | `rate_limited`, `overloaded` | Account limit or bounded model capacity; retry after `Retry-After` |
 | 503 | `unavailable` | Temporary service or capacity failure; retry with backoff |
 | 504 | `timeout` | Request body or upstream operation timed out |
 
@@ -158,3 +169,6 @@ curl https://platform.machinefi.com/api/spark/v1/decisions \
 
 The dependency-free [Python client](../clients/python/trio_spark.py) implements
 the same contract.
+
+`Trio-Spark v1.0` is the product and release name. `trio-spark-preview` is the
+current versioned API identifier retained for client compatibility.

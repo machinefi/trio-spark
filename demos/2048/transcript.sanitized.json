@@ -1,0 +1,4516 @@
+{
+  "selected_seed": 137442,
+  "seed_trials": [
+    {
+      "seed": 2048,
+      "turns": 26,
+      "final_score": 180,
+      "max_tile": 32,
+      "merge_turns": 17,
+      "selected": false
+    },
+    {
+      "seed": 137442,
+      "turns": 26,
+      "final_score": 180,
+      "max_tile": 32,
+      "merge_turns": 19,
+      "selected": true
+    },
+    {
+      "seed": 92929,
+      "turns": 26,
+      "final_score": 164,
+      "max_tile": 32,
+      "merge_turns": 15,
+      "selected": false
+    }
+  ],
+  "turns": [
+    {
+      "seed": 137442,
+      "turn": 1,
+      "board_before": [
+        [
+          2,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "score_before": 0,
+      "choices": [
+        [
+          "down",
+          "Move down. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +4; 15 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +4; 15 empty cells after sliding; largest tile is in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "ffb20fdc-1ce4-4ab8-9f56-ace1c9446d46",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 1,
+            "score": 0,
+            "board": [
+              [
+                2,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +4; 15 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +4; 15 empty cells after sliding; largest tile is in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 214,
+        "model_input_tokens": 249,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "down",
+            "probability": 0.32350264924899047
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.41829685615063544
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.258200494600374
+          }
+        ],
+        "confidence": 0.41829685615063544,
+        "disposition": "review",
+        "latency_ms": 243.3
+      },
+      "wall_ms": 401.55,
+      "move": "left",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "score_after": 4,
+      "max_tile": 4,
+      "empty_cells": 14
+    },
+    {
+      "seed": 137442,
+      "turn": 2,
+      "board_before": [
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "score_before": 4,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "da2090fb-f2e1-444a-8d82-3f37157a4cf0",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 2,
+            "score": 4,
+            "board": [
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 14 empty cells after sliding; largest tile is in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 240,
+        "model_input_tokens": 277,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.2597488063493447
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2795732291163357
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.25894913247461987
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.20172883205969971
+          }
+        ],
+        "confidence": 0.2795732291163357,
+        "disposition": "review",
+        "latency_ms": 281.1
+      },
+      "wall_ms": 429.56,
+      "move": "down",
+      "merge_score": 0,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ]
+      ],
+      "score_after": 4,
+      "max_tile": 4,
+      "empty_cells": 13
+    },
+    {
+      "seed": 137442,
+      "turn": 3,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ]
+      ],
+      "score_before": 4,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 13 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 13 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 13 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 13 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "a86434d5-bc38-4df0-9465-aa4204ebfd96",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 3,
+            "score": 4,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 13 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 13 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 13 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 13 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 241,
+        "model_input_tokens": 278,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.25738790693697977
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.27116941812207596
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.2540401835678297
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.21740249137311463
+          }
+        ],
+        "confidence": 0.27116941812207596,
+        "disposition": "review",
+        "latency_ms": 283.41
+      },
+      "wall_ms": 474.86,
+      "move": "down",
+      "merge_score": 0,
+      "board_after_spawn": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          2,
+          0
+        ]
+      ],
+      "score_after": 4,
+      "max_tile": 4,
+      "empty_cells": 12
+    },
+    {
+      "seed": 137442,
+      "turn": 4,
+      "board_before": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          2,
+          0
+        ]
+      ],
+      "score_before": 4,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "29fb65bb-40eb-496f-befa-44e2d39f3739",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 4,
+            "score": 4,
+            "board": [
+              [
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                2,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +4; 13 empty cells after sliding; largest tile is in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 240,
+        "model_input_tokens": 277,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.25835277480484137
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2796477402424882
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.24501760884443433
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.2169818761082362
+          }
+        ],
+        "confidence": 0.2796477402424882,
+        "disposition": "review",
+        "latency_ms": 283.31
+      },
+      "wall_ms": 435.99,
+      "move": "down",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          2,
+          0
+        ]
+      ],
+      "score_after": 8,
+      "max_tile": 4,
+      "empty_cells": 12
+    },
+    {
+      "seed": 137442,
+      "turn": 5,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          2,
+          0
+        ]
+      ],
+      "score_before": 8,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 12 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 12 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +8; 13 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +8; 13 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "720af5e2-613c-432c-b4c2-9812c4c8692a",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 5,
+            "score": 8,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                4,
+                2,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 12 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 12 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +8; 13 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +8; 13 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 241,
+        "model_input_tokens": 278,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.24004320662055473
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.24103486691293877
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.3137181107487448
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.20520381571776172
+          }
+        ],
+        "confidence": 0.3137181107487448,
+        "disposition": "review",
+        "latency_ms": 286.78
+      },
+      "wall_ms": 607.24,
+      "move": "left",
+      "merge_score": 8,
+      "board_after_spawn": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          2,
+          4,
+          0
+        ]
+      ],
+      "score_after": 16,
+      "max_tile": 8,
+      "empty_cells": 12
+    },
+    {
+      "seed": 137442,
+      "turn": 6,
+      "board_before": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          2,
+          4,
+          0
+        ]
+      ],
+      "score_before": 16,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 12 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 12 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 12 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "9683657c-2484-4ddf-9a71-5a4514fb7b0d",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 6,
+            "score": 16,
+            "board": [
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                2,
+                4,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 12 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 12 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 12 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 217,
+        "model_input_tokens": 252,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.2965326173552295
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.42464252910588685
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.2788248535388837
+          }
+        ],
+        "confidence": 0.42464252910588685,
+        "disposition": "review",
+        "latency_ms": 247.05
+      },
+      "wall_ms": 420.7,
+      "move": "down",
+      "merge_score": 0,
+      "board_after_spawn": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          2,
+          4,
+          0
+        ]
+      ],
+      "score_after": 16,
+      "max_tile": 8,
+      "empty_cells": 11
+    },
+    {
+      "seed": 137442,
+      "turn": 7,
+      "board_before": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          2,
+          4,
+          0
+        ]
+      ],
+      "score_before": 16,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +4; 12 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +4; 12 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "46557ac5-ed11-44dc-b582-98c22cddd9ad",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 7,
+            "score": 16,
+            "board": [
+              [
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                2,
+                4,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +4; 12 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +4; 12 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 243,
+        "model_input_tokens": 280,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.2657829005336555
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.34149224442997994
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.22100004505652737
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.17172480997983716
+          }
+        ],
+        "confidence": 0.34149224442997994,
+        "disposition": "review",
+        "latency_ms": 277.79
+      },
+      "wall_ms": 438.33,
+      "move": "down",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          4,
+          0
+        ]
+      ],
+      "score_after": 20,
+      "max_tile": 8,
+      "empty_cells": 11
+    },
+    {
+      "seed": 137442,
+      "turn": 8,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          4,
+          0
+        ]
+      ],
+      "score_before": 20,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +8; 12 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +8; 12 empty cells after sliding; largest tile is in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "0f350513-b192-4103-a12b-d42fc33df60d",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 8,
+            "score": 20,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                4,
+                4,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +8; 12 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +8; 12 empty cells after sliding; largest tile is in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 242,
+        "model_input_tokens": 279,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.22258926720736028
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.26725404667956393
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.29433552465178914
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.21582116146128674
+          }
+        ],
+        "confidence": 0.29433552465178914,
+        "disposition": "review",
+        "latency_ms": 284.44
+      },
+      "wall_ms": 410.04,
+      "move": "left",
+      "merge_score": 8,
+      "board_after_spawn": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          8,
+          0,
+          0
+        ]
+      ],
+      "score_after": 28,
+      "max_tile": 8,
+      "empty_cells": 11
+    },
+    {
+      "seed": 137442,
+      "turn": 9,
+      "board_before": [
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          8,
+          0,
+          0
+        ]
+      ],
+      "score_before": 28,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +16; 12 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +16; 12 empty cells after sliding; largest tile is in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "2ebae38e-7051-4566-aeaf-e972cff3a611",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 9,
+            "score": 28,
+            "board": [
+              [
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                8,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +16; 12 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +16; 12 empty cells after sliding; largest tile is in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 244,
+        "model_input_tokens": 281,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.22000423040932673
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2745306737098853
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.29700998898303427
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.20845510689775357
+          }
+        ],
+        "confidence": 0.29700998898303427,
+        "disposition": "review",
+        "latency_ms": 285.65
+      },
+      "wall_ms": 427.55,
+      "move": "left",
+      "merge_score": 16,
+      "board_after_spawn": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          0,
+          2,
+          0
+        ]
+      ],
+      "score_after": 44,
+      "max_tile": 16,
+      "empty_cells": 11
+    },
+    {
+      "seed": 137442,
+      "turn": 10,
+      "board_before": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          0,
+          2,
+          0
+        ]
+      ],
+      "score_before": 44,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "096bf964-75cb-4a6e-93bd-7bb37ec408a0",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 10,
+            "score": 44,
+            "board": [
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                0,
+                2,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 218,
+        "model_input_tokens": 253,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.33285596590548594
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.3704359296474468
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.2967081044470672
+          }
+        ],
+        "confidence": 0.3704359296474468,
+        "disposition": "review",
+        "latency_ms": 247.92
+      },
+      "wall_ms": 422.44,
+      "move": "left",
+      "merge_score": 0,
+      "board_after_spawn": [
+        [
+          2,
+          0,
+          0,
+          2
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          2,
+          0,
+          0
+        ]
+      ],
+      "score_after": 44,
+      "max_tile": 16,
+      "empty_cells": 10
+    },
+    {
+      "seed": 137442,
+      "turn": 11,
+      "board_before": [
+        [
+          2,
+          0,
+          0,
+          2
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          2,
+          0,
+          0
+        ]
+      ],
+      "score_before": 44,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "a768613d-7316-422c-ae9b-27d60b2a2fc3",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 11,
+            "score": 44,
+            "board": [
+              [
+                2,
+                0,
+                0,
+                2
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                2,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 244,
+        "model_input_tokens": 281,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.24589512396475705
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.24253694916336685
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.3144854235167652
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.19708250335511088
+          }
+        ],
+        "confidence": 0.3144854235167652,
+        "disposition": "review",
+        "latency_ms": 283.32
+      },
+      "wall_ms": 427.15,
+      "move": "left",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          2,
+          0,
+          2
+        ]
+      ],
+      "score_after": 48,
+      "max_tile": 16,
+      "empty_cells": 10
+    },
+    {
+      "seed": 137442,
+      "turn": 12,
+      "board_before": [
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          2,
+          0,
+          2
+        ]
+      ],
+      "score_before": 48,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +8; 11 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +8; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "6cc3aae8-a564-463f-87a9-ca8518060b67",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 12,
+            "score": 48,
+            "board": [
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                2,
+                0,
+                2
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +8; 11 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +8; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 245,
+        "model_input_tokens": 282,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.24822292448291639
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.32230526138877813
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.2564499754248495
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.17302183870345603
+          }
+        ],
+        "confidence": 0.32230526138877813,
+        "disposition": "review",
+        "latency_ms": 285.37
+      },
+      "wall_ms": 430.94,
+      "move": "down",
+      "merge_score": 8,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          2,
+          0,
+          2
+        ]
+      ],
+      "score_after": 56,
+      "max_tile": 16,
+      "empty_cells": 10
+    },
+    {
+      "seed": 137442,
+      "turn": 13,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          2,
+          0,
+          2
+        ]
+      ],
+      "score_before": 56,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "a436c58c-fc22-499d-839c-361bd0380de1",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 13,
+            "score": 56,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                0,
+                2,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                2,
+                0,
+                2
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 245,
+        "model_input_tokens": 282,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.22263712040313205
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2816775562392011
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.292520437266831
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.2031648860908358
+          }
+        ],
+        "confidence": 0.292520437266831,
+        "disposition": "review",
+        "latency_ms": 292.22
+      },
+      "wall_ms": 451.1,
+      "move": "left",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          2,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          4,
+          0,
+          0
+        ]
+      ],
+      "score_after": 60,
+      "max_tile": 16,
+      "empty_cells": 10
+    },
+    {
+      "seed": 137442,
+      "turn": 14,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          2,
+          0,
+          4
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          4,
+          0,
+          0
+        ]
+      ],
+      "score_before": 60,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "256be5d5-5a0a-420b-b35b-aced79b9a357",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 14,
+            "score": 60,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                2,
+                0,
+                4
+              ],
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                4,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 245,
+        "model_input_tokens": 282,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.23864915700039083
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.3385782632549411
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.24278256080527788
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.17999001893939012
+          }
+        ],
+        "confidence": 0.3385782632549411,
+        "disposition": "review",
+        "latency_ms": 285.0
+      },
+      "wall_ms": 444.18,
+      "move": "down",
+      "merge_score": 0,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          4,
+          0,
+          4
+        ]
+      ],
+      "score_after": 60,
+      "max_tile": 16,
+      "empty_cells": 9
+    },
+    {
+      "seed": 137442,
+      "turn": 15,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          4,
+          0,
+          4
+        ]
+      ],
+      "score_before": 60,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +12; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +12; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "cf249043-df57-4b31-8ddf-1ab6a473a202",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 15,
+            "score": 60,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                0,
+                0,
+                2
+              ],
+              [
+                2,
+                2,
+                0,
+                0
+              ],
+              [
+                16,
+                4,
+                0,
+                4
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +12; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +12; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 245,
+        "model_input_tokens": 282,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.21827773047380625
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2886831486320919
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.30066165088693975
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.19237747000716215
+          }
+        ],
+        "confidence": 0.30066165088693975,
+        "disposition": "review",
+        "latency_ms": 287.17
+      },
+      "wall_ms": 471.78,
+      "move": "left",
+      "merge_score": 12,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          8,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          0,
+          0
+        ]
+      ],
+      "score_after": 72,
+      "max_tile": 16,
+      "empty_cells": 10
+    },
+    {
+      "seed": 137442,
+      "turn": 16,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          8,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          0,
+          0
+        ]
+      ],
+      "score_before": 72,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "d694227b-0585-4cd8-a92b-19d2b3e8c4d5",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 16,
+            "score": 72,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                8,
+                2,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                8,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 245,
+        "model_input_tokens": 282,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.23793026320026822
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.33153378358688057
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.24336751131991435
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.1871684418929369
+          }
+        ],
+        "confidence": 0.33153378358688057,
+        "disposition": "review",
+        "latency_ms": 285.28
+      },
+      "wall_ms": 453.18,
+      "move": "down",
+      "merge_score": 0,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          0,
+          2
+        ]
+      ],
+      "score_after": 72,
+      "max_tile": 16,
+      "empty_cells": 9
+    },
+    {
+      "seed": 137442,
+      "turn": 17,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          0,
+          2
+        ]
+      ],
+      "score_before": 72,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "f449a345-c11e-4f49-b7be-09abba4cace5",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 17,
+            "score": 72,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                0,
+                2,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                16,
+                8,
+                0,
+                2
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 241,
+        "model_input_tokens": 278,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.23879148028646646
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.33097557700225916
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.2405113908980941
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.18972155181318023
+          }
+        ],
+        "confidence": 0.33097557700225916,
+        "disposition": "review",
+        "latency_ms": 287.64
+      },
+      "wall_ms": 423.51,
+      "move": "down",
+      "merge_score": 0,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          2,
+          2
+        ]
+      ],
+      "score_after": 72,
+      "max_tile": 16,
+      "empty_cells": 8
+    },
+    {
+      "seed": 137442,
+      "turn": 18,
+      "board_before": [
+        [
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          2,
+          2
+        ]
+      ],
+      "score_before": 72,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 8 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +4; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +4; 9 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "04bd6788-560c-46ee-af9c-654c19692ad1",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 18,
+            "score": 72,
+            "board": [
+              [
+                0,
+                0,
+                4,
+                0
+              ],
+              [
+                8,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                16,
+                8,
+                2,
+                2
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 8 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +4; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +4; 9 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 241,
+        "model_input_tokens": 278,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.22355460860865875
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2864442769461373
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.29017932835164023
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.19982178609356377
+          }
+        ],
+        "confidence": 0.29017932835164023,
+        "disposition": "review",
+        "latency_ms": 294.89
+      },
+      "wall_ms": 447.3,
+      "move": "left",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          0
+        ]
+      ],
+      "score_after": 76,
+      "max_tile": 16,
+      "empty_cells": 8
+    },
+    {
+      "seed": 137442,
+      "turn": 19,
+      "board_before": [
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          0
+        ]
+      ],
+      "score_before": 76,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +4; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +4; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 8 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "b2b7db22-470c-45ea-a669-8944a07bc534",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 19,
+            "score": 76,
+            "board": [
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                8,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                16,
+                8,
+                4,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +4; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +4; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 8 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 215,
+        "model_input_tokens": 250,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.3666432627041123
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.36674988133221725
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.2666068559636705
+          }
+        ],
+        "confidence": 0.36674988133221725,
+        "disposition": "review",
+        "latency_ms": 253.66
+      },
+      "wall_ms": 403.99,
+      "move": "down",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          4,
+          0,
+          0,
+          2
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          0
+        ]
+      ],
+      "score_after": 80,
+      "max_tile": 16,
+      "empty_cells": 8
+    },
+    {
+      "seed": 137442,
+      "turn": 20,
+      "board_before": [
+        [
+          4,
+          0,
+          0,
+          2
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          0
+        ]
+      ],
+      "score_before": 80,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +8; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +8; 9 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "616b4ac1-054c-4aa0-962e-0154b13cabf0",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 20,
+            "score": 80,
+            "board": [
+              [
+                4,
+                0,
+                0,
+                2
+              ],
+              [
+                8,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                4,
+                0,
+                0
+              ],
+              [
+                16,
+                8,
+                4,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +8; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +8; 9 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 240,
+        "model_input_tokens": 277,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.24423501226953134
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.24454084804950138
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.31241732120765947
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.19880681847330772
+          }
+        ],
+        "confidence": 0.31241732120765947,
+        "disposition": "review",
+        "latency_ms": 284.87
+      },
+      "wall_ms": 462.33,
+      "move": "left",
+      "merge_score": 8,
+      "board_after_spawn": [
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          0
+        ]
+      ],
+      "score_after": 88,
+      "max_tile": 16,
+      "empty_cells": 8
+    },
+    {
+      "seed": 137442,
+      "turn": 21,
+      "board_before": [
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          0
+        ]
+      ],
+      "score_before": 88,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +16; 9 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +16; 9 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 8 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "21960227-cd88-4c28-9596-73e99d908c2f",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 21,
+            "score": 88,
+            "board": [
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                8,
+                0,
+                0,
+                2
+              ],
+              [
+                8,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                8,
+                4,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +16; 9 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +16; 9 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 8 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 243,
+        "model_input_tokens": 280,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.2613020848664902
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.3529659552504193
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.21981325673431948
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.16591870314877105
+          }
+        ],
+        "confidence": 0.3529659552504193,
+        "disposition": "review",
+        "latency_ms": 284.17
+      },
+      "wall_ms": 454.34,
+      "move": "down",
+      "merge_score": 16,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          2
+        ],
+        [
+          16,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          2
+        ]
+      ],
+      "score_after": 104,
+      "max_tile": 16,
+      "empty_cells": 8
+    },
+    {
+      "seed": 137442,
+      "turn": 22,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          2
+        ],
+        [
+          16,
+          2,
+          0,
+          0
+        ],
+        [
+          16,
+          8,
+          4,
+          2
+        ]
+      ],
+      "score_before": 104,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +36; 10 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +36; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "06ec362a-da0a-41a8-a313-d1e71ec1e414",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 22,
+            "score": 104,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                2
+              ],
+              [
+                16,
+                2,
+                0,
+                0
+              ],
+              [
+                16,
+                8,
+                4,
+                2
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +36; 10 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +36; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +0; 8 empty cells after sliding; largest tile is in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 246,
+        "model_input_tokens": 283,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.2599475986523061
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.3399700400268122
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.22085460713999003
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.17922775418089168
+          }
+        ],
+        "confidence": 0.3399700400268122,
+        "disposition": "review",
+        "latency_ms": 287.76
+      },
+      "wall_ms": 475.99,
+      "move": "down",
+      "merge_score": 36,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          32,
+          8,
+          4,
+          4
+        ]
+      ],
+      "score_after": 140,
+      "max_tile": 32,
+      "empty_cells": 9
+    },
+    {
+      "seed": 137442,
+      "turn": 23,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          32,
+          8,
+          4,
+          4
+        ]
+      ],
+      "score_before": 140,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +8; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +8; 10 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "e921faa7-cea9-4cf9-8d2f-2beeb0f3c870",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 23,
+            "score": 140,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                4,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                32,
+                8,
+                4,
+                4
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 9 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +8; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +8; 10 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 219,
+        "model_input_tokens": 254,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.29871314899984486
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.4224481236164968
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.2788387273836584
+          }
+        ],
+        "confidence": 0.4224481236164968,
+        "disposition": "review",
+        "latency_ms": 246.63
+      },
+      "wall_ms": 447.32,
+      "move": "left",
+      "merge_score": 8,
+      "board_after_spawn": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          32,
+          8,
+          8,
+          0
+        ]
+      ],
+      "score_after": 148,
+      "max_tile": 32,
+      "empty_cells": 9
+    },
+    {
+      "seed": 137442,
+      "turn": 24,
+      "board_before": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          32,
+          8,
+          8,
+          0
+        ]
+      ],
+      "score_before": 148,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +12; 11 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +12; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +16; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +16; 10 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "964e38eb-0274-4643-9434-49aa7e08ddcd",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 24,
+            "score": 148,
+            "board": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                0,
+                0
+              ],
+              [
+                32,
+                8,
+                8,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +12; 11 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +12; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +16; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +16; 10 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 250,
+        "model_input_tokens": 287,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "down",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.23265196107790523
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.29775091397890663
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.28463510986910245
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.1849620150740857
+          }
+        ],
+        "confidence": 0.29775091397890663,
+        "disposition": "review",
+        "latency_ms": 286.96
+      },
+      "wall_ms": 429.18,
+      "move": "down",
+      "merge_score": 12,
+      "board_after_spawn": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          0,
+          0
+        ],
+        [
+          32,
+          8,
+          8,
+          0
+        ]
+      ],
+      "score_after": 160,
+      "max_tile": 32,
+      "empty_cells": 10
+    },
+    {
+      "seed": 137442,
+      "turn": 25,
+      "board_before": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          0,
+          0
+        ],
+        [
+          32,
+          8,
+          8,
+          0
+        ]
+      ],
+      "score_before": 160,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +16; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +16; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "49725055-8604-48e1-a0ab-051061850bd9",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 25,
+            "score": 160,
+            "board": [
+              [
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                4,
+                0,
+                0
+              ],
+              [
+                32,
+                8,
+                8,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +16; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +16; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 248,
+        "model_input_tokens": 285,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.22099644169973542
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2755573129255924
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.30384564450280716
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.199600600871865
+          }
+        ],
+        "confidence": 0.30384564450280716,
+        "disposition": "review",
+        "latency_ms": 288.42
+      },
+      "wall_ms": 450.05,
+      "move": "left",
+      "merge_score": 16,
+      "board_after_spawn": [
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          0,
+          0
+        ],
+        [
+          32,
+          16,
+          0,
+          0
+        ]
+      ],
+      "score_after": 176,
+      "max_tile": 32,
+      "empty_cells": 10
+    },
+    {
+      "seed": 137442,
+      "turn": 26,
+      "board_before": [
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          0,
+          0
+        ],
+        [
+          32,
+          16,
+          0,
+          0
+        ]
+      ],
+      "score_before": 176,
+      "choices": [
+        [
+          "up",
+          "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+        ],
+        [
+          "down",
+          "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "left",
+          "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+        ],
+        [
+          "right",
+          "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+        ]
+      ],
+      "request": {
+        "request_id": "1480c875-53cb-4d9f-ab9d-54a2df896f92",
+        "input": {
+          "model": "trio-spark-preview",
+          "task": "Choose the single best legal next move in 2048 for long-term score and board survival.",
+          "state": {
+            "game": "2048",
+            "seed": 137442,
+            "turn": 26,
+            "score": 176,
+            "board": [
+              [
+                2,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                4,
+                0,
+                0
+              ],
+              [
+                32,
+                16,
+                0,
+                0
+              ]
+            ],
+            "board_legend": "0 is empty; other numbers are tile values; rows are top to bottom",
+            "goal": "Keep the board playable and maximize score and largest tile.",
+            "strategy": "Prefer useful merges and empty cells; preserve a stable corner for the largest tile.",
+            "valid_moves": [
+              "up",
+              "down",
+              "left",
+              "right"
+            ]
+          },
+          "choices": [
+            {
+              "id": "up",
+              "description": "Move up. Immediate merge score +0; 10 empty cells after sliding; largest tile is not in a corner."
+            },
+            {
+              "id": "down",
+              "description": "Move down. Immediate merge score +0; 10 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "left",
+              "description": "Move left. Immediate merge score +4; 11 empty cells after sliding; largest tile is in a corner."
+            },
+            {
+              "id": "right",
+              "description": "Move right. Immediate merge score +4; 11 empty cells after sliding; largest tile is not in a corner."
+            }
+          ]
+        }
+      },
+      "response": {
+        "billed_input_tokens": 247,
+        "model_input_tokens": 284,
+        "model_version": "trio-spark-production",
+        "tokenization_version": "production",
+        "choice_id": "left",
+        "probabilities": [
+          {
+            "choice_id": "up",
+            "probability": 0.22248439288570812
+          },
+          {
+            "choice_id": "down",
+            "probability": 0.2914862676408919
+          },
+          {
+            "choice_id": "left",
+            "probability": 0.29607427711200696
+          },
+          {
+            "choice_id": "right",
+            "probability": 0.18995506236139295
+          }
+        ],
+        "confidence": 0.29607427711200696,
+        "disposition": "review",
+        "latency_ms": 280.2
+      },
+      "wall_ms": 430.37,
+      "move": "left",
+      "merge_score": 4,
+      "board_after_spawn": [
+        [
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          0,
+          0
+        ],
+        [
+          32,
+          16,
+          4,
+          0
+        ]
+      ],
+      "score_after": 180,
+      "max_tile": 32,
+      "empty_cells": 10
+    }
+  ]
+}
