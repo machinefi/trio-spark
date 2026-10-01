@@ -7,7 +7,7 @@
   ·
   <a href="docs/api.md">API Docs</a>
   ·
-  <a href="https://platform.machinefi.com/spark/billing">Pricing</a>
+  <a href="https://platform.machinefi.com/spark#billing">Pricing</a>
   ·
   <a href="https://machinefi.com/blog/trio-spark-decisions-single-pass">Launch Post</a>
 </p>
@@ -65,7 +65,7 @@ videos replay captured production responses with presentation timing.
 
 ## Build with Trio-Spark
 
-Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark/keys), then follow the [public API reference](docs/api.md).
+Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark#api-keys), then follow the [public API reference](docs/api.md).
 
 ```bash
 export TRIO_SPARK_API_KEY=tf_...
@@ -90,6 +90,21 @@ PY
 ```
 
 The dependency-free Python client lives at [`clients/python/trio_spark.py`](clients/python/trio_spark.py). The request/response schema, limits, errors, and pricing are documented in the [public API reference](docs/api.md). Account management and live usage remain in the [Trio-Spark console](https://platform.machinefi.com/spark).
+
+## Reproduce the public benchmarks
+
+The [`evals/`](evals/) harness runs the hosted production API against pinned
+public dataset revisions and records accuracy, calibration, latency, billed
+tokens, cost, model version, and raw responses. Start with a small smoke before
+spending credits on a complete split:
+
+```bash
+python3 -m pip install -r evals/requirements.txt
+python3 evals/run.py --benchmark sst2 --limit 10 --output runs/sst2-smoke
+```
+
+See [`evals/README.md`](evals/README.md) for the reproducibility contract and
+the exact commands used for full runs.
 
 The product and release name is **Trio-Spark v1.0**. The current API model
 identifier remains `trio-spark-preview` for compatibility.

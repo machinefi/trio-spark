@@ -10,3 +10,10 @@ The demos adapt these MIT-licensed projects. Their names and trademarks remain t
 | 2048 recorded run | [ARCJ137442/jev-2048](https://github.com/ARCJ137442/jev-2048) | See `demos/2048/ATTRIBUTION.md` |
 
 For the runnable integrations, apply the patch in the demo directory to a checkout at the listed revision. The recorded 2048 run retains its upstream license and attribution in `demos/2048/`. Follow each upstream repository's license and setup instructions.
+
+## Evaluation manifests
+
+`evals/manifests/jevals-0.1.0-pubmedqa.json` is copied from
+[`Jevals/jevals-data`](https://github.com/Jevals/jevals-data) at commit
+`21bb47b72814cf661539b313844d2d2e26166e54`. It is licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
