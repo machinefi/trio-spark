@@ -16,6 +16,15 @@ Trio-Spark is a **Situated World Model** built for fast judgment. Give it the st
 
 Trio-Spark is currently available as a hosted API. Model weights and training code are not publicly released. This repository is its public home for API clients, integrations, evaluations, and community-built demos.
 
+## Visual decisions in v1.1
+
+Use `trio-spark-v1.1` for text, a single image, or a short sequence of 2–4 video
+frames. Tell Spark what matters in the scene and define the answers your
+application can act on. The same key and wallet cover both text and vision at
+**$0.042 per million billed input tokens**.
+
+[Visual API quickstart](docs/visual.md) · [Try hand gestures](https://platform.machinefi.com/spark?demo=gestures) · [Console Docs](https://platform.machinefi.com/spark/docs)
+
 ## Demos
 
 Every probability, decision, and latency shown below came from a real Trio-Spark v1.0 production run. The videos replay those recorded runs with presentation overlays.
