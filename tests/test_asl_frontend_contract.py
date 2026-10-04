@@ -11,4 +11,5 @@ def test_window_cadence_and_session_bound_are_locked():
 def test_errors_and_camera_play_failure_release_the_session():
     assert "if(failed)stopCamera({title:'Session stopped after an error'" in SOURCE
     assert 'if(stream)stream.getTracks().forEach(track=>track.stop())' in SOURCE
-    assert "window.addEventListener('pagehide',stopCamera)" in SOURCE
+    assert "els.stop.addEventListener('click',()=>stopCamera())" in SOURCE
+    assert "window.addEventListener('pagehide',()=>stopCamera())" in SOURCE
