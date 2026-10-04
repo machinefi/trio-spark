@@ -14,18 +14,8 @@
       "billed_input_tokens": 458,
       "choice_id": "pedestrians_only",
       "confidence": 0.9997548460960388,
-      "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-      "prepared_identity": {
-        "frame_sha256": [
-          "8ad74b6d24579c9b8305bf020c30a5097dcacb49efcaf25b0618015b017be184",
-          "01073be2e3e538b0840ab64ad01db202e910ee16f8214f9dbe499eb04a8717c5",
-          "b196e038ecd09b53c1be790571d18f59d0c75f5406bd35fc9a52809b379c7029",
-          "568f4171bdf4b66074407af55d30a01a2b86ab7a7870a4862b039120abe57e9f"
-        ],
-        "input_ids_sha256": "6ab0a65c3b0090c927cbf40174f714602a572e69c3fa307e298e91226839211f",
-        "pixel_sha256": "cc41e9d219544ead9b090d529c896e4a2bc089161624936302f901223102857a",
-        "prompt_sha256": "f2db16feb4653a66399cee5e40833d90fe8d6f4142728deb1c132486c729ff32"
-      },
+      "identity_sha256": "ab6660f6fe1432fd740cec480fac1719ef4f136f8cafe141b6f97aecc0245fc7",
+      "identity_verified": true,
       "probabilities": [
         {
           "choice_id": "motor_vehicles_only",
@@ -48,48 +38,6 @@
           "probability": 4.7097760216274764e-06
         }
       ],
-      "raw_response": {
-        "billed_input_tokens": 458,
-        "choice_id": "pedestrians_only",
-        "confidence": 0.9997548460960388,
-        "disposition": "decide",
-        "frame_sha256": [
-          "8ad74b6d24579c9b8305bf020c30a5097dcacb49efcaf25b0618015b017be184",
-          "01073be2e3e538b0840ab64ad01db202e910ee16f8214f9dbe499eb04a8717c5",
-          "b196e038ecd09b53c1be790571d18f59d0c75f5406bd35fc9a52809b379c7029",
-          "568f4171bdf4b66074407af55d30a01a2b86ab7a7870a4862b039120abe57e9f"
-        ],
-        "input_ids_sha256": "6ab0a65c3b0090c927cbf40174f714602a572e69c3fa307e298e91226839211f",
-        "latency_ms": 746.4746509795077,
-        "model_input_tokens": 458,
-        "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-        "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
-        "pixel_sha256": "cc41e9d219544ead9b090d529c896e4a2bc089161624936302f901223102857a",
-        "probabilities": [
-          {
-            "choice_id": "motor_vehicles_only",
-            "probability": 9.514009434496984e-06
-          },
-          {
-            "choice_id": "pedestrians_only",
-            "probability": 0.9997548460960388
-          },
-          {
-            "choice_id": "both_moving",
-            "probability": 0.00022692971106152982
-          },
-          {
-            "choice_id": "neither_moving",
-            "probability": 3.966028998547699e-06
-          },
-          {
-            "choice_id": "unclear",
-            "probability": 4.7097760216274764e-06
-          }
-        ],
-        "prompt_sha256": "f2db16feb4653a66399cee5e40833d90fe8d6f4142728deb1c132486c729ff32",
-        "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
-      },
       "request_id": null,
       "sample_times_ms": [
         34000,
@@ -98,7 +46,6 @@
         37000
       ],
       "server_processing_ms": 746.4746509795077,
-      "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
       "wall_latency_ms": 4497.6,
       "window_index": 1
     },
@@ -106,18 +53,8 @@
       "billed_input_tokens": 458,
       "choice_id": "pedestrians_only",
       "confidence": 0.9995747208595276,
-      "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-      "prepared_identity": {
-        "frame_sha256": [
-          "b570157ad2ff0ff6a47b54f1b48c8deabe109e98619e3b906b2caf54d59a7fa5",
-          "94fd2108851220c906b00a4718fbf395c8762e5383bbd640faf23c665c492b40",
-          "4865e96e2896c57a356e6a8eadfdc2cba2a31dd30775c7fb0cc52b6ab12acb7f",
-          "08eb9f215c6b69e9966f03ca96395f8dd5a0ab9eec39b70a245839ce7cca5ab3"
-        ],
-        "input_ids_sha256": "d47de2b2266816d1ecaaf7c0ce84bc056aa5434bee67585df7f5e403de35ae99",
-        "pixel_sha256": "8726482a20cc89d2df9d0a6c9923fbfa258e0ba0bde1dfc00f112faa4a71d387",
-        "prompt_sha256": "8075de876266556158e4f0a495fedb8e13a31421da64bac571f4cd1e48d4f787"
-      },
+      "identity_sha256": "ec85124f91c7e93c10b13d699720ce0426cc1fd48fd7fc26a5a728d3c6f4568c",
+      "identity_verified": true,
       "probabilities": [
         {
           "choice_id": "motor_vehicles_only",
@@ -140,48 +77,6 @@
           "probability": 1.844042571974569e-06
         }
       ],
-      "raw_response": {
-        "billed_input_tokens": 458,
-        "choice_id": "pedestrians_only",
-        "confidence": 0.9995747208595276,
-        "disposition": "decide",
-        "frame_sha256": [
-          "b570157ad2ff0ff6a47b54f1b48c8deabe109e98619e3b906b2caf54d59a7fa5",
-          "94fd2108851220c906b00a4718fbf395c8762e5383bbd640faf23c665c492b40",
-          "4865e96e2896c57a356e6a8eadfdc2cba2a31dd30775c7fb0cc52b6ab12acb7f",
-          "08eb9f215c6b69e9966f03ca96395f8dd5a0ab9eec39b70a245839ce7cca5ab3"
-        ],
-        "input_ids_sha256": "d47de2b2266816d1ecaaf7c0ce84bc056aa5434bee67585df7f5e403de35ae99",
-        "latency_ms": 752.4904570018407,
-        "model_input_tokens": 458,
-        "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-        "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
-        "pixel_sha256": "8726482a20cc89d2df9d0a6c9923fbfa258e0ba0bde1dfc00f112faa4a71d387",
-        "probabilities": [
-          {
-            "choice_id": "motor_vehicles_only",
-            "probability": 4.8584051910438575e-06
-          },
-          {
-            "choice_id": "pedestrians_only",
-            "probability": 0.9995747208595276
-          },
-          {
-            "choice_id": "both_moving",
-            "probability": 0.0004173124034423381
-          },
-          {
-            "choice_id": "neither_moving",
-            "probability": 1.2873491641585133e-06
-          },
-          {
-            "choice_id": "unclear",
-            "probability": 1.844042571974569e-06
-          }
-        ],
-        "prompt_sha256": "8075de876266556158e4f0a495fedb8e13a31421da64bac571f4cd1e48d4f787",
-        "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
-      },
       "request_id": null,
       "sample_times_ms": [
         38000,
@@ -190,7 +85,6 @@
         41000
       ],
       "server_processing_ms": 752.4904570018407,
-      "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
       "wall_latency_ms": 3793.7,
       "window_index": 2
     },
@@ -198,18 +92,8 @@
       "billed_input_tokens": 458,
       "choice_id": "pedestrians_only",
       "confidence": 0.9999938011169434,
-      "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-      "prepared_identity": {
-        "frame_sha256": [
-          "49a462886081d9e8d13b5a334a08a402cfeacadfd0d3b31b9d792a6c0fd69258",
-          "7bbe38a9c406537793b4a698aad5fca648ca5e401ae9c5ff28d9d10e3607d0c7",
-          "0314505811e639cd725032140bf4ea409754c6819641cca8e15022cde5d82826",
-          "838837c0f19e72ba89bbbee48d2d2e30c75d35d9c6599a9be32e6a4a9be6c429"
-        ],
-        "input_ids_sha256": "cf7d7f004240e4493a9f02eabc9b828492c9bbd850e9b87c066d6729c84979ed",
-        "pixel_sha256": "8c62f0f1b10251dab6952de32c0d734222c9a54b272e82b5d714dfecaacb4b6e",
-        "prompt_sha256": "5923029841365c8f298cec4b67e4838be4c7da522412784714c2cbc9be672d1b"
-      },
+      "identity_sha256": "a41e6ad8c2840a0b901be8685062742632fcc08f2de8d1a4bfb2c814f7d71b11",
+      "identity_verified": true,
       "probabilities": [
         {
           "choice_id": "motor_vehicles_only",
@@ -232,48 +116,6 @@
           "probability": 3.92783903180316e-07
         }
       ],
-      "raw_response": {
-        "billed_input_tokens": 458,
-        "choice_id": "pedestrians_only",
-        "confidence": 0.9999938011169434,
-        "disposition": "decide",
-        "frame_sha256": [
-          "49a462886081d9e8d13b5a334a08a402cfeacadfd0d3b31b9d792a6c0fd69258",
-          "7bbe38a9c406537793b4a698aad5fca648ca5e401ae9c5ff28d9d10e3607d0c7",
-          "0314505811e639cd725032140bf4ea409754c6819641cca8e15022cde5d82826",
-          "838837c0f19e72ba89bbbee48d2d2e30c75d35d9c6599a9be32e6a4a9be6c429"
-        ],
-        "input_ids_sha256": "cf7d7f004240e4493a9f02eabc9b828492c9bbd850e9b87c066d6729c84979ed",
-        "latency_ms": 728.6614249751437,
-        "model_input_tokens": 458,
-        "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-        "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
-        "pixel_sha256": "8c62f0f1b10251dab6952de32c0d734222c9a54b272e82b5d714dfecaacb4b6e",
-        "probabilities": [
-          {
-            "choice_id": "motor_vehicles_only",
-            "probability": 3.205809093742573e-07
-          },
-          {
-            "choice_id": "pedestrians_only",
-            "probability": 0.9999938011169434
-          },
-          {
-            "choice_id": "both_moving",
-            "probability": 5.09369965584483e-06
-          },
-          {
-            "choice_id": "neither_moving",
-            "probability": 3.011578542100324e-07
-          },
-          {
-            "choice_id": "unclear",
-            "probability": 3.92783903180316e-07
-          }
-        ],
-        "prompt_sha256": "5923029841365c8f298cec4b67e4838be4c7da522412784714c2cbc9be672d1b",
-        "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
-      },
       "request_id": null,
       "sample_times_ms": [
         42000,
@@ -282,7 +124,6 @@
         45000
       ],
       "server_processing_ms": 728.6614249751437,
-      "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
       "wall_latency_ms": 3273.3,
       "window_index": 3
     },
@@ -290,18 +131,8 @@
       "billed_input_tokens": 458,
       "choice_id": "pedestrians_only",
       "confidence": 0.9930456280708313,
-      "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-      "prepared_identity": {
-        "frame_sha256": [
-          "28cf50bef26e4548419ac76653097d8178c0657faa7d5d1fa9db47911769ddd1",
-          "cf562f83b532c23266a668393ed705c2ade6ea9639649b2af63a479ae3002cd1",
-          "2c0d6356df8ecaa7a8ceb04704f0c4b9f37338f836039f12705538bbaccbb6a3",
-          "bfadd4f9c7e10946b0ec38aa7beeb8ce98d3c3755b88a599b2f4c8d5ce2c7a17"
-        ],
-        "input_ids_sha256": "18c900aba2cbee9a64f6e0442e9365fcdd8fd791fa43937871da72ac9176368a",
-        "pixel_sha256": "60586b893be3f7b1c5d89a923b3489d1b11da878f16759fa2e1b7f847471868e",
-        "prompt_sha256": "ead3debf03e45bef8f517bc3e48574f76bb92e90483f90e19b1d0e5e2524af8a"
-      },
+      "identity_sha256": "5dd849ffdbbda2af114b763f5d2cdc0f516d0843af40a92e396c9e6eae36bd51",
+      "identity_verified": true,
       "probabilities": [
         {
           "choice_id": "motor_vehicles_only",
@@ -324,48 +155,6 @@
           "probability": 1.1048358828702476e-05
         }
       ],
-      "raw_response": {
-        "billed_input_tokens": 458,
-        "choice_id": "pedestrians_only",
-        "confidence": 0.9930456280708313,
-        "disposition": "decide",
-        "frame_sha256": [
-          "28cf50bef26e4548419ac76653097d8178c0657faa7d5d1fa9db47911769ddd1",
-          "cf562f83b532c23266a668393ed705c2ade6ea9639649b2af63a479ae3002cd1",
-          "2c0d6356df8ecaa7a8ceb04704f0c4b9f37338f836039f12705538bbaccbb6a3",
-          "bfadd4f9c7e10946b0ec38aa7beeb8ce98d3c3755b88a599b2f4c8d5ce2c7a17"
-        ],
-        "input_ids_sha256": "18c900aba2cbee9a64f6e0442e9365fcdd8fd791fa43937871da72ac9176368a",
-        "latency_ms": 721.8691809976008,
-        "model_input_tokens": 458,
-        "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-        "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
-        "pixel_sha256": "60586b893be3f7b1c5d89a923b3489d1b11da878f16759fa2e1b7f847471868e",
-        "probabilities": [
-          {
-            "choice_id": "motor_vehicles_only",
-            "probability": 3.3503732993267477e-05
-          },
-          {
-            "choice_id": "pedestrians_only",
-            "probability": 0.9930456280708313
-          },
-          {
-            "choice_id": "both_moving",
-            "probability": 0.006903487257659435
-          },
-          {
-            "choice_id": "neither_moving",
-            "probability": 6.295165349001763e-06
-          },
-          {
-            "choice_id": "unclear",
-            "probability": 1.1048358828702476e-05
-          }
-        ],
-        "prompt_sha256": "ead3debf03e45bef8f517bc3e48574f76bb92e90483f90e19b1d0e5e2524af8a",
-        "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
-      },
       "request_id": null,
       "sample_times_ms": [
         46000,
@@ -374,7 +163,6 @@
         49000
       ],
       "server_processing_ms": 721.8691809976008,
-      "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
       "wall_latency_ms": 4643.7,
       "window_index": 4
     },
@@ -382,18 +170,8 @@
       "billed_input_tokens": 458,
       "choice_id": "pedestrians_only",
       "confidence": 0.999567449092865,
-      "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-      "prepared_identity": {
-        "frame_sha256": [
-          "75184351b6097a35714abda383d6c5c011688bd4c80721fde7f708a808872db3",
-          "aa286eefff096254985d8069903334c870c460ed46a1b7c032a3152299eb0be6",
-          "cba217964211dcbe574c0de12ff972e737d7528cfe4ea8d68a0b02e4be843908",
-          "e7d15c77419fb28ac38bc13cfcd3b1039c4d5f941ee86ee519757d5ee19d6eb0"
-        ],
-        "input_ids_sha256": "ceb08353fe558d3dba111405846fdfa59475eeea13df1ca5b931df659f47f5fe",
-        "pixel_sha256": "35544ad661aac8b2f98e371559fe15ea7c65bd78cf066d597319e294cb9b4e68",
-        "prompt_sha256": "9efa191f38b233f06068db28292295ab7e3fcd346135ca153538a40231e775d0"
-      },
+      "identity_sha256": "10b01a825004b61c2f57003b0c1b2cc28256c282c019d85fd1abff0daa975cfe",
+      "identity_verified": true,
       "probabilities": [
         {
           "choice_id": "motor_vehicles_only",
@@ -416,48 +194,6 @@
           "probability": 2.4429418772342615e-06
         }
       ],
-      "raw_response": {
-        "billed_input_tokens": 458,
-        "choice_id": "pedestrians_only",
-        "confidence": 0.999567449092865,
-        "disposition": "decide",
-        "frame_sha256": [
-          "75184351b6097a35714abda383d6c5c011688bd4c80721fde7f708a808872db3",
-          "aa286eefff096254985d8069903334c870c460ed46a1b7c032a3152299eb0be6",
-          "cba217964211dcbe574c0de12ff972e737d7528cfe4ea8d68a0b02e4be843908",
-          "e7d15c77419fb28ac38bc13cfcd3b1039c4d5f941ee86ee519757d5ee19d6eb0"
-        ],
-        "input_ids_sha256": "ceb08353fe558d3dba111405846fdfa59475eeea13df1ca5b931df659f47f5fe",
-        "latency_ms": 734.4180840009358,
-        "model_input_tokens": 458,
-        "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-        "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
-        "pixel_sha256": "35544ad661aac8b2f98e371559fe15ea7c65bd78cf066d597319e294cb9b4e68",
-        "probabilities": [
-          {
-            "choice_id": "motor_vehicles_only",
-            "probability": 1.0778764590213541e-05
-          },
-          {
-            "choice_id": "pedestrians_only",
-            "probability": 0.999567449092865
-          },
-          {
-            "choice_id": "both_moving",
-            "probability": 0.0004173093766439706
-          },
-          {
-            "choice_id": "neither_moving",
-            "probability": 2.089558620355092e-06
-          },
-          {
-            "choice_id": "unclear",
-            "probability": 2.4429418772342615e-06
-          }
-        ],
-        "prompt_sha256": "9efa191f38b233f06068db28292295ab7e3fcd346135ca153538a40231e775d0",
-        "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
-      },
       "request_id": null,
       "sample_times_ms": [
         50000,
@@ -466,7 +202,6 @@
         53000
       ],
       "server_processing_ms": 734.4180840009358,
-      "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
       "wall_latency_ms": 2978.2,
       "window_index": 5
     },
@@ -474,18 +209,8 @@
       "billed_input_tokens": 458,
       "choice_id": "both_moving",
       "confidence": 0.834139883518219,
-      "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-      "prepared_identity": {
-        "frame_sha256": [
-          "48bb57a136ed3a6b1b2020c5756ab6ebfefaa75b4416ef7d404f8735505e6665",
-          "6e08763ba3840d69d3d2b70734cdf7d4d2a25b1bb548fa1e002a3a11f70baeb1",
-          "9e878130885bfb33f04b339234a6b8023f41b341169f155961701a17fdddcdbb",
-          "cc8ad659b3cbc49b38a76b95b27a66ffa97fb3ef0f07762c18034a560c2b8059"
-        ],
-        "input_ids_sha256": "4fd2f67e3b32e4c80df6d85a5e33f49fb33e0eadbfd06e597b7b629b0f4ab8b1",
-        "pixel_sha256": "54f90d63630306f46ad849ba2be2ce1a7bcf3ca83f94d28ef112d8f5d1f02029",
-        "prompt_sha256": "ffae9beb41aa9d004e77bc4a41ee3ab0689ca7dd8e72427dcbb923572c506e55"
-      },
+      "identity_sha256": "fc35128691928f86e90b18a9457a278328f0232dc9f4cbcb74e46d0e8343b377",
+      "identity_verified": true,
       "probabilities": [
         {
           "choice_id": "motor_vehicles_only",
@@ -508,48 +233,6 @@
           "probability": 0.00022484389774035662
         }
       ],
-      "raw_response": {
-        "billed_input_tokens": 458,
-        "choice_id": "both_moving",
-        "confidence": 0.834139883518219,
-        "disposition": "decide",
-        "frame_sha256": [
-          "48bb57a136ed3a6b1b2020c5756ab6ebfefaa75b4416ef7d404f8735505e6665",
-          "6e08763ba3840d69d3d2b70734cdf7d4d2a25b1bb548fa1e002a3a11f70baeb1",
-          "9e878130885bfb33f04b339234a6b8023f41b341169f155961701a17fdddcdbb",
-          "cc8ad659b3cbc49b38a76b95b27a66ffa97fb3ef0f07762c18034a560c2b8059"
-        ],
-        "input_ids_sha256": "4fd2f67e3b32e4c80df6d85a5e33f49fb33e0eadbfd06e597b7b629b0f4ab8b1",
-        "latency_ms": 714.9195199890528,
-        "model_input_tokens": 458,
-        "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
-        "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
-        "pixel_sha256": "54f90d63630306f46ad849ba2be2ce1a7bcf3ca83f94d28ef112d8f5d1f02029",
-        "probabilities": [
-          {
-            "choice_id": "motor_vehicles_only",
-            "probability": 0.11113838851451874
-          },
-          {
-            "choice_id": "pedestrians_only",
-            "probability": 0.054164525121450424
-          },
-          {
-            "choice_id": "both_moving",
-            "probability": 0.834139883518219
-          },
-          {
-            "choice_id": "neither_moving",
-            "probability": 0.0003322977281641215
-          },
-          {
-            "choice_id": "unclear",
-            "probability": 0.00022484389774035662
-          }
-        ],
-        "prompt_sha256": "ffae9beb41aa9d004e77bc4a41ee3ab0689ca7dd8e72427dcbb923572c506e55",
-        "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
-      },
       "request_id": null,
       "sample_times_ms": [
         54000,
@@ -558,7 +241,6 @@
         57000
       ],
       "server_processing_ms": 714.9195199890528,
-      "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
       "wall_latency_ms": 2867.9,
       "window_index": 6
     }

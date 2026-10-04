@@ -193,12 +193,12 @@ def render(source_clip: Path, evidence_path: Path, output: Path) -> None:
             y+=112
         if t >= 23.5:
             d.rounded_rectangle((58,208,390,256),12,fill="#071018",outline="#84d8ff",width=2)
-            d.text((76,218),"END HOLD · RECORDED TIMING",font=small,fill="#84d8ff")
-        d.text((44,920),"Sampled frames — not continuous monitoring or a safety determination",font=small,fill="#aec0cc")
+            d.text((76,218),"FINAL FRAME · REPLAY",font=small,fill="#84d8ff")
+        d.text((44,920),"Sampled video windows · Real model decisions · Recorded replay",font=small,fill="#aec0cc")
         d.text((44,962),"Basile Morin / Wikimedia Commons · CC BY-SA 4.0",font=small,fill="#718b9b")
         writer.write(cv2.cvtColor(np.asarray(canvas), cv2.COLOR_RGB2BGR))
     cap.release(); writer.release(); output.parent.mkdir(parents=True,exist_ok=True)
-    run(["ffmpeg","-y","-hide_banner","-loglevel","error","-i",str(temporary),"-c:v","libx264","-crf","18","-preset","medium","-pix_fmt","yuv420p","-movflags","+faststart",str(output)])
+    run(["ffmpeg","-y","-hide_banner","-loglevel","error","-i",str(temporary),"-c:v","libx264","-crf","22","-preset","medium","-pix_fmt","yuv420p","-movflags","+faststart",str(output)])
     temporary.unlink()
     run(["ffmpeg","-y","-hide_banner","-loglevel","error","-ss","28","-i",str(output),"-frames:v","1",str(output.with_suffix(".jpg"))])
 
