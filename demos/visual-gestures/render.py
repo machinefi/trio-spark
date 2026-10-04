@@ -79,7 +79,7 @@ def main() -> None:
     by={x['case_id']:x for x in responses['cases']};
     args.expected_model_version = args.expected_model_version or responses['cases'][0]['response'].get('model_version')
     if not isinstance(args.expected_model_version, str) or not args.expected_model_version: raise ValueError('recorded serving identity missing')
-     work=args.output.parent/'visual-gestures-render'; work.mkdir(parents=True,exist_ok=True)
+    work=args.output.parent/'visual-gestures-render'; work.mkdir(parents=True,exist_ok=True)
     card('SEE THE GESTURE. MAKE A DECISION.','Recorded production replay on licensed IPN Hand footage',3,work/'00.mp4')
     if len(responses['cases']) != len(by) or set(by) != {case['case_id'] for case in req['cases']}:
         raise ValueError('response case IDs do not exactly match the prepared request pack')
