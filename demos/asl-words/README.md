@@ -29,6 +29,7 @@ The recognizer uses a fixed two-stage bank protocol: route between two five-word
 - Keep `TRIO_SPARK_API_KEY` in the server process. Never inject it into HTML or JavaScript.
 - Accept a bounded JSON body and exactly four canonical JPEG frames.
 - Allow one recognition request at a time. Return a bounded busy response instead of queueing.
+- Sample four frames over 1.5 seconds, submit at most one rolling window every three seconds, stop on a server error, and end each camera session after 60 windows (about three minutes).
 - Do not follow redirects with an authorization header.
 - Stop every camera track on Stop, page hide, or mode exit. Late responses are discarded by an epoch guard.
 
