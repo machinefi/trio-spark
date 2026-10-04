@@ -17,3 +17,7 @@ For the runnable integrations, apply the patch in the demo directory to a checko
 [`Jevals/jevals-data`](https://github.com/Jevals/jevals-data) at commit
 `21bb47b72814cf661539b313844d2d2e26166e54`. It is licensed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## IPN Hand visual gesture footage
+
+The Trio-Spark v1.1 visual gesture demo uses two class-example GIFs from the [IPN Hand dataset](https://gibranbenitez.github.io/IPN_Hand/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Full attribution and pinned source hashes are in [`demos/visual-gestures/`](demos/visual-gestures/).
