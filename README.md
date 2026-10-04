@@ -25,9 +25,40 @@ application can act on. The same key and wallet cover both text and vision at
 
 [Visual API quickstart](docs/visual.md) · [Try hand gestures](https://platform.machinefi.com/spark?demo=gestures) · [Console Docs](https://platform.machinefi.com/spark/docs)
 
-## Demos
+## Visual demos · v1.1
 
-Every probability, decision, and latency shown below came from a real Trio-Spark v1.0 production run. The videos replay those recorded runs with presentation overlays.
+### Read a hand signal
+
+[![Trio-Spark visual gestures](assets/demos/Trio-Spark-v1.1-Visual-Gestures-poster.jpg)](assets/demos/Trio-Spark-v1.1-Visual-Gestures.mp4)
+
+Watch moving hand footage alongside four recorded visual decisions and their
+probabilities. Dataset captions were removed before inference.
+
+**22 seconds · four real model calls**
+
+[Run the demo](demos/visual-gestures/) · [Recording details](demos/visual-gestures/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.1-Visual-Gestures.mp4)
+
+### Watch a crossing change
+
+[![Trio-Spark crossing decisions](assets/demos/Trio-Spark-v1.1-Crossing-Phase-poster.jpg)](assets/demos/Trio-Spark-v1.1-Crossing-Phase.mp4)
+
+Six chronological video windows show a pedestrian wave followed by vehicles and
+pedestrians moving through the crossing together. The display updates from
+recorded model responses and preserves the measured request timing.
+
+**30 seconds · six real model calls · four frames per window**
+
+[Run the demo](demos/crossing-phase/) · [Recording details](demos/crossing-phase/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.1-Crossing-Phase.mp4)
+
+These v1.1 videos replay real calls to our deployed visual inference service.
+The recording details identify the serving path, inputs and timings.
+Their runnable examples use the public API.
+Source footage credits and licenses are included with each demo.
+
+## Text-driven demos · v1.0
+
+The following v1.0 videos replay real production API runs with presentation overlays.
+Their decisions use structured text state.
 
 ### Autonomous drone
 
@@ -115,8 +146,8 @@ python3 evals/run.py --benchmark sst2 --limit 10 --output runs/sst2-smoke
 See [`evals/README.md`](evals/README.md) for the reproducibility contract and
 the exact commands used for full runs.
 
-The product and release name is **Trio-Spark v1.0**. The current API model
-identifier remains `trio-spark-preview` for compatibility.
+Unified text and visual requests use **`trio-spark-v1.1`**. The legacy v1.0
+API identifier `trio-spark-preview` remains available for compatibility.
 
 ## How Spark fits into an agent
 
