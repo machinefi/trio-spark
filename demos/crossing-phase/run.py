@@ -23,14 +23,14 @@ WINDOW_END_MS = (37000, 41000, 45000, 49000, 53000, 57000)
 WINDOWS = tuple((end - 3000, end - 2000, end - 1000, end) for end in WINDOW_END_MS)
 SAMPLE_MS = tuple(sorted({value for window in WINDOWS for value in window}))
 CHOICES = {
-    "pedestrians_crossing": "Many pedestrians are actively occupying the central crossing.",
-    "crossing_is_clearing": "Pedestrian occupancy is visibly thinning across the sampled window.",
-    "crossing_mostly_clear": "The central crossing is mostly clear of pedestrians by the latest frame.",
-    "vehicles_entering": "Road vehicles are visibly entering or moving through the central crossing.",
-    "insufficient_evidence": "The sampled frames do not provide enough visual evidence to decide.",
+    "motor_vehicles_only": "Motor vehicles are moving through the central crossing, with no pedestrians walking across it.",
+    "pedestrians_only": "Pedestrians are walking across the central crossing, with no motor vehicles moving through it.",
+    "both_moving": "Motor vehicles and pedestrians are both moving through the central crossing.",
+    "neither_moving": "Neither motor vehicles nor pedestrians are moving through the central crossing.",
+    "unclear": "The sampled frames do not clearly show which road users are moving through the central crossing.",
 }
-TASK = "Which crossing phase is most clearly supported by this sampled video window?"
-STATE = "Four frames sample one 3-second window in chronological order. Judge only visible movement and occupancy; do not infer traffic-signal state, intent, or safety."
+TASK = "Which road users are visibly moving through the central crossing in this sampled window?"
+STATE = "Four chronological frames sample one 3-second window. Movement requires visible displacement across frames, not mere presence. Judge only the central marked crossing; ignore road users stopped or waiting at its edges."
 
 
 def sha256(path: Path) -> str:
@@ -63,7 +63,7 @@ def extract_inputs(source: Path, output: Path) -> list[Path]:
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", f"{timestamp_ms / 1000:.3f}", "-i", str(source), "-frames:v", "1", "-vf", "scale=512:-2", "-q:v", "2", str(path)])
         frames.append(path)
     clip = output / "source-window.mp4"
-    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", "34", "-t", "24", "-i", str(source), "-an", "-vf", "scale=1280:-2", "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", str(clip)])
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", "34", "-t", "23.5", "-i", str(source), "-an", "-vf", "scale=1280:-2", "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", str(clip)])
     return frames
 
 
@@ -147,10 +147,9 @@ def render(source_clip: Path, evidence_path: Path, output: Path) -> None:
     font_path = "/System/Library/Fonts/Supplemental/Arial.ttf"; bold_path = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
     regular = ImageFont.truetype(font_path, 30); small = ImageFont.truetype(font_path, 23)
     bold = ImageFont.truetype(bold_path, 32); title = ImageFont.truetype(bold_path, 48)
-    duration = 26.0; frames_total = int(duration * fps); source_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)); cached = None
-    labels = {"pedestrians_crossing":"Pedestrians crossing", "crossing_is_clearing":"Crossing is clearing",
-              "crossing_mostly_clear":"Crossing mostly clear", "vehicles_entering":"Vehicles entering",
-              "insufficient_evidence":"Insufficient evidence"}
+    duration = 30.0; frames_total = int(duration * fps); source_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)); cached = None
+    labels = {"motor_vehicles_only":"Motor vehicles only", "pedestrians_only":"Pedestrians only",
+              "both_moving":"Both moving", "neither_moving":"Neither moving", "unclear":"Unclear"}
     for number in range(frames_total):
         t = number / fps
         ok, frame = cap.read()
@@ -167,7 +166,7 @@ def render(source_clip: Path, evidence_path: Path, output: Path) -> None:
         d.rounded_rectangle((1320,40,1880,1025),24,fill="#101d29",outline="#28455a",width=2)
         d.text((1360,78),"CROSSING PHASE",font=small,fill="#84d8ff")
         y=125
-        for line in ("Which phase is most clearly", "supported by this sampled", "3-second video window?"):
+        for line in ("Who is visibly moving", "through the central crossing", "in this 3-second window?"):
             d.text((1360,y),line,font=bold,fill="white"); y+=40
         d.text((1360,275),"4 frames/window · no future frames",font=small,fill="#93a8b7")
         available = [item for item in decisions if t >= (item["sample_times_ms"][-1] - 34000) / 1000 + item["wall_latency_ms"] / 1000]
@@ -192,13 +191,16 @@ def render(source_clip: Path, evidence_path: Path, output: Path) -> None:
                 d.rectangle((1370,y+58,1370+int(445*probability),y+68),fill="#63e6a5" if chosen else "#5aa7d6")
                 d.text((1785,y+12),f"{probability*100:4.1f}%",font=small,fill="#dceaf2")
             y+=112
+        if t >= 23.5:
+            d.rounded_rectangle((58,208,390,256),12,fill="#071018",outline="#84d8ff",width=2)
+            d.text((76,218),"END HOLD · RECORDED TIMING",font=small,fill="#84d8ff")
         d.text((44,920),"Sampled frames — not continuous monitoring or a safety determination",font=small,fill="#aec0cc")
         d.text((44,962),"Basile Morin / Wikimedia Commons · CC BY-SA 4.0",font=small,fill="#718b9b")
         writer.write(cv2.cvtColor(np.asarray(canvas), cv2.COLOR_RGB2BGR))
     cap.release(); writer.release(); output.parent.mkdir(parents=True,exist_ok=True)
     run(["ffmpeg","-y","-hide_banner","-loglevel","error","-i",str(temporary),"-c:v","libx264","-crf","18","-preset","medium","-pix_fmt","yuv420p","-movflags","+faststart",str(output)])
     temporary.unlink()
-    run(["ffmpeg","-y","-hide_banner","-loglevel","error","-ss","18","-i",str(output),"-frames:v","1",str(output.with_suffix(".jpg"))])
+    run(["ffmpeg","-y","-hide_banner","-loglevel","error","-ss","28","-i",str(output),"-frames:v","1",str(output.with_suffix(".jpg"))])
 
 
 def main() -> None:

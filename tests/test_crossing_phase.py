@@ -9,8 +9,8 @@ def test_protocol_is_bounded_and_stable():
     assert all(len(window) == 4 and window == tuple(sorted(window)) for window in demo.WINDOWS)
     assert all(window[-1]-window[0] <= 30_000 for window in demo.WINDOWS)
     assert 2 <= len(demo.CHOICES) <= 8
-    assert 'insufficient_evidence' in demo.CHOICES
-    assert 'safety' in demo.STATE
+    assert 'unclear' in demo.CHOICES
+    assert 'Movement requires' in demo.STATE
 
 def test_payload_uses_real_distinct_frames(tmp_path):
     frames=[]

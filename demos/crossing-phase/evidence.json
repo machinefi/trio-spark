@@ -1,37 +1,19 @@
 {
   "api_errors": 0,
-  "capture_attempts": [
-    {
-      "attempt": 1,
-      "capture_tool_errors": 10,
-      "detail": "The private capture validator incorrectly required public-wrapper-only response fields after /run returned. Raw decisions were not retained and are not used in the demo.",
-      "origin_api_errors_observed": 0,
-      "requested_windows": 10,
-      "status": "capture_tool_validation_failed"
-    },
-    {
-      "attempt": 2,
-      "capture_tool_errors": 0,
-      "origin_api_errors": 0,
-      "requested_windows": 6,
-      "status": "complete",
-      "successful_calls": 6
-    }
-  ],
   "choices": {
-    "crossing_is_clearing": "Pedestrian occupancy is visibly thinning across the sampled window.",
-    "crossing_mostly_clear": "The central crossing is mostly clear of pedestrians by the latest frame.",
-    "insufficient_evidence": "The sampled frames do not provide enough visual evidence to decide.",
-    "pedestrians_crossing": "Many pedestrians are actively occupying the central crossing.",
-    "vehicles_entering": "Road vehicles are visibly entering or moving through the central crossing."
+    "both_moving": "Motor vehicles and pedestrians are both moving through the central crossing.",
+    "motor_vehicles_only": "Motor vehicles are moving through the central crossing, with no pedestrians walking across it.",
+    "neither_moving": "Neither motor vehicles nor pedestrians are moving through the central crossing.",
+    "pedestrians_only": "Pedestrians are walking across the central crossing, with no motor vehicles moving through it.",
+    "unclear": "The sampled frames do not clearly show which road users are moving through the central crossing."
   },
   "claim_scope": "Six calls over four sampled frames each; not continuous monitoring or a traffic-safety determination.",
   "complete": true,
   "decisions": [
     {
-      "billed_input_tokens": 434,
-      "choice_id": "pedestrians_crossing",
-      "confidence": 0.999991774559021,
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9997548460960388,
       "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
       "prepared_identity": {
         "frame_sha256": [
@@ -40,36 +22,36 @@
           "b196e038ecd09b53c1be790571d18f59d0c75f5406bd35fc9a52809b379c7029",
           "568f4171bdf4b66074407af55d30a01a2b86ab7a7870a4862b039120abe57e9f"
         ],
-        "input_ids_sha256": "c88b216aa0c83ca115b9043c486e379f9b945c4c74a6a1ab851d5c980dbe23cc",
+        "input_ids_sha256": "6ab0a65c3b0090c927cbf40174f714602a572e69c3fa307e298e91226839211f",
         "pixel_sha256": "cc41e9d219544ead9b090d529c896e4a2bc089161624936302f901223102857a",
-        "prompt_sha256": "4bf8939c47b877a60195f756cd34c2d711498309af119ab81c2f6fc2fa5d7722"
+        "prompt_sha256": "f2db16feb4653a66399cee5e40833d90fe8d6f4142728deb1c132486c729ff32"
       },
       "probabilities": [
         {
-          "choice_id": "pedestrians_crossing",
-          "probability": 0.999991774559021
+          "choice_id": "motor_vehicles_only",
+          "probability": 9.514009434496984e-06
         },
         {
-          "choice_id": "crossing_is_clearing",
-          "probability": 7.646533049410209e-06
+          "choice_id": "pedestrians_only",
+          "probability": 0.9997548460960388
         },
         {
-          "choice_id": "crossing_mostly_clear",
-          "probability": 3.3596523962842184e-07
+          "choice_id": "both_moving",
+          "probability": 0.00022692971106152982
         },
         {
-          "choice_id": "vehicles_entering",
-          "probability": 1.0571614694754317e-07
+          "choice_id": "neither_moving",
+          "probability": 3.966028998547699e-06
         },
         {
-          "choice_id": "insufficient_evidence",
-          "probability": 1.197920909135064e-07
+          "choice_id": "unclear",
+          "probability": 4.7097760216274764e-06
         }
       ],
-      "raw_response_sanitized": {
-        "billed_input_tokens": 434,
-        "choice_id": "pedestrians_crossing",
-        "confidence": 0.999991774559021,
+      "raw_response": {
+        "billed_input_tokens": 458,
+        "choice_id": "pedestrians_only",
+        "confidence": 0.9997548460960388,
         "disposition": "decide",
         "frame_sha256": [
           "8ad74b6d24579c9b8305bf020c30a5097dcacb49efcaf25b0618015b017be184",
@@ -77,35 +59,35 @@
           "b196e038ecd09b53c1be790571d18f59d0c75f5406bd35fc9a52809b379c7029",
           "568f4171bdf4b66074407af55d30a01a2b86ab7a7870a4862b039120abe57e9f"
         ],
-        "input_ids_sha256": "c88b216aa0c83ca115b9043c486e379f9b945c4c74a6a1ab851d5c980dbe23cc",
-        "latency_ms": 721.3524069811683,
-        "model_input_tokens": 434,
+        "input_ids_sha256": "6ab0a65c3b0090c927cbf40174f714602a572e69c3fa307e298e91226839211f",
+        "latency_ms": 746.4746509795077,
+        "model_input_tokens": 458,
         "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
         "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
         "pixel_sha256": "cc41e9d219544ead9b090d529c896e4a2bc089161624936302f901223102857a",
         "probabilities": [
           {
-            "choice_id": "pedestrians_crossing",
-            "probability": 0.999991774559021
+            "choice_id": "motor_vehicles_only",
+            "probability": 9.514009434496984e-06
           },
           {
-            "choice_id": "crossing_is_clearing",
-            "probability": 7.646533049410209e-06
+            "choice_id": "pedestrians_only",
+            "probability": 0.9997548460960388
           },
           {
-            "choice_id": "crossing_mostly_clear",
-            "probability": 3.3596523962842184e-07
+            "choice_id": "both_moving",
+            "probability": 0.00022692971106152982
           },
           {
-            "choice_id": "vehicles_entering",
-            "probability": 1.0571614694754317e-07
+            "choice_id": "neither_moving",
+            "probability": 3.966028998547699e-06
           },
           {
-            "choice_id": "insufficient_evidence",
-            "probability": 1.197920909135064e-07
+            "choice_id": "unclear",
+            "probability": 4.7097760216274764e-06
           }
         ],
-        "prompt_sha256": "4bf8939c47b877a60195f756cd34c2d711498309af119ab81c2f6fc2fa5d7722",
+        "prompt_sha256": "f2db16feb4653a66399cee5e40833d90fe8d6f4142728deb1c132486c729ff32",
         "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
       },
       "request_id": null,
@@ -115,15 +97,15 @@
         36000,
         37000
       ],
-      "server_processing_ms": 721.3524069811683,
+      "server_processing_ms": 746.4746509795077,
       "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
-      "wall_latency_ms": 2806.9,
+      "wall_latency_ms": 4497.6,
       "window_index": 1
     },
     {
-      "billed_input_tokens": 434,
-      "choice_id": "pedestrians_crossing",
-      "confidence": 0.9999997615814209,
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9995747208595276,
       "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
       "prepared_identity": {
         "frame_sha256": [
@@ -132,36 +114,36 @@
           "4865e96e2896c57a356e6a8eadfdc2cba2a31dd30775c7fb0cc52b6ab12acb7f",
           "08eb9f215c6b69e9966f03ca96395f8dd5a0ab9eec39b70a245839ce7cca5ab3"
         ],
-        "input_ids_sha256": "f2d1501fd091830846bc5b76ba8dea4416996008bd3921dea3aa5b4538949194",
+        "input_ids_sha256": "d47de2b2266816d1ecaaf7c0ce84bc056aa5434bee67585df7f5e403de35ae99",
         "pixel_sha256": "8726482a20cc89d2df9d0a6c9923fbfa258e0ba0bde1dfc00f112faa4a71d387",
-        "prompt_sha256": "34bfea1e1effc3b0febaa521a45aba8a67153f118b9842edde4529fafe84ee15"
+        "prompt_sha256": "8075de876266556158e4f0a495fedb8e13a31421da64bac571f4cd1e48d4f787"
       },
       "probabilities": [
         {
-          "choice_id": "pedestrians_crossing",
-          "probability": 0.9999997615814209
+          "choice_id": "motor_vehicles_only",
+          "probability": 4.8584051910438575e-06
         },
         {
-          "choice_id": "crossing_is_clearing",
-          "probability": 2.6995778057425923e-07
+          "choice_id": "pedestrians_only",
+          "probability": 0.9995747208595276
         },
         {
-          "choice_id": "crossing_mostly_clear",
-          "probability": 1.167722718520281e-08
+          "choice_id": "both_moving",
+          "probability": 0.0004173124034423381
         },
         {
-          "choice_id": "vehicles_entering",
-          "probability": 6.758260617800715e-09
+          "choice_id": "neither_moving",
+          "probability": 1.2873491641585133e-06
         },
         {
-          "choice_id": "insufficient_evidence",
-          "probability": 5.4304152286022145e-09
+          "choice_id": "unclear",
+          "probability": 1.844042571974569e-06
         }
       ],
-      "raw_response_sanitized": {
-        "billed_input_tokens": 434,
-        "choice_id": "pedestrians_crossing",
-        "confidence": 0.9999997615814209,
+      "raw_response": {
+        "billed_input_tokens": 458,
+        "choice_id": "pedestrians_only",
+        "confidence": 0.9995747208595276,
         "disposition": "decide",
         "frame_sha256": [
           "b570157ad2ff0ff6a47b54f1b48c8deabe109e98619e3b906b2caf54d59a7fa5",
@@ -169,35 +151,35 @@
           "4865e96e2896c57a356e6a8eadfdc2cba2a31dd30775c7fb0cc52b6ab12acb7f",
           "08eb9f215c6b69e9966f03ca96395f8dd5a0ab9eec39b70a245839ce7cca5ab3"
         ],
-        "input_ids_sha256": "f2d1501fd091830846bc5b76ba8dea4416996008bd3921dea3aa5b4538949194",
-        "latency_ms": 694.5780579990242,
-        "model_input_tokens": 434,
+        "input_ids_sha256": "d47de2b2266816d1ecaaf7c0ce84bc056aa5434bee67585df7f5e403de35ae99",
+        "latency_ms": 752.4904570018407,
+        "model_input_tokens": 458,
         "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
         "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
         "pixel_sha256": "8726482a20cc89d2df9d0a6c9923fbfa258e0ba0bde1dfc00f112faa4a71d387",
         "probabilities": [
           {
-            "choice_id": "pedestrians_crossing",
-            "probability": 0.9999997615814209
+            "choice_id": "motor_vehicles_only",
+            "probability": 4.8584051910438575e-06
           },
           {
-            "choice_id": "crossing_is_clearing",
-            "probability": 2.6995778057425923e-07
+            "choice_id": "pedestrians_only",
+            "probability": 0.9995747208595276
           },
           {
-            "choice_id": "crossing_mostly_clear",
-            "probability": 1.167722718520281e-08
+            "choice_id": "both_moving",
+            "probability": 0.0004173124034423381
           },
           {
-            "choice_id": "vehicles_entering",
-            "probability": 6.758260617800715e-09
+            "choice_id": "neither_moving",
+            "probability": 1.2873491641585133e-06
           },
           {
-            "choice_id": "insufficient_evidence",
-            "probability": 5.4304152286022145e-09
+            "choice_id": "unclear",
+            "probability": 1.844042571974569e-06
           }
         ],
-        "prompt_sha256": "34bfea1e1effc3b0febaa521a45aba8a67153f118b9842edde4529fafe84ee15",
+        "prompt_sha256": "8075de876266556158e4f0a495fedb8e13a31421da64bac571f4cd1e48d4f787",
         "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
       },
       "request_id": null,
@@ -207,15 +189,15 @@
         40000,
         41000
       ],
-      "server_processing_ms": 694.5780579990242,
+      "server_processing_ms": 752.4904570018407,
       "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
-      "wall_latency_ms": 2573.5,
+      "wall_latency_ms": 3793.7,
       "window_index": 2
     },
     {
-      "billed_input_tokens": 434,
-      "choice_id": "pedestrians_crossing",
-      "confidence": 0.9999997615814209,
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9999938011169434,
       "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
       "prepared_identity": {
         "frame_sha256": [
@@ -224,36 +206,36 @@
           "0314505811e639cd725032140bf4ea409754c6819641cca8e15022cde5d82826",
           "838837c0f19e72ba89bbbee48d2d2e30c75d35d9c6599a9be32e6a4a9be6c429"
         ],
-        "input_ids_sha256": "112ae2c8aa69277c43aa32dd89aa19f9a1511098d1f5f357ecac1e45152ab735",
+        "input_ids_sha256": "cf7d7f004240e4493a9f02eabc9b828492c9bbd850e9b87c066d6729c84979ed",
         "pixel_sha256": "8c62f0f1b10251dab6952de32c0d734222c9a54b272e82b5d714dfecaacb4b6e",
-        "prompt_sha256": "3d7a3a2843ca9c6946e6f31db286a95d25a7e9cd3ebcc9e64a6326aad3f0594d"
+        "prompt_sha256": "5923029841365c8f298cec4b67e4838be4c7da522412784714c2cbc9be672d1b"
       },
       "probabilities": [
         {
-          "choice_id": "pedestrians_crossing",
-          "probability": 0.9999997615814209
+          "choice_id": "motor_vehicles_only",
+          "probability": 3.205809093742573e-07
         },
         {
-          "choice_id": "crossing_is_clearing",
-          "probability": 2.536018826049258e-07
+          "choice_id": "pedestrians_only",
+          "probability": 0.9999938011169434
         },
         {
-          "choice_id": "crossing_mostly_clear",
-          "probability": 6.972791233295084e-09
+          "choice_id": "both_moving",
+          "probability": 5.09369965584483e-06
         },
         {
-          "choice_id": "vehicles_entering",
-          "probability": 3.732266051770239e-09
+          "choice_id": "neither_moving",
+          "probability": 3.011578542100324e-07
         },
         {
-          "choice_id": "insufficient_evidence",
-          "probability": 4.229211647555076e-09
+          "choice_id": "unclear",
+          "probability": 3.92783903180316e-07
         }
       ],
-      "raw_response_sanitized": {
-        "billed_input_tokens": 434,
-        "choice_id": "pedestrians_crossing",
-        "confidence": 0.9999997615814209,
+      "raw_response": {
+        "billed_input_tokens": 458,
+        "choice_id": "pedestrians_only",
+        "confidence": 0.9999938011169434,
         "disposition": "decide",
         "frame_sha256": [
           "49a462886081d9e8d13b5a334a08a402cfeacadfd0d3b31b9d792a6c0fd69258",
@@ -261,35 +243,35 @@
           "0314505811e639cd725032140bf4ea409754c6819641cca8e15022cde5d82826",
           "838837c0f19e72ba89bbbee48d2d2e30c75d35d9c6599a9be32e6a4a9be6c429"
         ],
-        "input_ids_sha256": "112ae2c8aa69277c43aa32dd89aa19f9a1511098d1f5f357ecac1e45152ab735",
-        "latency_ms": 703.3080979890656,
-        "model_input_tokens": 434,
+        "input_ids_sha256": "cf7d7f004240e4493a9f02eabc9b828492c9bbd850e9b87c066d6729c84979ed",
+        "latency_ms": 728.6614249751437,
+        "model_input_tokens": 458,
         "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
         "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
         "pixel_sha256": "8c62f0f1b10251dab6952de32c0d734222c9a54b272e82b5d714dfecaacb4b6e",
         "probabilities": [
           {
-            "choice_id": "pedestrians_crossing",
-            "probability": 0.9999997615814209
+            "choice_id": "motor_vehicles_only",
+            "probability": 3.205809093742573e-07
           },
           {
-            "choice_id": "crossing_is_clearing",
-            "probability": 2.536018826049258e-07
+            "choice_id": "pedestrians_only",
+            "probability": 0.9999938011169434
           },
           {
-            "choice_id": "crossing_mostly_clear",
-            "probability": 6.972791233295084e-09
+            "choice_id": "both_moving",
+            "probability": 5.09369965584483e-06
           },
           {
-            "choice_id": "vehicles_entering",
-            "probability": 3.732266051770239e-09
+            "choice_id": "neither_moving",
+            "probability": 3.011578542100324e-07
           },
           {
-            "choice_id": "insufficient_evidence",
-            "probability": 4.229211647555076e-09
+            "choice_id": "unclear",
+            "probability": 3.92783903180316e-07
           }
         ],
-        "prompt_sha256": "3d7a3a2843ca9c6946e6f31db286a95d25a7e9cd3ebcc9e64a6326aad3f0594d",
+        "prompt_sha256": "5923029841365c8f298cec4b67e4838be4c7da522412784714c2cbc9be672d1b",
         "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
       },
       "request_id": null,
@@ -299,15 +281,15 @@
         44000,
         45000
       ],
-      "server_processing_ms": 703.3080979890656,
+      "server_processing_ms": 728.6614249751437,
       "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
-      "wall_latency_ms": 2526.8,
+      "wall_latency_ms": 3273.3,
       "window_index": 3
     },
     {
-      "billed_input_tokens": 434,
-      "choice_id": "pedestrians_crossing",
-      "confidence": 0.9999994039535522,
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9930456280708313,
       "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
       "prepared_identity": {
         "frame_sha256": [
@@ -316,36 +298,36 @@
           "2c0d6356df8ecaa7a8ceb04704f0c4b9f37338f836039f12705538bbaccbb6a3",
           "bfadd4f9c7e10946b0ec38aa7beeb8ce98d3c3755b88a599b2f4c8d5ce2c7a17"
         ],
-        "input_ids_sha256": "a4968c57e593e3b683e270b06e6c098d05615576973c8ce1d64f86ae041aca15",
+        "input_ids_sha256": "18c900aba2cbee9a64f6e0442e9365fcdd8fd791fa43937871da72ac9176368a",
         "pixel_sha256": "60586b893be3f7b1c5d89a923b3489d1b11da878f16759fa2e1b7f847471868e",
-        "prompt_sha256": "6ca21e9abcce1d85edd7b7985393372e80e0b26e52cddce93b301b8f922cd6d2"
+        "prompt_sha256": "ead3debf03e45bef8f517bc3e48574f76bb92e90483f90e19b1d0e5e2524af8a"
       },
       "probabilities": [
         {
-          "choice_id": "pedestrians_crossing",
-          "probability": 0.9999994039535522
+          "choice_id": "motor_vehicles_only",
+          "probability": 3.3503732993267477e-05
         },
         {
-          "choice_id": "crossing_is_clearing",
-          "probability": 5.203571049605671e-07
+          "choice_id": "pedestrians_only",
+          "probability": 0.9930456280708313
         },
         {
-          "choice_id": "crossing_mostly_clear",
-          "probability": 2.6315028378576244e-08
+          "choice_id": "both_moving",
+          "probability": 0.006903487257659435
         },
         {
-          "choice_id": "vehicles_entering",
-          "probability": 1.3440401680497871e-08
+          "choice_id": "neither_moving",
+          "probability": 6.295165349001763e-06
         },
         {
-          "choice_id": "insufficient_evidence",
-          "probability": 9.530673139579449e-09
+          "choice_id": "unclear",
+          "probability": 1.1048358828702476e-05
         }
       ],
-      "raw_response_sanitized": {
-        "billed_input_tokens": 434,
-        "choice_id": "pedestrians_crossing",
-        "confidence": 0.9999994039535522,
+      "raw_response": {
+        "billed_input_tokens": 458,
+        "choice_id": "pedestrians_only",
+        "confidence": 0.9930456280708313,
         "disposition": "decide",
         "frame_sha256": [
           "28cf50bef26e4548419ac76653097d8178c0657faa7d5d1fa9db47911769ddd1",
@@ -353,35 +335,35 @@
           "2c0d6356df8ecaa7a8ceb04704f0c4b9f37338f836039f12705538bbaccbb6a3",
           "bfadd4f9c7e10946b0ec38aa7beeb8ce98d3c3755b88a599b2f4c8d5ce2c7a17"
         ],
-        "input_ids_sha256": "a4968c57e593e3b683e270b06e6c098d05615576973c8ce1d64f86ae041aca15",
-        "latency_ms": 744.5988190011121,
-        "model_input_tokens": 434,
+        "input_ids_sha256": "18c900aba2cbee9a64f6e0442e9365fcdd8fd791fa43937871da72ac9176368a",
+        "latency_ms": 721.8691809976008,
+        "model_input_tokens": 458,
         "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
         "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
         "pixel_sha256": "60586b893be3f7b1c5d89a923b3489d1b11da878f16759fa2e1b7f847471868e",
         "probabilities": [
           {
-            "choice_id": "pedestrians_crossing",
-            "probability": 0.9999994039535522
+            "choice_id": "motor_vehicles_only",
+            "probability": 3.3503732993267477e-05
           },
           {
-            "choice_id": "crossing_is_clearing",
-            "probability": 5.203571049605671e-07
+            "choice_id": "pedestrians_only",
+            "probability": 0.9930456280708313
           },
           {
-            "choice_id": "crossing_mostly_clear",
-            "probability": 2.6315028378576244e-08
+            "choice_id": "both_moving",
+            "probability": 0.006903487257659435
           },
           {
-            "choice_id": "vehicles_entering",
-            "probability": 1.3440401680497871e-08
+            "choice_id": "neither_moving",
+            "probability": 6.295165349001763e-06
           },
           {
-            "choice_id": "insufficient_evidence",
-            "probability": 9.530673139579449e-09
+            "choice_id": "unclear",
+            "probability": 1.1048358828702476e-05
           }
         ],
-        "prompt_sha256": "6ca21e9abcce1d85edd7b7985393372e80e0b26e52cddce93b301b8f922cd6d2",
+        "prompt_sha256": "ead3debf03e45bef8f517bc3e48574f76bb92e90483f90e19b1d0e5e2524af8a",
         "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
       },
       "request_id": null,
@@ -391,15 +373,15 @@
         48000,
         49000
       ],
-      "server_processing_ms": 744.5988190011121,
+      "server_processing_ms": 721.8691809976008,
       "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
-      "wall_latency_ms": 2581.6,
+      "wall_latency_ms": 4643.7,
       "window_index": 4
     },
     {
-      "billed_input_tokens": 434,
-      "choice_id": "pedestrians_crossing",
-      "confidence": 0.9999725818634033,
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.999567449092865,
       "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
       "prepared_identity": {
         "frame_sha256": [
@@ -408,36 +390,36 @@
           "cba217964211dcbe574c0de12ff972e737d7528cfe4ea8d68a0b02e4be843908",
           "e7d15c77419fb28ac38bc13cfcd3b1039c4d5f941ee86ee519757d5ee19d6eb0"
         ],
-        "input_ids_sha256": "7f0488b9d96f05b726e487fbc6b5b60b7014e44c04dbd321e94866e050fa3c75",
+        "input_ids_sha256": "ceb08353fe558d3dba111405846fdfa59475eeea13df1ca5b931df659f47f5fe",
         "pixel_sha256": "35544ad661aac8b2f98e371559fe15ea7c65bd78cf066d597319e294cb9b4e68",
-        "prompt_sha256": "5adb1341bcd0a34bc72ce4f6c0d5f3eb72d50dade153b24631c751bf77171e6a"
+        "prompt_sha256": "9efa191f38b233f06068db28292295ab7e3fcd346135ca153538a40231e775d0"
       },
       "probabilities": [
         {
-          "choice_id": "pedestrians_crossing",
-          "probability": 0.9999725818634033
+          "choice_id": "motor_vehicles_only",
+          "probability": 1.0778764590213541e-05
         },
         {
-          "choice_id": "crossing_is_clearing",
-          "probability": 2.668851266207639e-05
+          "choice_id": "pedestrians_only",
+          "probability": 0.999567449092865
         },
         {
-          "choice_id": "crossing_mostly_clear",
-          "probability": 5.626250754175999e-07
+          "choice_id": "both_moving",
+          "probability": 0.0004173093766439706
         },
         {
-          "choice_id": "vehicles_entering",
-          "probability": 6.615420744537914e-08
+          "choice_id": "neither_moving",
+          "probability": 2.089558620355092e-06
         },
         {
-          "choice_id": "insufficient_evidence",
-          "probability": 1.1793262189030429e-07
+          "choice_id": "unclear",
+          "probability": 2.4429418772342615e-06
         }
       ],
-      "raw_response_sanitized": {
-        "billed_input_tokens": 434,
-        "choice_id": "pedestrians_crossing",
-        "confidence": 0.9999725818634033,
+      "raw_response": {
+        "billed_input_tokens": 458,
+        "choice_id": "pedestrians_only",
+        "confidence": 0.999567449092865,
         "disposition": "decide",
         "frame_sha256": [
           "75184351b6097a35714abda383d6c5c011688bd4c80721fde7f708a808872db3",
@@ -445,35 +427,35 @@
           "cba217964211dcbe574c0de12ff972e737d7528cfe4ea8d68a0b02e4be843908",
           "e7d15c77419fb28ac38bc13cfcd3b1039c4d5f941ee86ee519757d5ee19d6eb0"
         ],
-        "input_ids_sha256": "7f0488b9d96f05b726e487fbc6b5b60b7014e44c04dbd321e94866e050fa3c75",
-        "latency_ms": 728.5033789812587,
-        "model_input_tokens": 434,
+        "input_ids_sha256": "ceb08353fe558d3dba111405846fdfa59475eeea13df1ca5b931df659f47f5fe",
+        "latency_ms": 734.4180840009358,
+        "model_input_tokens": 458,
         "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
         "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
         "pixel_sha256": "35544ad661aac8b2f98e371559fe15ea7c65bd78cf066d597319e294cb9b4e68",
         "probabilities": [
           {
-            "choice_id": "pedestrians_crossing",
-            "probability": 0.9999725818634033
+            "choice_id": "motor_vehicles_only",
+            "probability": 1.0778764590213541e-05
           },
           {
-            "choice_id": "crossing_is_clearing",
-            "probability": 2.668851266207639e-05
+            "choice_id": "pedestrians_only",
+            "probability": 0.999567449092865
           },
           {
-            "choice_id": "crossing_mostly_clear",
-            "probability": 5.626250754175999e-07
+            "choice_id": "both_moving",
+            "probability": 0.0004173093766439706
           },
           {
-            "choice_id": "vehicles_entering",
-            "probability": 6.615420744537914e-08
+            "choice_id": "neither_moving",
+            "probability": 2.089558620355092e-06
           },
           {
-            "choice_id": "insufficient_evidence",
-            "probability": 1.1793262189030429e-07
+            "choice_id": "unclear",
+            "probability": 2.4429418772342615e-06
           }
         ],
-        "prompt_sha256": "5adb1341bcd0a34bc72ce4f6c0d5f3eb72d50dade153b24631c751bf77171e6a",
+        "prompt_sha256": "9efa191f38b233f06068db28292295ab7e3fcd346135ca153538a40231e775d0",
         "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
       },
       "request_id": null,
@@ -483,15 +465,15 @@
         52000,
         53000
       ],
-      "server_processing_ms": 728.5033789812587,
+      "server_processing_ms": 734.4180840009358,
       "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
-      "wall_latency_ms": 2841.6,
+      "wall_latency_ms": 2978.2,
       "window_index": 5
     },
     {
-      "billed_input_tokens": 434,
-      "choice_id": "pedestrians_crossing",
-      "confidence": 0.9999343156814575,
+      "billed_input_tokens": 458,
+      "choice_id": "both_moving",
+      "confidence": 0.834139883518219,
       "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
       "prepared_identity": {
         "frame_sha256": [
@@ -500,36 +482,36 @@
           "9e878130885bfb33f04b339234a6b8023f41b341169f155961701a17fdddcdbb",
           "cc8ad659b3cbc49b38a76b95b27a66ffa97fb3ef0f07762c18034a560c2b8059"
         ],
-        "input_ids_sha256": "8e4603bd003300d8f86f7f6e436b10118b6e46df14907937c15c2d38e7587ea1",
+        "input_ids_sha256": "4fd2f67e3b32e4c80df6d85a5e33f49fb33e0eadbfd06e597b7b629b0f4ab8b1",
         "pixel_sha256": "54f90d63630306f46ad849ba2be2ce1a7bcf3ca83f94d28ef112d8f5d1f02029",
-        "prompt_sha256": "e8464cd2f36a85a891d58b102897f03c2873c5c0be4ebd5f97e302a064eee939"
+        "prompt_sha256": "ffae9beb41aa9d004e77bc4a41ee3ab0689ca7dd8e72427dcbb923572c506e55"
       },
       "probabilities": [
         {
-          "choice_id": "pedestrians_crossing",
-          "probability": 0.9999343156814575
+          "choice_id": "motor_vehicles_only",
+          "probability": 0.11113838851451874
         },
         {
-          "choice_id": "crossing_is_clearing",
-          "probability": 5.307441097102128e-05
+          "choice_id": "pedestrians_only",
+          "probability": 0.054164525121450424
         },
         {
-          "choice_id": "crossing_mostly_clear",
-          "probability": 1.0288943485647906e-05
+          "choice_id": "both_moving",
+          "probability": 0.834139883518219
         },
         {
-          "choice_id": "vehicles_entering",
-          "probability": 1.3924570794188185e-06
+          "choice_id": "neither_moving",
+          "probability": 0.0003322977281641215
         },
         {
-          "choice_id": "insufficient_evidence",
-          "probability": 9.131956630881177e-07
+          "choice_id": "unclear",
+          "probability": 0.00022484389774035662
         }
       ],
-      "raw_response_sanitized": {
-        "billed_input_tokens": 434,
-        "choice_id": "pedestrians_crossing",
-        "confidence": 0.9999343156814575,
+      "raw_response": {
+        "billed_input_tokens": 458,
+        "choice_id": "both_moving",
+        "confidence": 0.834139883518219,
         "disposition": "decide",
         "frame_sha256": [
           "48bb57a136ed3a6b1b2020c5756ab6ebfefaa75b4416ef7d404f8735505e6665",
@@ -537,35 +519,35 @@
           "9e878130885bfb33f04b339234a6b8023f41b341169f155961701a17fdddcdbb",
           "cc8ad659b3cbc49b38a76b95b27a66ffa97fb3ef0f07762c18034a560c2b8059"
         ],
-        "input_ids_sha256": "8e4603bd003300d8f86f7f6e436b10118b6e46df14907937c15c2d38e7587ea1",
-        "latency_ms": 737.2658789972775,
-        "model_input_tokens": 434,
+        "input_ids_sha256": "4fd2f67e3b32e4c80df6d85a5e33f49fb33e0eadbfd06e597b7b629b0f4ab8b1",
+        "latency_ms": 714.9195199890528,
+        "model_input_tokens": 458,
         "model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
         "pixel_hash_definition": "sha256 contiguous numpy bytes; dtype=float32;shape=[1152, 1536]",
         "pixel_sha256": "54f90d63630306f46ad849ba2be2ce1a7bcf3ca83f94d28ef112d8f5d1f02029",
         "probabilities": [
           {
-            "choice_id": "pedestrians_crossing",
-            "probability": 0.9999343156814575
+            "choice_id": "motor_vehicles_only",
+            "probability": 0.11113838851451874
           },
           {
-            "choice_id": "crossing_is_clearing",
-            "probability": 5.307441097102128e-05
+            "choice_id": "pedestrians_only",
+            "probability": 0.054164525121450424
           },
           {
-            "choice_id": "crossing_mostly_clear",
-            "probability": 1.0288943485647906e-05
+            "choice_id": "both_moving",
+            "probability": 0.834139883518219
           },
           {
-            "choice_id": "vehicles_entering",
-            "probability": 1.3924570794188185e-06
+            "choice_id": "neither_moving",
+            "probability": 0.0003322977281641215
           },
           {
-            "choice_id": "insufficient_evidence",
-            "probability": 9.131956630881177e-07
+            "choice_id": "unclear",
+            "probability": 0.00022484389774035662
           }
         ],
-        "prompt_sha256": "e8464cd2f36a85a891d58b102897f03c2873c5c0be4ebd5f97e302a064eee939",
+        "prompt_sha256": "ffae9beb41aa9d004e77bc4a41ee3ab0689ca7dd8e72427dcbb923572c506e55",
         "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2"
       },
       "request_id": null,
@@ -575,14 +557,21 @@
         56000,
         57000
       ],
-      "server_processing_ms": 737.2658789972775,
+      "server_processing_ms": 714.9195199890528,
       "tokenization_version": "native-video-canonical-512-v1+choice-letter-state-task-choice-id-order-v2",
-      "wall_latency_ms": 2647.3,
+      "wall_latency_ms": 2867.9,
       "window_index": 6
     }
   ],
   "demo": "crossing-phase",
   "errors": [],
+  "final_run_scope": {
+    "omitted_outcomes": 0,
+    "origin_api_errors": 0,
+    "requested_windows": 6,
+    "retries": 0,
+    "successful_calls": 6
+  },
   "frame_sha256": {
     "34000": "8ad74b6d24579c9b8305bf020c30a5097dcacb49efcaf25b0618015b017be184",
     "35000": "01073be2e3e538b0840ab64ad01db202e910ee16f8214f9dbe499eb04a8717c5",
@@ -609,13 +598,9 @@
     "56000": "9e878130885bfb33f04b339234a6b8023f41b341169f155961701a17fdddcdbb",
     "57000": "cc8ad659b3cbc49b38a76b95b27a66ffa97fb3ef0f07762c18034a560c2b8059"
   },
-  "limitations": [
-    "The protected production inference origin was tested; the public customer API and wallet path were not tested by this capture.",
-    "The model selected pedestrians_crossing in all six windows. This remains in the evidence without selection or retry.",
-    "The final window is visually sparse, so the final classification is a material qualitative error and the clip should not be presented as an accuracy demonstration."
-  ],
   "model": "trio-spark-v1.1",
   "production_api": true,
+  "protocol_revision_note": "An earlier capture-tool validator expected public-wrapper fields on protected-origin responses. That tooling attempt was excluded before rendering and is retained in the private audit archive. This file contains the subsequent prelocked, mutually exclusive six-window protocol in full, without retries or omitted outcomes.",
   "public_customer_api_verified": false,
   "serving_path": "production_inference_origin",
   "source": {
@@ -624,9 +609,9 @@
     "sha256": "b002bee56f416eddcc4dc3fb78079fe1ef4b13d47bf925930ee20a22a7487cde",
     "url": "https://commons.wikimedia.org/wiki/File:Shibuya_Crossing,_Tokyo,_Japan_(video).webm"
   },
-  "state": "Four frames sample one 3-second window in chronological order. Judge only visible movement and occupancy; do not infer traffic-signal state, intent, or safety.",
+  "state": "Four chronological frames sample one 3-second window. Movement requires visible displacement across frames, not mere presence. Judge only the central marked crossing; ignore road users stopped or waiting at its edges.",
   "successful_calls": 6,
-  "task": "Which crossing phase is most clearly supported by this sampled video window?",
+  "task": "Which road users are visibly moving through the central crossing in this sampled window?",
   "windows": [
     [
       34000,
