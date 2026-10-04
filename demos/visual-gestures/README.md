@@ -2,6 +2,8 @@
 
 This 22-second recorded demo pairs four chronological frames from two reviewed, CC BY 4.0 IPN Hand class clips with real Trio-Spark v1.1 production probabilities. It demonstrates bounded visual choices; it is not an accuracy evaluation or a live-latency claim.
 
+Requirements: Python 3.11+, Pillow, `ffmpeg` and `ffprobe`.
+
 ## Prepare licensed inputs
 
 ```bash
@@ -18,14 +20,20 @@ Send each request in `requests.json` once through one declared serving path. Sav
 
 Use the same key to recover an uncertain public API response. Never invent or hand-edit probabilities. Do not include secrets, wallet data, private URLs, or raw base64 media in the sanitized response file. A direct production-origin capture must remain labeled as such and must not claim public billing or public API verification.
 
+```bash
+export TRIO_SPARK_API_KEY=your_api_key
+python3 demos/visual-gestures/record_public.py \
+  --prepared /private/tmp/trio-spark-ipn-hand-prepared \
+  --output /private/tmp/trio-spark-ipn-hand-responses.json
+```
+
 ## Render
 
 ```bash
 python3 demos/visual-gestures/render.py \
   --prepared /private/tmp/trio-spark-ipn-hand-prepared \
   --responses /private/tmp/trio-spark-ipn-hand-responses.json \
-  --expected-model-version "$LOCKED_VISUAL_MODEL_VERSION" \
   --output assets/demos/Trio-Spark-v1.1-Visual-Gestures.mp4
 ```
 
-Pass the exact deployed visual identity from the production release manifest. The renderer rejects any other identity, extra or missing cases, the wrong choice IDs, a non-normalized or non-finite probability distribution, and an invalid selected choice. The source labels remain visible. See [ATTRIBUTION.md](ATTRIBUTION.md).
+The renderer requires all responses to use the same recorded serving identity. You can optionally pin it with `--expected-model-version`. The renderer rejects any other identity, extra or missing cases, the wrong choice IDs, a non-normalized or non-finite probability distribution, and an invalid selected choice. Source class labels are cropped out of both model inputs and playback. See [ATTRIBUTION.md](ATTRIBUTION.md).

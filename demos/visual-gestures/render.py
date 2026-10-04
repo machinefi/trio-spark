@@ -72,11 +72,14 @@ def card(text: str, sub: str, seconds: int, out: Path) -> None:
     png=out.with_suffix('.png'); image.save(png)
     subprocess.run(['ffmpeg','-v','error','-loop','1','-i',str(png),'-t',str(seconds),'-r','30','-c:v','libx264','-pix_fmt','yuv420p','-y',str(out)],check=True)
 def main() -> None:
-    ap=argparse.ArgumentParser(); ap.add_argument('--prepared',type=Path,required=True); ap.add_argument('--responses',type=Path,required=True); ap.add_argument('--output',type=Path,required=True); ap.add_argument('--expected-model-version', required=True); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument('--prepared',type=Path,required=True); ap.add_argument('--responses',type=Path,required=True); ap.add_argument('--output',type=Path,required=True); ap.add_argument('--expected-model-version'); args=ap.parse_args()
     req=json.loads((args.prepared/'requests.json').read_text()); responses=json.loads(args.responses.read_text())
     if responses.get('complete') is not True or responses.get('production_api') is not True or responses.get('serving_path') not in {'production_inference_origin','public_customer_api'}:
         raise ValueError('render requires complete recorded production evidence')
-    by={x['case_id']:x for x in responses['cases']}; work=args.output.parent/'visual-gestures-render'; work.mkdir(parents=True,exist_ok=True)
+    by={x['case_id']:x for x in responses['cases']};
+    args.expected_model_version = args.expected_model_version or responses['cases'][0]['response'].get('model_version')
+    if not isinstance(args.expected_model_version, str) or not args.expected_model_version: raise ValueError('recorded serving identity missing')
+     work=args.output.parent/'visual-gestures-render'; work.mkdir(parents=True,exist_ok=True)
     card('SEE THE GESTURE. MAKE A DECISION.','Recorded production replay on licensed IPN Hand footage',3,work/'00.mp4')
     if len(responses['cases']) != len(by) or set(by) != {case['case_id'] for case in req['cases']}:
         raise ValueError('response case IDs do not exactly match the prepared request pack')

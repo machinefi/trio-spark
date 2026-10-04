@@ -10,6 +10,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 def main() -> None:
     ap=argparse.ArgumentParser(); ap.add_argument('--prepared',type=Path,required=True); ap.add_argument('--api-url',default='https://platform.machinefi.com/api/spark/v1/decisions'); ap.add_argument('--output',type=Path,required=True); args=ap.parse_args()
+    if not args.api_url.startswith('https://'): raise ValueError('HTTPS is required')
     if args.output.exists(): raise FileExistsError('refusing to replace recorded evidence')
     key=os.environ.get('TRIO_SPARK_API_KEY','')
     if not key: raise RuntimeError('TRIO_SPARK_API_KEY is required')
@@ -24,7 +25,7 @@ def main() -> None:
             cases.append({'case_id':case['case_id'],'sample_time_seconds':case['sample_time_seconds'],'frame_sha256':case['frame_sha256'],'wall_latency_ms':round((time.perf_counter()-started)*1000,1),'response':result})
         except Exception as error:
             errors.append({'case_id':case['case_id'],'http_status':status,'error_type':type(error).__name__,'message':str(error)[:200]})
-    evidence={'complete':len(cases)==len(pack['cases']) and not errors,'production_api':True,'serving_path':'public_customer_api','public_customer_api_verified':True,'successful_calls':len(cases),'api_errors':len(errors),'errors':errors,'cases':cases}
+    evidence={'complete':len(cases)==len(pack['cases']) and not errors,'production_api':True,'serving_path':'public_customer_api','public_customer_api_verified':len(cases)==len(pack['cases']) and not errors,'successful_calls':len(cases),'api_errors':len(errors),'errors':errors,'cases':cases}
     args.output.write_text(json.dumps(evidence,indent=2)+'\n')
     if not evidence['complete']: raise RuntimeError('public capture incomplete; evidence retained without retry')
 
