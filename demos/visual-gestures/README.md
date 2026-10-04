@@ -8,7 +8,7 @@ This 22-second recorded demo pairs four chronological frames from two reviewed, 
 python3 demos/visual-gestures/prepare.py --output /private/tmp/trio-spark-ipn-hand-prepared
 ```
 
-`prepare.py` downloads only two small official GIFs, verifies their pinned SHA-256 hashes, extracts the exact submitted JPEGs, and writes `requests.json`. Keep the generated base64 request pack outside Git.
+`prepare.py` downloads only two small official GIFs, verifies their pinned SHA-256 hashes, crops each frame to the photographic camera region so the embedded class caption cannot leak the answer, extracts the exact submitted JPEGs, and writes `requests.json`. The crop rectangle is frozen in `source_manifest.json`. Keep the generated base64 request pack outside Git.
 
 ## Record production responses
 

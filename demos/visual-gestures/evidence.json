@@ -1,0 +1,117 @@
+{
+  "demo": "visual-gestures-v11",
+  "complete": true,
+  "production_api": true,
+  "serving_path": "production_inference_origin",
+  "public_customer_api_verified": false,
+  "duration_seconds": 22,
+  "successful_calls": 4,
+  "api_errors": 0,
+  "decisions": [
+    {
+      "case_id": "one_finger_t0350",
+      "sample_time_seconds": 0.35,
+      "frame_sha256": "839fe4cb0fee922834724a67cd96969a5580120a7f48bbe0f6cbd40546a0f57d",
+      "choice_id": "one",
+      "probabilities": [
+        {
+          "choice_id": "one",
+          "probability": 0.9999998807907104
+        },
+        {
+          "choice_id": "two",
+          "probability": 4.691163724146463e-08
+        },
+        {
+          "choice_id": "other",
+          "probability": 4.406940590229169e-08
+        },
+        {
+          "choice_id": "insufficient",
+          "probability": 1.1079045947326449e-07
+        }
+      ],
+      "model_processing_ms": 589.7393699851818
+    },
+    {
+      "case_id": "one_finger_t1250",
+      "sample_time_seconds": 1.25,
+      "frame_sha256": "ad1ab60af2a50dc2e1bcb4a4bb39c45f51387d45e5fffcdfb1ad81b5b00452b9",
+      "choice_id": "one",
+      "probabilities": [
+        {
+          "choice_id": "one",
+          "probability": 0.9435601234436035
+        },
+        {
+          "choice_id": "two",
+          "probability": 0.0028656211216002703
+        },
+        {
+          "choice_id": "other",
+          "probability": 0.0003422496374696493
+        },
+        {
+          "choice_id": "insufficient",
+          "probability": 0.05323202162981033
+        }
+      ],
+      "model_processing_ms": 569.2542959877755
+    },
+    {
+      "case_id": "two_fingers_t0350",
+      "sample_time_seconds": 0.35,
+      "frame_sha256": "4c89ad5f0e2819b2b6485a1d3cd1a57b2c7479a41555806f5df9bcd18ed9d639",
+      "choice_id": "two",
+      "probabilities": [
+        {
+          "choice_id": "one",
+          "probability": 3.359677123171423e-07
+        },
+        {
+          "choice_id": "two",
+          "probability": 0.9999991655349731
+        },
+        {
+          "choice_id": "other",
+          "probability": 1.689351591949162e-07
+        },
+        {
+          "choice_id": "insufficient",
+          "probability": 3.4663247561184107e-07
+        }
+      ],
+      "model_processing_ms": 492.75002599461004
+    },
+    {
+      "case_id": "two_fingers_t1250",
+      "sample_time_seconds": 1.25,
+      "frame_sha256": "644cd72296b02ef7501168c429476f014a1dd1a5783a7e91b316d167a422c972",
+      "choice_id": "one",
+      "probabilities": [
+        {
+          "choice_id": "one",
+          "probability": 0.9798082709312439
+        },
+        {
+          "choice_id": "two",
+          "probability": 0.0003553976130206138
+        },
+        {
+          "choice_id": "other",
+          "probability": 0.0001267209299840033
+        },
+        {
+          "choice_id": "insufficient",
+          "probability": 0.019709620624780655
+        }
+      ],
+      "model_processing_ms": 511.5852089948021
+    }
+  ],
+  "model": "trio-spark-v1.1",
+  "serving_identity_verified": true,
+  "source_license": "CC BY 4.0",
+  "claim_scope": "Four recorded single-image production decisions over two licensed gesture clips; not live camera throughput, public billing verification, or an accuracy evaluation.",
+  "output_sha256": "4369778c8ab54c19bd905e23bc5a76bcfe0dc8639fcdfacfe46c12be4fa72693"
+}

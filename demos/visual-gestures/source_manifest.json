@@ -4,6 +4,7 @@
   "classes_page": "https://gibranbenitez.github.io/IPN_Hand/Classes",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "input_crop_pixels": {"x": 21, "y": 44, "width": 240, "height": 178},
   "clips": [
     {
       "case_id": "one_finger",
