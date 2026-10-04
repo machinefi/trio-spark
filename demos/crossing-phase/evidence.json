@@ -1,0 +1,335 @@
+{
+  "api_errors": 0,
+  "choices": {
+    "both_moving": "Motor vehicles and pedestrians are both moving through the central crossing.",
+    "motor_vehicles_only": "Motor vehicles are moving through the central crossing, with no pedestrians walking across it.",
+    "neither_moving": "Neither motor vehicles nor pedestrians are moving through the central crossing.",
+    "pedestrians_only": "Pedestrians are walking across the central crossing, with no motor vehicles moving through it.",
+    "unclear": "The sampled frames do not clearly show which road users are moving through the central crossing."
+  },
+  "claim_scope": "Six calls over four sampled frames each; not continuous monitoring or a traffic-safety determination.",
+  "complete": true,
+  "decisions": [
+    {
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9997548460960388,
+      "identity_sha256": "ab6660f6fe1432fd740cec480fac1719ef4f136f8cafe141b6f97aecc0245fc7",
+      "identity_verified": true,
+      "probabilities": [
+        {
+          "choice_id": "motor_vehicles_only",
+          "probability": 9.514009434496984e-06
+        },
+        {
+          "choice_id": "pedestrians_only",
+          "probability": 0.9997548460960388
+        },
+        {
+          "choice_id": "both_moving",
+          "probability": 0.00022692971106152982
+        },
+        {
+          "choice_id": "neither_moving",
+          "probability": 3.966028998547699e-06
+        },
+        {
+          "choice_id": "unclear",
+          "probability": 4.7097760216274764e-06
+        }
+      ],
+      "request_id": null,
+      "sample_times_ms": [
+        34000,
+        35000,
+        36000,
+        37000
+      ],
+      "server_processing_ms": 746.4746509795077,
+      "wall_latency_ms": 4497.6,
+      "window_index": 1
+    },
+    {
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9995747208595276,
+      "identity_sha256": "ec85124f91c7e93c10b13d699720ce0426cc1fd48fd7fc26a5a728d3c6f4568c",
+      "identity_verified": true,
+      "probabilities": [
+        {
+          "choice_id": "motor_vehicles_only",
+          "probability": 4.8584051910438575e-06
+        },
+        {
+          "choice_id": "pedestrians_only",
+          "probability": 0.9995747208595276
+        },
+        {
+          "choice_id": "both_moving",
+          "probability": 0.0004173124034423381
+        },
+        {
+          "choice_id": "neither_moving",
+          "probability": 1.2873491641585133e-06
+        },
+        {
+          "choice_id": "unclear",
+          "probability": 1.844042571974569e-06
+        }
+      ],
+      "request_id": null,
+      "sample_times_ms": [
+        38000,
+        39000,
+        40000,
+        41000
+      ],
+      "server_processing_ms": 752.4904570018407,
+      "wall_latency_ms": 3793.7,
+      "window_index": 2
+    },
+    {
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9999938011169434,
+      "identity_sha256": "a41e6ad8c2840a0b901be8685062742632fcc08f2de8d1a4bfb2c814f7d71b11",
+      "identity_verified": true,
+      "probabilities": [
+        {
+          "choice_id": "motor_vehicles_only",
+          "probability": 3.205809093742573e-07
+        },
+        {
+          "choice_id": "pedestrians_only",
+          "probability": 0.9999938011169434
+        },
+        {
+          "choice_id": "both_moving",
+          "probability": 5.09369965584483e-06
+        },
+        {
+          "choice_id": "neither_moving",
+          "probability": 3.011578542100324e-07
+        },
+        {
+          "choice_id": "unclear",
+          "probability": 3.92783903180316e-07
+        }
+      ],
+      "request_id": null,
+      "sample_times_ms": [
+        42000,
+        43000,
+        44000,
+        45000
+      ],
+      "server_processing_ms": 728.6614249751437,
+      "wall_latency_ms": 3273.3,
+      "window_index": 3
+    },
+    {
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.9930456280708313,
+      "identity_sha256": "5dd849ffdbbda2af114b763f5d2cdc0f516d0843af40a92e396c9e6eae36bd51",
+      "identity_verified": true,
+      "probabilities": [
+        {
+          "choice_id": "motor_vehicles_only",
+          "probability": 3.3503732993267477e-05
+        },
+        {
+          "choice_id": "pedestrians_only",
+          "probability": 0.9930456280708313
+        },
+        {
+          "choice_id": "both_moving",
+          "probability": 0.006903487257659435
+        },
+        {
+          "choice_id": "neither_moving",
+          "probability": 6.295165349001763e-06
+        },
+        {
+          "choice_id": "unclear",
+          "probability": 1.1048358828702476e-05
+        }
+      ],
+      "request_id": null,
+      "sample_times_ms": [
+        46000,
+        47000,
+        48000,
+        49000
+      ],
+      "server_processing_ms": 721.8691809976008,
+      "wall_latency_ms": 4643.7,
+      "window_index": 4
+    },
+    {
+      "billed_input_tokens": 458,
+      "choice_id": "pedestrians_only",
+      "confidence": 0.999567449092865,
+      "identity_sha256": "10b01a825004b61c2f57003b0c1b2cc28256c282c019d85fd1abff0daa975cfe",
+      "identity_verified": true,
+      "probabilities": [
+        {
+          "choice_id": "motor_vehicles_only",
+          "probability": 1.0778764590213541e-05
+        },
+        {
+          "choice_id": "pedestrians_only",
+          "probability": 0.999567449092865
+        },
+        {
+          "choice_id": "both_moving",
+          "probability": 0.0004173093766439706
+        },
+        {
+          "choice_id": "neither_moving",
+          "probability": 2.089558620355092e-06
+        },
+        {
+          "choice_id": "unclear",
+          "probability": 2.4429418772342615e-06
+        }
+      ],
+      "request_id": null,
+      "sample_times_ms": [
+        50000,
+        51000,
+        52000,
+        53000
+      ],
+      "server_processing_ms": 734.4180840009358,
+      "wall_latency_ms": 2978.2,
+      "window_index": 5
+    },
+    {
+      "billed_input_tokens": 458,
+      "choice_id": "both_moving",
+      "confidence": 0.834139883518219,
+      "identity_sha256": "fc35128691928f86e90b18a9457a278328f0232dc9f4cbcb74e46d0e8343b377",
+      "identity_verified": true,
+      "probabilities": [
+        {
+          "choice_id": "motor_vehicles_only",
+          "probability": 0.11113838851451874
+        },
+        {
+          "choice_id": "pedestrians_only",
+          "probability": 0.054164525121450424
+        },
+        {
+          "choice_id": "both_moving",
+          "probability": 0.834139883518219
+        },
+        {
+          "choice_id": "neither_moving",
+          "probability": 0.0003322977281641215
+        },
+        {
+          "choice_id": "unclear",
+          "probability": 0.00022484389774035662
+        }
+      ],
+      "request_id": null,
+      "sample_times_ms": [
+        54000,
+        55000,
+        56000,
+        57000
+      ],
+      "server_processing_ms": 714.9195199890528,
+      "wall_latency_ms": 2867.9,
+      "window_index": 6
+    }
+  ],
+  "demo": "crossing-phase",
+  "errors": [],
+  "final_run_scope": {
+    "omitted_outcomes": 0,
+    "origin_api_errors": 0,
+    "requested_windows": 6,
+    "retries": 0,
+    "successful_calls": 6
+  },
+  "frame_sha256": {
+    "34000": "8ad74b6d24579c9b8305bf020c30a5097dcacb49efcaf25b0618015b017be184",
+    "35000": "01073be2e3e538b0840ab64ad01db202e910ee16f8214f9dbe499eb04a8717c5",
+    "36000": "b196e038ecd09b53c1be790571d18f59d0c75f5406bd35fc9a52809b379c7029",
+    "37000": "568f4171bdf4b66074407af55d30a01a2b86ab7a7870a4862b039120abe57e9f",
+    "38000": "b570157ad2ff0ff6a47b54f1b48c8deabe109e98619e3b906b2caf54d59a7fa5",
+    "39000": "94fd2108851220c906b00a4718fbf395c8762e5383bbd640faf23c665c492b40",
+    "40000": "4865e96e2896c57a356e6a8eadfdc2cba2a31dd30775c7fb0cc52b6ab12acb7f",
+    "41000": "08eb9f215c6b69e9966f03ca96395f8dd5a0ab9eec39b70a245839ce7cca5ab3",
+    "42000": "49a462886081d9e8d13b5a334a08a402cfeacadfd0d3b31b9d792a6c0fd69258",
+    "43000": "7bbe38a9c406537793b4a698aad5fca648ca5e401ae9c5ff28d9d10e3607d0c7",
+    "44000": "0314505811e639cd725032140bf4ea409754c6819641cca8e15022cde5d82826",
+    "45000": "838837c0f19e72ba89bbbee48d2d2e30c75d35d9c6599a9be32e6a4a9be6c429",
+    "46000": "28cf50bef26e4548419ac76653097d8178c0657faa7d5d1fa9db47911769ddd1",
+    "47000": "cf562f83b532c23266a668393ed705c2ade6ea9639649b2af63a479ae3002cd1",
+    "48000": "2c0d6356df8ecaa7a8ceb04704f0c4b9f37338f836039f12705538bbaccbb6a3",
+    "49000": "bfadd4f9c7e10946b0ec38aa7beeb8ce98d3c3755b88a599b2f4c8d5ce2c7a17",
+    "50000": "75184351b6097a35714abda383d6c5c011688bd4c80721fde7f708a808872db3",
+    "51000": "aa286eefff096254985d8069903334c870c460ed46a1b7c032a3152299eb0be6",
+    "52000": "cba217964211dcbe574c0de12ff972e737d7528cfe4ea8d68a0b02e4be843908",
+    "53000": "e7d15c77419fb28ac38bc13cfcd3b1039c4d5f941ee86ee519757d5ee19d6eb0",
+    "54000": "48bb57a136ed3a6b1b2020c5756ab6ebfefaa75b4416ef7d404f8735505e6665",
+    "55000": "6e08763ba3840d69d3d2b70734cdf7d4d2a25b1bb548fa1e002a3a11f70baeb1",
+    "56000": "9e878130885bfb33f04b339234a6b8023f41b341169f155961701a17fdddcdbb",
+    "57000": "cc8ad659b3cbc49b38a76b95b27a66ffa97fb3ef0f07762c18034a560c2b8059"
+  },
+  "model": "trio-spark-v1.1",
+  "production_api": true,
+  "protocol_revision_note": "An earlier capture-tool validator expected public-wrapper fields on protected-origin responses. That tooling attempt was excluded before rendering and is retained in the private audit archive. This file contains the subsequent prelocked, mutually exclusive six-window protocol in full, without retries or omitted outcomes.",
+  "public_customer_api_verified": false,
+  "serving_path": "production_inference_origin",
+  "source": {
+    "author": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "sha256": "b002bee56f416eddcc4dc3fb78079fe1ef4b13d47bf925930ee20a22a7487cde",
+    "url": "https://commons.wikimedia.org/wiki/File:Shibuya_Crossing,_Tokyo,_Japan_(video).webm"
+  },
+  "state": "Four chronological frames sample one 3-second window. Movement requires visible displacement across frames, not mere presence. Judge only the central marked crossing; ignore road users stopped or waiting at its edges.",
+  "successful_calls": 6,
+  "task": "Which road users are visibly moving through the central crossing in this sampled window?",
+  "windows": [
+    [
+      34000,
+      35000,
+      36000,
+      37000
+    ],
+    [
+      38000,
+      39000,
+      40000,
+      41000
+    ],
+    [
+      42000,
+      43000,
+      44000,
+      45000
+    ],
+    [
+      46000,
+      47000,
+      48000,
+      49000
+    ],
+    [
+      50000,
+      51000,
+      52000,
+      53000
+    ],
+    [
+      54000,
+      55000,
+      56000,
+      57000
+    ]
+  ]
+}
