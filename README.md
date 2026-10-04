@@ -146,8 +146,8 @@ python3 evals/run.py --benchmark sst2 --limit 10 --output runs/sst2-smoke
 See [`evals/README.md`](evals/README.md) for the reproducibility contract and
 the exact commands used for full runs.
 
-The product and release name is **Trio-Spark v1.0**. The current API model
-identifier remains `trio-spark-preview` for compatibility.
+Unified text and visual requests use **`trio-spark-v1.1`**. The legacy v1.0
+API identifier `trio-spark-preview` remains available for compatibility.
 
 ## How Spark fits into an agent
 
