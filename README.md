@@ -38,6 +38,18 @@ probabilities. Dataset captions were removed before inference.
 
 [Run the demo](demos/visual-gestures/) · [Recording details](demos/visual-gestures/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.1-Visual-Gestures.mp4)
 
+### Watch a crossing change
+
+[![Trio-Spark crossing decisions](assets/demos/Trio-Spark-v1.1-Crossing-Phase-poster.jpg)](assets/demos/Trio-Spark-v1.1-Crossing-Phase.mp4)
+
+Six chronological video windows show a pedestrian wave followed by vehicles and
+pedestrians moving through the crossing together. The display updates from
+recorded model responses and preserves the measured request timing.
+
+**30 seconds · six real model calls · four frames per window**
+
+[Run the demo](demos/crossing-phase/) · [Recording details](demos/crossing-phase/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.1-Crossing-Phase.mp4)
+
 These v1.1 videos replay real calls to our deployed visual inference service.
 The recording details identify the serving path, inputs and timings.
 Their runnable examples use the public API.
