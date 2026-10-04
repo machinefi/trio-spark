@@ -1,0 +1,22 @@
+{
+  "language": "American Sign Language (ASL)",
+  "version": "asl10-prototype-20261004",
+  "status": "experimental_unvalidated",
+  "evaluation": {"ten_word_accuracy": null, "signer_disjoint_test_complete": false},
+  "banks": [
+    {"id":"bank_a","words":[
+      {"id":"hello","label":"HELLO","description":"The American Sign Language word HELLO, a greeting."},
+      {"id":"thank_you","label":"THANK-YOU","description":"The American Sign Language word THANK-YOU, expressing thanks."},
+      {"id":"yes","label":"YES","description":"The American Sign Language word YES, an affirmation."},
+      {"id":"no","label":"NO","description":"The American Sign Language word NO, a negation."},
+      {"id":"please","label":"PLEASE","description":"The American Sign Language word PLEASE, marking a polite request."}
+    ]},
+    {"id":"bank_b","words":[
+      {"id":"sorry","label":"SORRY","description":"The American Sign Language word SORRY, expressing apology."},
+      {"id":"help","label":"HELP","description":"The American Sign Language word HELP, requesting or offering assistance."},
+      {"id":"water","label":"WATER","description":"The American Sign Language word WATER."},
+      {"id":"eat","label":"EAT","description":"The American Sign Language word EAT, referring to eating."},
+      {"id":"stop","label":"STOP","description":"The American Sign Language word STOP, requesting or describing stopping."}
+    ]}
+  ]
+}
