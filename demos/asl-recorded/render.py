@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import math
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
@@ -41,14 +43,27 @@ def load_case(evidence_path: Path, source_root: Path) -> Case:
         raise ValueError(f"{evidence_path}: expected four strictly increasing samples")
     latency = float(result["latency_ms"])
     score = float(result.get("score", 0))
-    if latency < 0 or not 0 <= score <= 1:
+    if not math.isfinite(latency) or latency < 0 or not math.isfinite(score) or not 0 <= score <= 1:
         raise ValueError(f"{evidence_path}: invalid timing or score")
     source = source_root / case["file"]
     if not source.is_file():
         raise FileNotFoundError(source)
-    return Case(evidence_path, source, str(case["expected"]).upper(),
-                str(result.get("label", result.get("status", "unclear"))).upper(),
-                score, str(result["status"]), times, latency)
+    expected_hash = payload.get("source_sha256")
+    if not isinstance(expected_hash, str) or len(expected_hash) != 64:
+        raise ValueError(f"{evidence_path}: missing source SHA-256")
+    actual_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+    if actual_hash != expected_hash:
+        raise ValueError(f"{evidence_path}: source SHA-256 mismatch")
+    status = str(result["status"])
+    label = result.get("label")
+    if status == "recognized":
+        if not isinstance(label, str) or not label:
+            raise ValueError(f"{evidence_path}: recognized result missing label")
+        actual = label
+    else:
+        actual = status
+    return Case(evidence_path, source, str(case["expected"]).upper(), actual.upper(),
+                score, status, times, latency)
 
 
 def render(cases: list[Case], output: Path) -> None:
