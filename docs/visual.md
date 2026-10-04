@@ -108,10 +108,13 @@ submits the frames. Sampled windows cannot establish what happened between frame
 | Text | `state` plus typed `questions` |
 | Single image | One embedded JPEG/PNG in `images` |
 | Single image, native form | `media: {"type":"image", "frames":[{"mime_type":"image/jpeg", "data_base64":"..."}]}` |
-| Video/camera window | `media.type: "video"`, 2–4 frames with increasing integer `timestamp_ms` |
+| Video/camera window | `media.type: "video"`, 2–4 frames with strictly increasing, nonnegative integer `timestamp_ms` |
 | Choices | 2–8 alternatives per choice question |
 | Questions | At most 16 per System One request |
 | Context | At most 1,024 model input tokens, including visual input |
+| Visual JSON body | At most 12 MiB, including base64 encoding |
+| Decoded media | At most 2 MiB per frame and 8 MiB across the request |
+| Image dimensions | Each side 64–4,096 pixels; at most 16 megapixels across all frames |
 
 Do not combine `images` and `media`. Empty or multi-image `images` arrays, remote
 image URLs, unsupported formats and visual requests using v1.0 are rejected.
