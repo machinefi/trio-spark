@@ -1,0 +1,489 @@
+{
+  "model": "Trio-Spark v1.1",
+  "hardware": "NVIDIA Tesla T4 (verified with nvidia-smi)",
+  "route": "Protected production inference origin; not the customer billing API",
+  "source_revision": "3139832",
+  "seed": "showcase-course-v1",
+  "game_duration_s": 45.0149000000003,
+  "applied_decisions": 21,
+  "successful_requests": 22,
+  "late_results_not_applied": 1,
+  "collisions": 1,
+  "coins": 4,
+  "median_request_ms": 1748.4,
+  "min_request_ms": 1626.6,
+  "max_request_ms": 2386.8,
+  "input": "512 x 314 JPEG game screenshots; no obstacle coordinates",
+  "driver": "Model lane choices, with smooth lane transitions; no scripted avoidance",
+  "attempts": "Re-recorded after temporary recording files were cleared. Same committed warm toy-world artwork; fresh inference throughout. Earlier unarchived warm-art run reported 20 actions, 1 collision and 4 coins; its footage is not used. Final retained run has 21 actions. Old racer recordings are separately archived.",
+  "claim_scope": "One deliberately paced arcade run, not an accuracy benchmark or autonomous driving validation.",
+  "decisions": [
+    {
+      "sequence": 1,
+      "captured_s": 0.5000000000000002,
+      "applied_s": 2.4832,
+      "choice": "center",
+      "wall_ms": 1984.6,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.3111546039581299
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.5813133120536804
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.10753215104341507
+        }
+      ],
+      "frame_sha256": "3fb219bcce53cc0cb9b03e348748622b94e1dbca433809b64743febd3ea3c2b8"
+    },
+    {
+      "sequence": 2,
+      "captured_s": 2.799899999999999,
+      "applied_s": 4.4165,
+      "choice": "center",
+      "wall_ms": 1626.6,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.2825475037097931
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.5797498226165771
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.13770265877246857
+        }
+      ],
+      "frame_sha256": "ecabacc1657402dcaf2459cd15e7194b44887c1d8197adb3cfd801c983826fc9"
+    },
+    {
+      "sequence": 3,
+      "captured_s": 4.733100000000003,
+      "applied_s": 6.566400000000024,
+      "choice": "center",
+      "wall_ms": 1842.1,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.08798984438180923
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.8091395497322083
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.10287054628133774
+        }
+      ],
+      "frame_sha256": "13bdaab90aead42bf73bd9d80b6904433a083e49b321292c9c831092127f5c4f"
+    },
+    {
+      "sequence": 4,
+      "captured_s": 6.866400000000028,
+      "applied_s": 8.833000000000029,
+      "choice": "center",
+      "wall_ms": 1948.1,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.040072549134492874
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.9409984946250916
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.018928930163383484
+        }
+      ],
+      "frame_sha256": "2f34b20cb7571b1c4526bbb679a6588bc4fa3599565e8415db9c59adb7b392a6"
+    },
+    {
+      "sequence": 5,
+      "captured_s": 9.133000000000024,
+      "applied_s": 10.882899999999998,
+      "choice": "center",
+      "wall_ms": 1740.7,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.3102554976940155
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.5980331301689148
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.09171134978532791
+        }
+      ],
+      "frame_sha256": "b8e45f78e0b166dd98af468250417e11721a4146bd7b1f7a92f4b9eb78c8b723"
+    },
+    {
+      "sequence": 6,
+      "captured_s": 11.182899999999991,
+      "applied_s": 13.14949999999996,
+      "choice": "left",
+      "wall_ms": 1971.8,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.6846262812614441
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.15276077389717102
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.16261300444602966
+        }
+      ],
+      "frame_sha256": "55a64a2bc40fe0a0f02d4f51ab6c47cc39288ef416e38ecb7a94cdb8b62f384d"
+    },
+    {
+      "sequence": 7,
+      "captured_s": 13.449399999999958,
+      "applied_s": 15.232699999999934,
+      "choice": "left",
+      "wall_ms": 1775.7,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.9624050259590149
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0025394191034138203
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.035055600106716156
+        }
+      ],
+      "frame_sha256": "ca9143b56deab7cc69cce72f17fd62f0f438a8f72b8867b1c6a9eb6abb5b550c"
+    },
+    {
+      "sequence": 8,
+      "captured_s": 15.532699999999927,
+      "applied_s": 17.415999999999855,
+      "choice": "left",
+      "wall_ms": 1870,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.9963783621788025
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0013014799915254116
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.0023201387375593185
+        }
+      ],
+      "frame_sha256": "c9b04c5a95adb7c4658395c906d010c0e439fb52d4a269b827eb3ab8e7c168f4"
+    },
+    {
+      "sequence": 9,
+      "captured_s": 17.715899999999856,
+      "applied_s": 19.449199999999827,
+      "choice": "left",
+      "wall_ms": 1729.8,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.6530407667160034
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.028692610561847687
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.3182666599750519
+        }
+      ],
+      "frame_sha256": "56911fb51909bea23a0ef88111fd6956251bad179f4d2fc38592ec4c0796337c"
+    },
+    {
+      "sequence": 10,
+      "captured_s": 19.749199999999817,
+      "applied_s": 21.582499999999733,
+      "choice": "right",
+      "wall_ms": 1817.1,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.33958667516708374
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.005842911079525948
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.6545704007148743
+        }
+      ],
+      "frame_sha256": "788f7cfabb9a65ed9a5dcf5407f02767c9bd040a62d53907da68c075b211b164"
+    },
+    {
+      "sequence": 11,
+      "captured_s": 21.882399999999734,
+      "applied_s": 23.715799999999714,
+      "choice": "right",
+      "wall_ms": 1820.9,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.13638459146022797
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0016382092144340277
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.8619771599769592
+        }
+      ],
+      "frame_sha256": "aca42d0ea69e9c012cd2fc75ab0a4720099bb1fd4acb5d4c211bf42791d8e377"
+    },
+    {
+      "sequence": 12,
+      "captured_s": 24.015699999999704,
+      "applied_s": 25.765699999999633,
+      "choice": "right",
+      "wall_ms": 1748.4,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.01132736261934042
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0003876009723171592
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.9882850646972656
+        }
+      ],
+      "frame_sha256": "48c0c197d4b101faefd5464772d6b5d7845b97a6ce7a4ab0ad620d8f0e228c24"
+    },
+    {
+      "sequence": 13,
+      "captured_s": 26.065699999999634,
+      "applied_s": 27.765599999999623,
+      "choice": "right",
+      "wall_ms": 1692,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.44483813643455505
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.09620299190282822
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.45895883440971375
+        }
+      ],
+      "frame_sha256": "846267e9f1ebe4f35d9012080426c56d57c33a203e36c3b1a40574e9bf0e4af8"
+    },
+    {
+      "sequence": 14,
+      "captured_s": 28.065599999999606,
+      "applied_s": 29.76549999999952,
+      "choice": "left",
+      "wall_ms": 1689.7,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.4844050109386444
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.126364603638649
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.3892303705215454
+        }
+      ],
+      "frame_sha256": "a3e35ab41960d0fb7c77edb4932630e42f93ba01a3343f43d789c8eaae20190c"
+    },
+    {
+      "sequence": 15,
+      "captured_s": 30.065399999999517,
+      "applied_s": 32.44869999999949,
+      "choice": "left",
+      "wall_ms": 2386.8,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.39928215742111206
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.3869975209236145
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.21372033655643463
+        }
+      ],
+      "frame_sha256": "2af04806b11eef51edee486550028b0e1982f6928e85dde4fdb2b415d852bf47"
+    },
+    {
+      "sequence": 16,
+      "captured_s": 32.76539999999951,
+      "applied_s": 34.43199999999965,
+      "choice": "left",
+      "wall_ms": 1669.5,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.9010789394378662
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.08921889960765839
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.0097021060064435
+        }
+      ],
+      "frame_sha256": "e9ee3c6895e7bcdee51430d3d4f52a116f10e5922433e31bfc0f85bee259e872"
+    },
+    {
+      "sequence": 17,
+      "captured_s": 34.73189999999966,
+      "applied_s": 36.41529999999979,
+      "choice": "left",
+      "wall_ms": 1670.3,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.6013755798339844
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.010347237810492516
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.38827723264694214
+        }
+      ],
+      "frame_sha256": "f40812f81b3c77a8d5fad5e7df33d4537644f9d08443055828ea5a1a2d03a48f"
+    },
+    {
+      "sequence": 18,
+      "captured_s": 36.71519999999982,
+      "applied_s": 38.39849999999992,
+      "choice": "right",
+      "wall_ms": 1677.7,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.12536543607711792
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.004425941035151482
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.8702085614204407
+        }
+      ],
+      "frame_sha256": "37b7e72ea12c12659c569d3a66220bf7f1ccb0c746c7480c5512148a716fde12"
+    },
+    {
+      "sequence": 19,
+      "captured_s": 38.69849999999993,
+      "applied_s": 40.41510000000004,
+      "choice": "right",
+      "wall_ms": 1711.3,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.15998120605945587
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0017772307619452477
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.8382415771484375
+        }
+      ],
+      "frame_sha256": "415cbbc62f37789e09d543db3dc0d27fff911fef8a5a1aec5cc414bc1daf811b"
+    },
+    {
+      "sequence": 20,
+      "captured_s": 40.71510000000006,
+      "applied_s": 42.58170000000016,
+      "choice": "right",
+      "wall_ms": 1858.9,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.003942906390875578
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0006336827063933015
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.9954233765602112
+        }
+      ],
+      "frame_sha256": "2706bc547a09910280fe345c8daa99eb17fd895245fa399cced34da87719ff4f"
+    },
+    {
+      "sequence": 21,
+      "captured_s": 42.881600000000184,
+      "applied_s": 44.514900000000274,
+      "choice": "left",
+      "wall_ms": 1639.6,
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.6405777931213379
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.016545606777071953
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.3428765833377838
+        }
+      ],
+      "frame_sha256": "a33cc71ec9a983439ee40b6c2c1aa7b08ab53e48bab42b34635c7a0bd9d616dd"
+    }
+  ],
+  "artifacts": {
+    "Trio-Spark-v1.1-Little-Road-Trip-poster.png": "9a7c6183b1509b33302f71727f4096c9740effaff4c8baf7c7436a3ab7956d0d",
+    "Trio-Spark-v1.1-Little-Road-Trip.mp4": "80f1a57890b818447b2ebed13a178a5b2100a0c3a6a169b47f858bf534415f48"
+  },
+  "latency_scope": "Median/min/max over the 21 applied decisions; late unapplied responses excluded."
+}
