@@ -4,7 +4,7 @@ A small, earnest robot driver in a warm MachineFi toy world. Solid embossed coin
 
 [Watch the new recording](../../assets/demos/Trio-Spark-v1.1-Little-Road-Trip.mp4) · [Poster](../../assets/demos/Trio-Spark-v1.1-Little-Road-Trip-poster.png) · [Recording evidence](recording-evidence-polished.json)
 
-Re-recorded on the production Tesla T4 after the visual redesign: 21 applied model decisions, 4 coins, 1 collision. The protected production inference origin was used for recording; the runnable client below defaults to the customer API. The 45-second game is continuous. This is one illustrative run, not a benchmark.
+Re-recorded on the production Tesla T4 after the visual redesign: 19 applied model decisions, 4 coins, 1 collision. The protected production inference origin was used for recording; the runnable client below defaults to the customer API. The 45-second game is continuous. This is one illustrative run, not a benchmark.
 
 A screenshot-driven arcade racer for Trio-Spark v1.1. The model picks an absolute lane from a JPEG of the road. The simulation continues while inference runs; steering interpolates toward the returned lane. No obstacle coordinates are sent to the model and there is no scripted avoidance fallback.
 
