@@ -27,6 +27,19 @@ application can act on. The same key and wallet cover both text and vision at
 
 ## Visual demos · v1.1
 
+### Spark’s Little Road Trip
+
+[![Spark’s Little Road Trip](assets/demos/Trio-Spark-v1.1-Little-Road-Trip-poster.png)](assets/demos/Trio-Spark-v1.1-Little-Road-Trip.mp4)
+
+A tiny robot takes the wheel. Spark sees game screenshots and chooses a lane;
+no obstacle coordinates or scripted avoidance are passed to the model.
+Recorded continuously with live visual inference on a production Tesla T4,
+including the bonk. This is an illustrative game run, not a driving benchmark.
+
+**45 seconds of gameplay · 19 model decisions · 4 coins · 1 collision**
+
+[Run the demo](demos/spark-racer/) · [Recording details](demos/spark-racer/recording-evidence-polished.json) · [Watch MP4](assets/demos/Trio-Spark-v1.1-Little-Road-Trip.mp4)
+
 ### Read a hand signal
 
 [![Trio-Spark visual gestures](assets/demos/Trio-Spark-v1.1-Visual-Gestures-poster.jpg)](assets/demos/Trio-Spark-v1.1-Visual-Gestures.mp4)

@@ -18,7 +18,7 @@ python3 demos/spark-racer/server.py
 
 Python 3.9+; standard library only. The key stays server-side. The server binds to loopback and checks browser origins. It is a local demo, not a public multi-user service.
 
-Each race lasts 45 seconds. Three choices: left, center, right. Red cars are obstacles; gold rings are coins. A fixed course (`showcase-course-v1`) rotates the open lane through center, left, right, center, right, left. Waves spawn every 8.2 seconds independently of model predictions. Scores are illustrative gameplay, not an accuracy benchmark.
+Each race lasts 45 seconds. Three choices: left, center, right. Coral cars are obstacles; embossed gold coins are collectibles. A fixed course (`showcase-course-v1`) rotates the open lane through center, left, right, center, right, left. Waves spawn every 8.2 seconds independently of model predictions. Scores are illustrative gameplay, not an accuracy benchmark.
 
 The default call budget is 100 per server process (`RACER_MAX_CALLS`). One request is in flight at a time, with 300 ms between responses and the next capture. Inference failure stops the run; there is no scripted fallback. A late result after the finish is not applied but may still complete and consume usage.
 
