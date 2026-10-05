@@ -418,5 +418,6 @@
   "artifacts": {
     "Trio-Spark-v1.1-Spark-Racer-poster.png": "5641396e09f3bb5d5de2c4dce203a6c1380ad09057884e33148449d68eeb7738",
     "Trio-Spark-v1.1-Spark-Racer.mp4": "aeaf8b647024ecdee14958b72a82fbf6373bf248a3b8ff4b57a113c9dce0aabe"
-  }
+  },
+  "latency_scope": "Median/min/max summarize the 18 applied decisions; the late unapplied request is excluded."
 }
