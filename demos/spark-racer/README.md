@@ -2,7 +2,7 @@
 
 A small, earnest robot driver in a warm MachineFi toy world. Solid embossed coins, expressive coral neighbours, and a visible bonk when a collision happens.
 
-[Watch the new recording](../../assets/demos/Trio-Spark-v1.1-Little-Road-Trip.mp4) · [Poster](../../assets/demos/Trio-Spark-v1.1-Little-Road-Trip-poster.png) · [Recording evidence](recording-evidence-polished.json)
+[Watch the v1.1 recording](../../assets/demos/Trio-Spark-v1.1-Little-Road-Trip.mp4) · [Poster](../../assets/demos/Trio-Spark-v1.1-Little-Road-Trip-poster.png) · [Recording evidence](recording-evidence-polished.json)
 
 Re-recorded on the production Tesla T4 after the visual redesign: 19 applied model decisions, 4 coins, 1 collision. The protected production inference origin was used for recording; the runnable client below defaults to the customer API. The 45-second game is continuous. This is one illustrative run, not a benchmark.
 
@@ -50,7 +50,7 @@ python3 demos/spark-racer/record_public_v12.py \
 CPU contract checks require no browser, Playwright package, model or API:
 
 ```sh
-python3 -m pytest -q tests/test_racer_v12.py
+python3 -m unittest discover -s tests -p test_racer_v12.py -v
 ```
 
 The historical v1.1 recording and its original evidence remain unchanged.
