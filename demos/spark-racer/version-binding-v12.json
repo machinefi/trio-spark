@@ -1,0 +1,14 @@
+{
+  "schema": "racer-v12-visual-version-source-binding-v1",
+  "requested_model": "trio-spark-v1.2",
+  "expected_model_version": "trio-spark-v1.1-visual-t4-native4-v1+canonical-choice-id-v2",
+  "scope": "Public v1.2 alias preserves deployed visual backend; not text release version or new visual capability.",
+  "verified_deployed_source_sha256": {
+    "deployed-visual_v2_origin.py": "7816041690a2522ed7c55088e492fbc8d34a46cfbd0e3a69294d2ba0cb918db2",
+    "deployed-supervise.py": "13eedd43b3c2cb4a0c5ef0a0687ab4379118b44f19534338f881a2657632afea"
+  },
+  "previous_actual_http200_version_matches": true,
+  "actual_visual_calls_already_used": 1,
+  "replacement_remaining_call_cap": 39,
+  "no_further_replacement_authorized": true
+}

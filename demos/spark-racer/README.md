@@ -29,3 +29,28 @@ Frames, hashes, raw API responses and game outcomes are saved under `racer-evide
 The release recording is captured from a real browser running this game continuously. Its accompanying evidence notes identify the serving route, hardware, applied decisions and request timings. Screenshot encoding, network latency, server processing and browser scheduling all contribute to the control loop. This is a deliberately paced arcade scenario, not autonomous-driving validation.
 
 All graphics are original Canvas drawings; no third-party game art or soundtrack is required.
+
+## Recorded via the v1.2 API — October 8, 2026
+
+[Watch the v1.2 recording](../../assets/demos/Trio-Spark-v1.2-Little-Road-Trip.mp4) · [GIF](../../assets/demos/Trio-Spark-v1.2-Little-Road-Trip.gif) · [Poster](../../assets/demos/Trio-Spark-v1.2-Little-Road-Trip-poster.png) · [Evidence](recording-evidence-v12.json)
+
+This real public-API capture contains 35 seconds of continuous gameplay: 10 applied model decisions, 2 coins and 1 collision. Eleven requests succeeded; one result arrived after the game finished and was not applied. Screenshots were the only road input. The three raw model lane choices controlled steering, with no avoidance script or action override. The clip is one illustrative run, not a benchmark or a comparison.
+
+The version-specific `index-v12.html`, `server_v12.py` and `record_public_v12.py` preserve the earlier artwork, course and physics. The recording uses explicit request-start spacing of at least 1.1 seconds, a 39-call replacement budget and 90-second total bound. Its unchanged visual route is pinned separately from the text model version. Actual captured source hashes are retained in the evidence; the later optional-import fix is identified separately.
+
+The initial browser bootstrap made no API calls. A first capture received one valid visual response but stopped before applying it because the wrapper incorrectly checked the text version. That capture is retained in the private archive; the approved replacement shown here used the deployed visual version. No further gameplay run was selected or retried.
+
+For a separately authorized recording, install neither a browser nor a model implicitly. Reuse an existing Playwright installation, local Chrome and its video encoder; set `RACER_BROWSER_EXECUTABLE` if necessary. Keep the API key in `TRIO_SPARK_API_KEY` on the server side. Recording performs metered requests and requires explicit approval; the command acknowledges that requirement:
+
+```sh
+python3 demos/spark-racer/record_public_v12.py \
+  --ack-up-to-39-visual-calls --output /private/tmp/spark-v12-racer-your-run
+```
+
+CPU contract checks require no browser, Playwright package, model or API:
+
+```sh
+python3 -m pytest -q tests/test_racer_v12.py
+```
+
+The historical v1.1 recording and its original evidence remain unchanged.
