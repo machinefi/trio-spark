@@ -1,0 +1,344 @@
+{
+  "schema": "spark-v12-racer-recording-evidence-v1",
+  "model": "trio-spark-v1.2",
+  "route": "Public metered production decision API",
+  "recorded_date": "2026-10-08",
+  "course": "showcase-course-v1",
+  "continuous_game_duration_s": 35.015299999999705,
+  "video_duration_s": 37.72,
+  "applied_decisions": 10,
+  "successful_requests": 11,
+  "late_results_not_applied": 1,
+  "coins": 2,
+  "collisions": 1,
+  "min_request_start_spacing_s": 2.7682017079999994,
+  "max_calls_this_recording": 39,
+  "actual_visual_calls_across_attempts": 12,
+  "input": "512×314 JPEG screenshots; no obstacle coordinates or road state.",
+  "driver": "Returned raw lane choices only; no avoidance fallback, override or retries.",
+  "latency_scope": "Wall time from local proxy before request through public API response validation; includes network and local evidence I/O. Not GPU inference time or throughput.",
+  "request_latency_all_11_ms": {
+    "median": 2778.7,
+    "min": 2419.6,
+    "max": 3467.0
+  },
+  "attempt_disclosure": "Browser bootstrap failed before any model call. First visual capture received one valid HTTP200 but wrapper incorrectly required text version, so no action applied. Approved replacement pins deployed visual version; no further replacement or gameplay selection. All failures and raw evidence archived.",
+  "prior_validator_failure_archive_receipt_sha256": "d10c9da722dae226349ac6755fb6be1c4991f19684994472fbdc6245370eaae5",
+  "claim_scope": "One illustrative continuous run via v1.2 API. Not a benchmark, comparison, speed win or claim of new visual capability.",
+  "checks": {
+    "all_native_alias_and_visual_version": "PASS",
+    "all_frame_hashes_and_jpeg_dimensions": "PASS",
+    "all_finite_normalized_three_option_probs": "PASS",
+    "applied_action_matches_raw_response": "PASS",
+    "start_spacing_budget_wall_bounds": "PASS",
+    "historical_game_art_course_physics_unchanged": "PASS"
+  },
+  "artifacts": {
+    "Trio-Spark-v1.2-Little-Road-Trip.mp4": {
+      "sha256": "d1a751018b41865e9e647250c30fe03b9b8ac7c0914b65840a88b1d2936ae08c",
+      "bytes": 2129041
+    },
+    "Trio-Spark-v1.2-Little-Road-Trip.gif": {
+      "sha256": "d2f6d36a801f87d53a1d3bee089a32fd3614268a768900893a2d468b259635e5",
+      "bytes": 12237013
+    },
+    "Trio-Spark-v1.2-Little-Road-Trip-poster.png": {
+      "sha256": "b8b6108bdfa2a19467c55c804d6da4ca84c83a24e6d6e8b9423e0aed330fc9f1",
+      "bytes": 136940
+    }
+  },
+  "decisions": [
+    {
+      "sequence": 1,
+      "captured_game_s": 0.49999999999999983,
+      "applied_game_s": 3.899799999999994,
+      "choice_id": "center",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.26116684079170227
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.6265066862106323
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.11232646554708481
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 3399.1,
+      "frame_sha256": "1ab0c8a1b05a6d4eb7f1e199b68561d35f14200cec9d754e107ec3a5b3800ca6",
+      "raw_response_sha256": "534cd312476271a2efed70c8cd8fb338ef5ef52d18ddd44b3f15464595402307"
+    },
+    {
+      "sequence": 2,
+      "captured_game_s": 4.199799999999996,
+      "applied_game_s": 7.666300000000033,
+      "choice_id": "center",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.17591127753257751
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.65358966588974
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.1704990714788437
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 3467.0,
+      "frame_sha256": "9b536334b9408bd4c887f9e0ecf0ee361a063475a22f240e6d0a54816a86567b",
+      "raw_response_sha256": "5c4e9669caccf861e5a555fe9965df0b1b047def866b267be9766315b76a1146"
+    },
+    {
+      "sequence": 3,
+      "captured_game_s": 7.9831000000000385,
+      "applied_game_s": 11.166299999999982,
+      "choice_id": "center",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.005699565168470144
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.9889461398124695
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.005354245658963919
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 3194.7,
+      "frame_sha256": "d0e893920201ab69b30a287a3d9e5e29573624dc6d43b882a35d260a6c5b5261",
+      "raw_response_sha256": "0f16058b0fd8a248374979ce606fefc26258badd03de586c6ffc559ab853e1ee"
+    },
+    {
+      "sequence": 4,
+      "captured_game_s": 11.482899999999976,
+      "applied_game_s": 14.116099999999927,
+      "choice_id": "left",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.9165017008781433
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.05011468008160591
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.0333835706114769
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 2643.2,
+      "frame_sha256": "826a91a24a29e288c59d7d2b237796f9050608f7f9c1cc2e4f4537a81c36d741",
+      "raw_response_sha256": "6c26812d316b805acc0b0603cb092a7a4bf41045c3b88ace9878eeed3f299222"
+    },
+    {
+      "sequence": 5,
+      "captured_game_s": 14.416099999999922,
+      "applied_game_s": 17.215899999999895,
+      "choice_id": "left",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.9710054993629456
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.002296662889420986
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.026697825640439987
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 2778.7,
+      "frame_sha256": "485473675196946bc91850e83894589c3d01bfa94de9be3005833500fc868b8f",
+      "raw_response_sha256": "464a9abccf44a77fbed108b51d9bb9cd8e4184e6dcf027ad1c6ff3411b8e579d"
+    },
+    {
+      "sequence": 6,
+      "captured_game_s": 17.51599999999989,
+      "applied_game_s": 20.16579999999981,
+      "choice_id": "left",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.64202481508255
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.04507721588015556
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.3128979206085205
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 2657.2,
+      "frame_sha256": "28a49ed85933fd1674ea5c886836223401e99e144c93850fe2e2a8e09fc8dac8",
+      "raw_response_sha256": "a27a88ab280348989eba8db249c01b85eb4fecdc34edc156baec5d3ca3db8524"
+    },
+    {
+      "sequence": 7,
+      "captured_game_s": 20.465899999999795,
+      "applied_game_s": 22.932399999999767,
+      "choice_id": "right",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.12229210883378983
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0018861497519537807
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.8758217096328735
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 2462.2,
+      "frame_sha256": "b475529dc1d494ac2794e45a85ca5b6d6257235b658c84372fc3632ad4db483c",
+      "raw_response_sha256": "66465f0e59061364e8bc34818339090a836491c776f50a87a682163173db0d29"
+    },
+    {
+      "sequence": 8,
+      "captured_game_s": 23.23239999999975,
+      "applied_game_s": 25.748999999999697,
+      "choice_id": "right",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.09524038434028625
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.0011439978843554854
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.9036155939102173
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 2499.1,
+      "frame_sha256": "48f8cb36aa8ec1a6f56ca3c715b128bd47443dece1fbeb09cc569310d9da0d16",
+      "raw_response_sha256": "eb2cd0eeca293363729245a7c803f8f8015f4cf1f6f9de3f9890ac9cf2193e52"
+    },
+    {
+      "sequence": 9,
+      "captured_game_s": 26.0488999999997,
+      "applied_game_s": 29.14879999999958,
+      "choice_id": "left",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.47441917657852173
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.07990522682666779
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.4456755816936493
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 3094.9,
+      "frame_sha256": "ae73a1161b57d8b42db03eebf4fafeb1605aa9671b9f798e3dd3f8e352286448",
+      "raw_response_sha256": "977abb664328e8df97088d3970c2d3c203e90ab9c720ca9c90037a4d5950bff8"
+    },
+    {
+      "sequence": 10,
+      "captured_game_s": 29.44879999999958,
+      "applied_game_s": 32.53199999999954,
+      "choice_id": "center",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.26361921429634094
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.4083014130592346
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.3280794024467468
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 3085.6,
+      "frame_sha256": "d6c6a253e3b1e3d261fab0f78e30767b2b9bdc4634f08eac386efb3d7b7dd68b",
+      "raw_response_sha256": "29cf35492166df026cdb603f542401fcba0b8d58d771d1952eeda11d609074fe"
+    },
+    {
+      "sequence": 11,
+      "captured_game_s": 32.83209999999956,
+      "applied_game_s": null,
+      "choice_id": "center",
+      "probabilities": [
+        {
+          "choice_id": "left",
+          "probability": 0.04005427286028862
+        },
+        {
+          "choice_id": "center",
+          "probability": 0.9116309881210327
+        },
+        {
+          "choice_id": "right",
+          "probability": 0.04831467568874359
+        }
+      ],
+      "usage": {
+        "billed_input_tokens": 306
+      },
+      "wall_ms": 2419.6,
+      "frame_sha256": "49c42e811dd507c61dd36cb75a9b155b415ea4b5ed735343ce81df387b0b06cb",
+      "raw_response_sha256": "432ab641a447b86c9ea95738e4661ad504186fce4f6d9fa26637ed6a3d7ada55"
+    }
+  ],
+  "actual_capture_source_sha256": {
+    "index-v12.html": "d243ea90e54322685d3c76b617a4931eaba1709d38c6cc49d205b9d76103d3ff",
+    "server_v12.py": "c285bcabe325a45ea0f3db95e6c36a890934d675cd88881830ad20b6ccef573f",
+    "record_public_v12.py": "b4e188ff2b7c449193301e11850e7ce27f90ddb7cadf9033f49e60639c242522"
+  },
+  "post_capture_source_fix": "Optional Playwright import moved behind acknowledgement/credential gates after capture; actual source snapshot remains archived and hashed separately."
+}

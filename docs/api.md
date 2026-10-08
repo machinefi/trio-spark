@@ -1,7 +1,7 @@
 # Trio-Spark API reference
 
-**Trio-Spark v1.1** adds image and sampled-video decisions to the same hosted API.
-Start with the [visual and System One guide](visual.md) for `trio-spark-v1.1`,
+**Trio-Spark v1.2** supports text, image and sampled-video decisions in the same hosted API.
+Start with the [visual and System One guide](visual.md) for `trio-spark-v1.2`,
 text/image/video examples, pricing and media limits. The primary System One
 endpoint is `POST https://platform.machinefi.com/v1/systemone`.
 
@@ -9,7 +9,7 @@ endpoint is `POST https://platform.machinefi.com/v1/systemone`.
 
 The following reference documents the backward-compatible v1.0 text interface.
 Its `trio-spark-preview` identifier is retained for existing clients; new visual
-applications should use the v1.1 guide above.
+applications should use the v1.2 guide above.
 
 Trio-Spark v1.0 is a hosted Choice decision model. A request describes the
 current state and 2–8 actions the application is allowed to take. The response
