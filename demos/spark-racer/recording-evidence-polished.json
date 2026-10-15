@@ -1,6 +1,5 @@
 {
   "model": "Trio-Spark v1.1",
-  "hardware": "NVIDIA Tesla T4 (verified with nvidia-smi)",
   "route": "Protected production inference origin; not the customer billing API",
   "source_revision": "3139832",
   "seed": "showcase-course-v1",
@@ -438,8 +437,9 @@
     }
   ],
   "artifacts": {
-    "Trio-Spark-v1.1-Little-Road-Trip-poster.png": "95c473ff296535daa887d130373d31fcc7e141fddfada0863092eb5732039444",
-    "Trio-Spark-v1.1-Little-Road-Trip.mp4": "f07c8f777164791fcd5e5ad7b856a7ea1d6ecc8c2095686c6d601a818c16985f"
+    "Trio-Spark-v1.1-Little-Road-Trip-poster.png": "8822b5f0e780398b5a00e12af9eb6fb850c078a9d7981bbc5f24fb16b8081ef7",
+    "Trio-Spark-v1.1-Little-Road-Trip.mp4": "46762a955f9eeaba17094e2e9fcd99b4191a996bcbb55984ceb0a53779d77f41"
   },
-  "latency_scope": "Median/min/max over the 19 applied decisions; late unapplied responses excluded."
+  "latency_scope": "Median/min/max over the 19 applied decisions; late unapplied responses excluded.",
+  "artifact_note": "Published video and poster have a header badge masked after recording; the frames sent to the model (frame_sha256) and the decisions are unchanged."
 }
