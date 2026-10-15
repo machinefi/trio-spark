@@ -23,7 +23,7 @@ frames. Tell Spark what matters in the scene and define the answers your
 application can act on. The same key and wallet cover both text and vision at
 **$0.042 per million billed input tokens**.
 
-v1.3 is a text-model upgrade: 90.9% on our 13-task public evaluation panel, about 8 points above v1.2, with well-calibrated probabilities (ECE 0.019). Image and video requests use the same visual model as before. [See the release and evaluations](https://machinefi.com/blog/trio-spark-v13-decisions).
+v1.3 is a text-model upgrade: 90.9% across 13 public-dataset tasks, about 8 points above v1.2, and well-calibrated probabilities (ECE 0.019 on the ten tasks where calibration is measured). Image and video requests use the same visual model as before. [See the release and evaluations](https://machinefi.com/blog/trio-spark-v13-decisions).
 
 [Visual API quickstart](docs/visual.md) · [Try hand gestures](https://platform.machinefi.com/spark?demo=gestures) · [Console Docs](https://platform.machinefi.com/spark/docs)
 
