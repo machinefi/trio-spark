@@ -1,0 +1,20 @@
+{
+  "demo": "ticket-rush",
+  "production_api": true,
+  "serving_path": "protected_production_origin",
+  "serving_note": "Recorded through the protected production inference origin with the same deployed model, not the public customer API and wallet path. The runner in this directory targets the public API.",
+  "model": "trio-spark-v1.3",
+  "recorded_utc_date": "2026-10-15",
+  "successful_calls": 1000,
+  "api_errors": 0,
+  "tickets": 1000,
+  "duration_s": 407,
+  "match_human_label_pct": 94.7,
+  "sent_to_review": 33,
+  "review_rule": "top-choice probability below 0.6",
+  "model_cost_usd": 0.005,
+  "queues": 8,
+  "input_data": "tickets.json",
+  "per_decision_log": "Not retained for the recorded run; totals are read from the run's final screen. Re-run run.py to produce a full per-ticket log.",
+  "claim_scope": "One recorded run over 1,000 template-filled Bitext tickets with dataset category labels mapped to 8 queues; a demo, not a benchmark."
+}
