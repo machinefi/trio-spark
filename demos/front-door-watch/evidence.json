@@ -1,0 +1,172 @@
+{
+  "demo": "front-door-watch",
+  "production_api": true,
+  "serving_path": "protected_production_origin",
+  "serving_note": "Recorded through the protected production inference origin with the same deployed model, not the public customer API and wallet path. The runner in this directory targets the public API.",
+  "model": "trio-spark-v1.1",
+  "recorded_utc_date": "2026-10-15",
+  "task": "You watch the front-door camera of a family home. Decide what is happening at the door.",
+  "recorded_state": {
+    "camera": "front door",
+    "frames": "a few seconds of video, oldest first"
+  },
+  "choices": {
+    "family": "Someone from the household: walking up and opening the door to go in, or stepping out of the house",
+    "delivery": "A delivery: a courier bringing a package to the door or leaving it there",
+    "stranger": "An unknown person acting suspiciously: lurking, peering inside, or trying to get in",
+    "clear": "Nobody at the door"
+  },
+  "successful_calls": 4,
+  "api_errors": 0,
+  "frames_per_decision": 4,
+  "frame_offsets_s": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "frame_size": [
+    512,
+    288
+  ],
+  "matches_expected": 4,
+  "decisions": [
+    {
+      "event": 0,
+      "clock_label": "10:42 AM",
+      "expected": "delivery",
+      "sample_times_ms": [
+        2008,
+        3008,
+        4008,
+        5008
+      ],
+      "choice_id": "delivery",
+      "confidence": 0.9990063309669495,
+      "probabilities": [
+        {
+          "choice_id": "family",
+          "probability": 0.0009697286877781153
+        },
+        {
+          "choice_id": "delivery",
+          "probability": 0.9990063309669495
+        },
+        {
+          "choice_id": "stranger",
+          "probability": 1.4956430277379695e-05
+        },
+        {
+          "choice_id": "clear",
+          "probability": 8.930893272918183e-06
+        }
+      ],
+      "billed_input_tokens": 424,
+      "wall_latency_ms": 2389.5,
+      "recorded_utc": "2026-10-15T17:31:54Z"
+    },
+    {
+      "event": 1,
+      "clock_label": "3:28 PM",
+      "expected": "family",
+      "sample_times_ms": [
+        11541,
+        12541,
+        13541,
+        14541
+      ],
+      "choice_id": "family",
+      "confidence": 0.9997441172599792,
+      "probabilities": [
+        {
+          "choice_id": "family",
+          "probability": 0.9997441172599792
+        },
+        {
+          "choice_id": "delivery",
+          "probability": 8.348187839146703e-05
+        },
+        {
+          "choice_id": "stranger",
+          "probability": 1.643855830479879e-05
+        },
+        {
+          "choice_id": "clear",
+          "probability": 0.00015596469165757298
+        }
+      ],
+      "billed_input_tokens": 426,
+      "wall_latency_ms": 2579.6,
+      "recorded_utc": "2026-10-15T17:32:04Z"
+    },
+    {
+      "event": 2,
+      "clock_label": "4:05 PM",
+      "expected": "family",
+      "sample_times_ms": [
+        20873,
+        21874,
+        22874,
+        23874
+      ],
+      "choice_id": "family",
+      "confidence": 0.9991132616996765,
+      "probabilities": [
+        {
+          "choice_id": "family",
+          "probability": 0.9991132616996765
+        },
+        {
+          "choice_id": "delivery",
+          "probability": 0.000816680898424238
+        },
+        {
+          "choice_id": "stranger",
+          "probability": 3.4239277738379315e-05
+        },
+        {
+          "choice_id": "clear",
+          "probability": 3.588245454011485e-05
+        }
+      ],
+      "billed_input_tokens": 426,
+      "wall_latency_ms": 2511.4,
+      "recorded_utc": "2026-10-15T17:32:13Z"
+    },
+    {
+      "event": 3,
+      "clock_label": "2:13 AM",
+      "expected": "stranger",
+      "sample_times_ms": [
+        29840,
+        30840,
+        31840,
+        32840
+      ],
+      "choice_id": "stranger",
+      "confidence": 0.9996286630630493,
+      "probabilities": [
+        {
+          "choice_id": "family",
+          "probability": 0.00011588974302867427
+        },
+        {
+          "choice_id": "delivery",
+          "probability": 0.00017949352331925184
+        },
+        {
+          "choice_id": "stranger",
+          "probability": 0.9996286630630493
+        },
+        {
+          "choice_id": "clear",
+          "probability": 7.600234675919637e-05
+        }
+      ],
+      "billed_input_tokens": 426,
+      "wall_latency_ms": 2389.8,
+      "recorded_utc": "2026-10-15T17:32:22Z"
+    }
+  ],
+  "claim_scope": "Four hand-picked stock clips, one decision each; a demo, not a benchmark or a security product."
+}

@@ -1,0 +1,27 @@
+{
+  "demo": "comment-bouncer",
+  "production_api": true,
+  "serving_path": "protected_production_origin",
+  "serving_note": "Recorded through the protected production inference origin with the same deployed model, not the public customer API and wallet path. The runner in this directory targets the public API.",
+  "model": "trio-spark-v1.3",
+  "recorded_utc_date": "2026-10-15",
+  "successful_calls": 600,
+  "api_errors": 0,
+  "comments": 600,
+  "human_rated_toxic": 150,
+  "comments_per_second": 1.1,
+  "policy": {
+    "review_at": 0.3,
+    "hide_at": 0.7
+  },
+  "hidden": 100,
+  "to_review": 54,
+  "toxic_hidden_or_reviewed_pct": 78.7,
+  "auto_hidden_rated_toxic_pct": 88.0,
+  "fine_wrongly_auto_hidden_pct": 2.7,
+  "match_human_raters_at_0_5_pct": 88.3,
+  "model_cost_usd": 0.0017,
+  "input_data": "comments.json",
+  "per_decision_log": "Not retained for the recorded run; totals are read from the run's final screen. Re-run run.py to produce a full per-comment log.",
+  "claim_scope": "One recorded run over 600 Civil Comments test-split comments (25% rated toxic by human raters, toxicity >= 0.5); a demo, not a benchmark."
+}

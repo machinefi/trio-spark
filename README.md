@@ -27,6 +27,46 @@ v1.3 is a text-model upgrade: 90.9% across 13 public-dataset tasks, about 8 poin
 
 [Visual API quickstart](docs/visual.md) · [Try hand gestures](https://platform.machinefi.com/spark?demo=gestures) · [Console Docs](https://platform.machinefi.com/spark/docs)
 
+## Text decisions at volume · v1.3
+
+### Route 1,000 support tickets
+
+[![Trio-Spark v1.3 routes 1,000 support tickets](assets/demos/Trio-Spark-v1.3-Ticket-Rush-poster.jpg)](assets/demos/Trio-Spark-v1.3-Ticket-Rush.mp4)
+
+Every ticket gets one decision across eight team queues, with a probability for
+each. If the top probability is low, the ticket goes to a person instead.
+
+**1,000 tickets · 6 min 47 s · 94.7% match the human label · 33 to review · $0.0050**
+
+[Run the demo](demos/ticket-rush/) · [Recording details](demos/ticket-rush/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.3-Ticket-Rush.mp4)
+
+### Moderate comments with a policy you can move
+
+[![Trio-Spark v1.3 moderates 600 comments](assets/demos/Trio-Spark-v1.3-Comment-Bouncer-poster.jpg)](assets/demos/Trio-Spark-v1.3-Comment-Bouncer.mp4)
+
+Spark returns `P(hide)` for each comment. Two thresholds decide what is shown,
+reviewed or hidden. Moving the thresholds re-sorts every comment without
+calling the model again.
+
+**600 comments · 88.3% match human raters · 2.7% of fine comments auto-hidden · $0.0017**
+
+[Run the demo](demos/comment-bouncer/) · [Recording details](demos/comment-bouncer/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.3-Comment-Bouncer.mp4)
+
+### Front Door Watch
+
+[![Trio-Spark front-door camera decisions](assets/demos/Trio-Spark-v1.1-Front-Door-Watch-poster.jpg)](assets/demos/Trio-Spark-v1.1-Front-Door-Watch.mp4)
+
+Four events at a front door, each judged from four frames: a delivery, two
+household members and a stranger at night. Only the stranger raises an alert.
+Uses the visual model.
+
+**46 seconds · four real model calls · about 2.5 s per decision**
+
+[Run the demo](demos/front-door-watch/) · [Recording details](demos/front-door-watch/evidence.json) · [Watch MP4](assets/demos/Trio-Spark-v1.1-Front-Door-Watch.mp4)
+
+These runs are demos, not benchmarks. Each recording details file states its
+serving path and what was logged.
+
 ## A little road trip · recorded via v1.2
 
 [![Trio-Spark v1.2 chooses lanes from real game screenshots](assets/demos/Trio-Spark-v1.2-Little-Road-Trip-poster.png)](assets/demos/Trio-Spark-v1.2-Little-Road-Trip.mp4)
