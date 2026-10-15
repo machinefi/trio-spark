@@ -9,21 +9,21 @@
   ·
   <a href="https://platform.machinefi.com/spark#billing">Pricing</a>
   ·
-  <a href="https://machinefi.com/blog/trio-spark-v12-fast-decisions">Latest release</a>
+  <a href="https://machinefi.com/blog/trio-spark-v13-decisions">Latest release</a>
 </p>
 
 Trio-Spark is a **Situated World Model** built for fast judgment. Give it the state of an environment and 2–8 possible moves. In one pass, it returns the best next move and a probability for every choice.
 
 Trio-Spark is currently available as a hosted API. Model weights and training code are not publicly released. This repository is its public home for API clients, integrations, evaluations, and community-built demos.
 
-## Text and visual decisions · v1.2
+## Text and visual decisions · v1.3
 
-Use `trio-spark-v1.2` for text, a single image, or a short sequence of 2–4 video
+Use `trio-spark-v1.3` for text, a single image, or a short sequence of 2–4 video
 frames. Tell Spark what matters in the scene and define the answers your
 application can act on. The same key and wallet cover both text and vision at
 **$0.042 per million billed input tokens**.
 
-v1.2 improves text decisions while retaining the existing image and sampled-video capability. [See the release and matched evaluations](https://machinefi.com/blog/trio-spark-v12-fast-decisions).
+v1.3 is a text-model upgrade: 90.9% on our 13-task public evaluation panel, about 8 points above v1.2, with well-calibrated probabilities (ECE 0.019). Image and video requests use the same visual model as before. [See the release and evaluations](https://machinefi.com/blog/trio-spark-v13-decisions).
 
 [Visual API quickstart](docs/visual.md) · [Try hand gestures](https://platform.machinefi.com/spark?demo=gestures) · [Console Docs](https://platform.machinefi.com/spark/docs)
 
@@ -43,7 +43,7 @@ One continuous 35-second run through the public API: 10 applied decisions, 2 coi
 
 A tiny robot takes the wheel. Spark sees game screenshots and chooses a lane;
 no obstacle coordinates or scripted avoidance are passed to the model.
-Recorded continuously with live visual inference on a production Tesla T4,
+Recorded continuously with live visual inference on our production service,
 including the bonk. This is an illustrative game run, not a driving benchmark.
 
 **45 seconds of gameplay · 19 model decisions · 4 coins · 1 collision**
@@ -169,7 +169,7 @@ python3 evals/run.py --benchmark sst2 --limit 10 --output runs/sst2-smoke
 See [`evals/README.md`](evals/README.md) for the reproducibility contract and
 the exact commands used for full runs.
 
-Unified text and visual requests use **`trio-spark-v1.2`**. Existing v1.0 and v1.1 identifiers remain supported. The legacy v1.0
+Unified text and visual requests use **`trio-spark-v1.3`**. Existing v1.0, v1.1 and v1.2 identifiers remain supported. The legacy v1.0
 API identifier `trio-spark-preview` remains available for compatibility.
 
 ## How Spark fits into an agent
