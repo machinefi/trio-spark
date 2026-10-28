@@ -74,7 +74,7 @@ def decide(
         raise ValueError("Trio-Spark accepts 2 to 8 choices")
     key = os.environ["TRIO_SPARK_API_KEY"]
     body = json.dumps({
-        "model": "trio-spark-preview",
+        "model": "trio-spark",
         "task": task,
         "state": state,
         "choices": [{"id": key, "description": value} for key, value in choices.items()],

@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 from clients.python.trio_spark import TrioSparkError, decide  # noqa: E402
 from evals.metrics import decision_score, summarize  # noqa: E402
 
-MODEL = "trio-spark-preview"
+MODEL = "trio-spark"
 MAX_CHOICES = 8
 
 
