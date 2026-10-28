@@ -5,29 +5,33 @@
 <p align="center">
   <a href="https://platform.machinefi.com/spark"><strong>Try Trio-Spark</strong></a>
   ·
-  <a href="docs/api.md">API Docs</a>
+  <a href="https://machinefi.com/docs">API Docs</a>
   ·
-  <a href="https://platform.machinefi.com/spark#billing">Pricing</a>
+  <a href="https://machinefi.com/pricing">Pricing</a>
   ·
-  <a href="https://machinefi.com/blog/trio-spark-v13-decisions">Latest release</a>
+  <a href="https://machinefi.com/blog/trio-spark-v14-decisions">Latest release</a>
 </p>
 
 Trio-Spark is a **Situated World Model** built for fast judgment. Give it the state of an environment and 2–8 possible moves. In one pass, it returns the best next move and a probability for every choice.
 
 Trio-Spark is currently available as a hosted API. Model weights and training code are not publicly released. This repository is its public home for API clients, integrations, evaluations, and community-built demos.
 
-## Text and visual decisions · v1.3
+## Text and visual decisions
 
-Use `trio-spark-v1.3` for text, a single image, or a short sequence of 2–4 video
-frames. Tell Spark what matters in the scene and define the answers your
-application can act on. The same key and wallet cover both text and vision at
-**$0.042 per million billed input tokens**.
+Use `model: "trio-spark"` for text, a single image, or a short sequence of 2–4
+video frames. It always runs the current release, so your integration improves
+without code changes. Tell Spark what matters and define the answers your
+application can act on. The same key and wallet cover text and vision at
+**$0.042 per million billed input tokens**; output is free.
 
-v1.3 is a text-model upgrade: 90.9% across 13 public-dataset tasks, about 8 points above v1.2, and well-calibrated probabilities (ECE 0.019 on the ten tasks where calibration is measured). Image and video requests use the same visual model as before. [See the release and evaluations](https://machinefi.com/blog/trio-spark-v13-decisions).
+The current release, v1.4, serves one model for text and vision. On thirteen
+public benchmarks it has the best score of four fast decision models on seven.
 
-[Visual API quickstart](docs/visual.md) · [Try hand gestures](https://platform.machinefi.com/spark?demo=gestures) · [Console Docs](https://platform.machinefi.com/spark/docs)
+[![Trio-Spark accuracy on thirteen benchmarks against Jev 1.14, Clef-Flash and Clef](assets/benchmarks/trio-spark-benchmarks-2026-10-28.png)](https://machinefi.com/blog/trio-spark-v14-decisions)
 
-## Text decisions at volume · v1.3
+[Method, footnotes and every number](https://machinefi.com/blog/trio-spark-v14-decisions) · [API docs](https://machinefi.com/docs) · [Try hand gestures](https://platform.machinefi.com/spark?demo=gestures)
+
+## Text decisions at volume
 
 ### Route 1,000 support tickets
 
@@ -168,7 +172,7 @@ videos replay captured production responses with presentation timing.
 
 ## Build with Trio-Spark
 
-Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark#api-keys), then follow the [public API reference](docs/api.md).
+Create an API key in the [Trio-Spark console](https://platform.machinefi.com/spark#api-keys), then follow the [API docs](https://machinefi.com/docs).
 
 ```bash
 export TRIO_SPARK_API_KEY=tf_...
@@ -192,7 +196,7 @@ print(result["probabilities"])
 PY
 ```
 
-The dependency-free Python client lives at [`clients/python/trio_spark.py`](clients/python/trio_spark.py). The request/response schema, limits, errors, and pricing are documented in the [public API reference](docs/api.md). Account management and live usage remain in the [Trio-Spark console](https://platform.machinefi.com/spark).
+The dependency-free Python client lives at [`clients/python/trio_spark.py`](clients/python/trio_spark.py). The request/response schema, limits, errors, and pricing are documented in the [API docs](https://machinefi.com/docs). Account management and live usage remain in the [Trio-Spark console](https://platform.machinefi.com/spark).
 
 ## Reproduce the public benchmarks
 
@@ -209,8 +213,10 @@ python3 evals/run.py --benchmark sst2 --limit 10 --output runs/sst2-smoke
 See [`evals/README.md`](evals/README.md) for the reproducibility contract and
 the exact commands used for full runs.
 
-Unified text and visual requests use **`trio-spark-v1.3`**. Existing v1.0, v1.1 and v1.2 identifiers remain supported. The legacy v1.0
-API identifier `trio-spark-preview` remains available for compatibility.
+New integrations use **`trio-spark`**, which always runs the current release; the
+exact release is reported in each response's `model_version`. Earlier
+identifiers (`trio-spark-preview`, `trio-spark-v1.0` to `trio-spark-v1.3`)
+remain accepted for existing clients.
 
 ## How Spark fits into an agent
 

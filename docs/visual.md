@@ -1,4 +1,4 @@
-# Visual decisions with Trio-Spark v1.3
+# Visual decisions with Trio-Spark
 
 Give Spark a picture or a short sequence of frames, tell it what matters, and
 receive a structured decision with probabilities. Use the same account, API key
@@ -6,14 +6,14 @@ and wallet as text decisions.
 
 - [Playground](https://platform.machinefi.com/spark)
 - [Hand gesture demo](https://platform.machinefi.com/spark?demo=gestures)
-- [Full console documentation](https://platform.machinefi.com/spark/docs)
+- [Full API documentation](https://machinefi.com/docs)
 
 ## One model, two kinds of input
 
-Use `model: "trio-spark-v1.3"` with `POST /v1/systemone`.
+Use `model: "trio-spark"` with `POST /v1/systemone`.
 Without media, Spark evaluates text. With media, Spark evaluates the visual input
 alongside your instructions. Invalid media returns an error; it is not silently
-ignored. Existing `trio-spark-v1.0` text and `trio-spark-v1.1` requests remain supported.
+ignored. Earlier model identifiers remain supported.
 
 ## A complete image request
 
@@ -29,7 +29,7 @@ import uuid
 from pathlib import Path
 
 payload = {
-    "model": "trio-spark-v1.3",
+    "model": "trio-spark",
     "state": "A view of an entrance. Decide only from visible evidence.",
     "images": [{
         "content_type": "image/jpeg",
